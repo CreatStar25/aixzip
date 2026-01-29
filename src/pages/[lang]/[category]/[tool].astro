@@ -1,14 +1,12 @@
 ---
-import { tools, locales } from '../../../../config/tools';
-import Layout from '../../../../layouts/Layout.astro';
-import componentMap from '../../../../components/tools/registry';
+import { tools, locales } from '../../../config/tools';
+import Layout from '../../../layouts/Layout.astro';
+// ✅ 修改点 1: 引入新的分发组件
+import ToolDispatcher from '../../../components/tools/ToolDispatcher.jsx';
 
-// 1. 生成静态路径
-// 这里是三重循环：语言 x 分类 x 工具
+// 1. 生成静态路径 (逻辑不变)
 export function getStaticPaths() {
   const paths = [];
-  
-  // 排除默认语言 'en'，因为由上面的路由 A 处理
   const otherLocales = locales.filter(l => l !== 'en');
 
   otherLocales.forEach((lang) => {
@@ -23,29 +21,35 @@ export function getStaticPaths() {
   return paths;
 }
 
-const { toolConfig } = Astro.props;
 const { lang, category, tool } = Astro.params;
-const ToolComponent = componentMap[tool];
 
-// 获取对应语言的标题，例如 zh-cn 对应的 "去水印"
-// const pageTitle = getLocalizedTitle(lang, tool); 
+// 获取工具名称的大写形式
+const toolName = tool.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 ---
 
-<Layout title={`Page Title in ${lang}`} lang={lang}>
+<Layout title={`${toolName} - ${lang.toUpperCase()}`} lang={lang}>
   <main class="min-h-screen py-12 bg-slate-50">
     <div class="max-w-5xl mx-auto px-4">
-        <nav class="text-sm text-slate-500 mb-6 capitalize">
-            {/* 注意链接都要带上 /{lang} 前缀 */}
+        
+        <nav class="text-sm text-slate-500 mb-6 capitalize flex items-center gap-2">
             <a href={`/${lang}`} class="hover:text-blue-600">Home</a> 
-            {/* ... */}
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
+            <span>{category}</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
+            <span class="text-slate-900 font-bold">{toolName}</span>
         </nav>
 
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-            {/* 将 lang 传给 React 组件，让组件内部文字变成中文/法文等 */}
-            {ToolComponent ? <ToolComponent client:load lang={lang} /> : <p>Error</p>}
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden min-h-[600px] border border-slate-100">
+            {/* ✅ 修改点 2: 使用分发组件，并传入 toolId */}
+            {/* Astro 能够识别这个明确的组件导入，因此 client:load 可以正常工作 */}
+            <ToolDispatcher toolId={tool} lang={lang} client:load />
         </div>
         
-        {/* 这里放置针对该语言翻译过的 SEO 文章 */}
+        <article class="prose lg:prose-xl mx-auto mt-16 text-slate-600">
+            <h1>{toolName} ({lang})</h1>
+            <p>This is a placeholder for SEO content in {lang}. You can add specific descriptions here.</p>
+        </article>
+
     </div>
   </main>
 </Layout>

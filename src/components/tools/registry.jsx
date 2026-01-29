@@ -1,16 +1,24 @@
-// 引入你之前写好的具体工具组件
 import WatermarkRemover from './WatermarkRemover.jsx';
 import ImageCompressor from './ImageCompressor.jsx';
 import PdfToImage from './PdfToImage.jsx';
-// ... 引入其他组件
+import ZipCreator from './ZipCreator.jsx';
+import ComingSoon from './ComingSoon.jsx'; // 引入占位组件
 
-// 建立映射关系
 const componentMap = {
+  // 图片工具
   'gemini-remove-waterprint': WatermarkRemover,
   'image-compressor': ImageCompressor,
+  'image-cropper': ComingSoon, // 暂时用占位符
+  
+  // PDF 工具
   'pdf-to-image': PdfToImage,
-  // 如果某个工具还没开发完，可以放一个 ComingSoon 组件
-  'word-to-pdf': () => <div className="p-10 text-center">Coming Soon...</div>, 
+  'word-to-pdf': ComingSoon,   // 暂时用占位符
+  
+  // 文件工具
+  'zip-creator': ZipCreator,
+  
+  // 视频工具 (如果你之前加了的话)
+  'video-compressor': ComingSoon
 };
 
 export default componentMap;
