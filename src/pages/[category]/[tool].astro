@@ -1,0 +1,54 @@
+---
+// 1. 导入数据
+import { tools } from '../../config/tools';
+import Layout from '../../layouts/Layout.astro';
+import componentMap from '../../components/tools/registry';
+import { navData } from '../../i18n/ui'; // 你的多语言UI文本
+
+// 2. 生成静态路径 (Astro 构建时会执行)
+// 这会生成 /pdf/word-to-pdf, /image/image-compressor 等路径
+export function getStaticPaths() {
+  return tools.map((t) => ({
+    params: { category: t.category, tool: t.id },
+    props: { toolConfig: t },
+  }));
+}
+
+// 3. 获取当前页面的数据
+const { toolConfig } = Astro.props;
+const { category, tool } = Astro.params;
+
+// 4. 根据 ID 动态获取对应的 React 组件
+const ToolComponent = componentMap[tool];
+
+// 5. 获取当前页面的翻译数据 (English)
+const t = navData['en']; 
+// 这里你需要根据 category 和 tool 去 navData 里找对应的标题
+// 简单起见，这里假设你有一个 helper 函数 getToolTitle('en', category, tool)
+const pageTitle = `${toolConfig.id} - Free Online Tool`; 
+---
+
+<Layout title={pageTitle} lang="en">
+  <main class="min-h-screen py-12 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <nav class="text-sm text-slate-500 mb-6 capitalize">
+        <a href="/" class="hover:text-blue-600">Home</a> 
+        <i class="fa-solid fa-chevron-right text-xs mx-2"></i>
+        <span>{category}</span>
+        <i class="fa-solid fa-chevron-right text-xs mx-2"></i>
+        <span class="text-slate-900 font-bold">{tool.replace(/-/g, ' ')}</span>
+      </nav>
+
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden min-h-[500px]">
+        {ToolComponent ? <ToolComponent client:load lang="en" /> : <p>Tool not found</p>}
+      </div>
+
+      <article class="prose lg:prose-xl mx-auto mt-16">
+        <h1>Free Online {tool.replace(/-/g, ' ')}</h1>
+        <p>Use our free tool to process your {category} files...</p>
+      </article>
+
+    </div>
+  </main>
+</Layout>

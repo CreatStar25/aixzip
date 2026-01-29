@@ -1,0 +1,53 @@
+---
+import Home from '../components/pages/Home.astro';
+---
+
+<Home lang="en" />
+
+<script is:inline>
+  (function() {
+    // 1. 获取浏览器语言 (例如 "zh-CN", "en-US")
+    const browserLang = navigator.language.toLowerCase();
+    
+    // 2. 你的网站支持的语言列表 (必须小写，对应路由前缀)
+    // 注意：这里没有 'en'，因为 en 是根路径，不需要跳转
+    const supportedLocales = [
+      'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 'fr', 'ru', 'hi', 
+      'ja', 'de', 'ko', 'tr', 'vi', 'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro'
+    ];
+
+    // 3. 检查是否有历史选择记录
+    const savedLang = localStorage.getItem('user_lang');
+
+    // 4. 决定目标语言
+    let targetLang = null;
+
+    if (savedLang) {
+      // 如果用户以前手动选过，优先尊重历史选择
+      if (savedLang !== 'en' && window.location.pathname === '/') {
+        targetLang = savedLang;
+      }
+    } else {
+      // 首次访问，检测浏览器语言
+      // 特殊处理中文：zh-cn, zh-sg -> zh-cn; zh-hk, zh-tw -> zh-tw
+      if (browserLang.includes('zh')) {
+        targetLang = (browserLang.includes('tw') || browserLang.includes('hk')) ? 'zh-tw' : 'zh-cn';
+      } else {
+        // 其他语言直接匹配前缀 (例如 'es-ES' -> 'es')
+        const prefix = browserLang.split('-')[0];
+        if (supportedLocales.includes(prefix)) {
+          targetLang = prefix;
+        }
+      }
+    }
+
+    // 5. 执行跳转 (仅当当前在根路径且需要跳转时)
+    if (targetLang && window.location.pathname === '/') {
+      window.location.replace('/' + targetLang + '/');
+    }
+    
+    // 6. 记录当前语言到 localStorage (只要页面加载就记录，方便下次)
+    // 这里的逻辑稍微 tricky：我们在 Layout 或 Header 里切换语言链接点击时，也应该更新这个 storage
+    // 为了简单，我们只在自动跳转时记录。更严谨的做法是在 Header 的语言切换链接加 onclick 事件。
+  })();
+</script>

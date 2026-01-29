@@ -1,0 +1,51 @@
+---
+import { tools, locales } from '../../../../config/tools';
+import Layout from '../../../../layouts/Layout.astro';
+import componentMap from '../../../../components/tools/registry';
+
+// 1. 生成静态路径
+// 这里是三重循环：语言 x 分类 x 工具
+export function getStaticPaths() {
+  const paths = [];
+  
+  // 排除默认语言 'en'，因为由上面的路由 A 处理
+  const otherLocales = locales.filter(l => l !== 'en');
+
+  otherLocales.forEach((lang) => {
+    tools.forEach((t) => {
+      paths.push({
+        params: { lang: lang, category: t.category, tool: t.id },
+        props: { toolConfig: t },
+      });
+    });
+  });
+
+  return paths;
+}
+
+const { toolConfig } = Astro.props;
+const { lang, category, tool } = Astro.params;
+const ToolComponent = componentMap[tool];
+
+// 获取对应语言的标题，例如 zh-cn 对应的 "去水印"
+// const pageTitle = getLocalizedTitle(lang, tool); 
+---
+
+<Layout title={`Page Title in ${lang}`} lang={lang}>
+  <main class="min-h-screen py-12 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4">
+        <nav class="text-sm text-slate-500 mb-6 capitalize">
+            {/* 注意链接都要带上 /{lang} 前缀 */}
+            <a href={`/${lang}`} class="hover:text-blue-600">Home</a> 
+            {/* ... */}
+        </nav>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            {/* 将 lang 传给 React 组件，让组件内部文字变成中文/法文等 */}
+            {ToolComponent ? <ToolComponent client:load lang={lang} /> : <p>Error</p>}
+        </div>
+        
+        {/* 这里放置针对该语言翻译过的 SEO 文章 */}
+    </div>
+  </main>
+</Layout>
