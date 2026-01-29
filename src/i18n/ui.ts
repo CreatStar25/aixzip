@@ -1,28 +1,70 @@
 // src/i18n/ui.ts
 
+// 1. 导航菜单数据 (Header 必须使用此导出)
 export const navData = {
-  // ... 保持 navData 不变 ...
   en: {
-    image: { title: "Image Tools", items: [{ name: "Watermark Remover", href: "/image/gemini-remove-waterprint" }, { name: "Compress Image", href: "/image/image-compressor" }] },
-    pdf: { title: "PDF Tools", items: [{ name: "PDF to Image", href: "/pdf/pdf-to-image" }] },
-    file: { title: "File Tools", items: [{ name: "Create ZIP", href: "/file/zip-creator" }] }
+    image: { 
+      title: "Image Tools", 
+      items: [
+        { name: "Watermark Remover", href: "/image/gemini-remove-waterprint" },
+        { name: "Compress Image", href: "/image/image-compressor" }
+      ] 
+    },
+    pdf: { 
+      title: "PDF Tools", 
+      items: [
+        { name: "PDF to Image", href: "/pdf/pdf-to-image" }
+      ] 
+    },
+    file: { 
+      title: "File Tools", 
+      items: [
+        { name: "Create ZIP", href: "/file/zip-creator" }
+      ] 
+    }
   },
   'zh-cn': {
-    image: { title: "图片工具", items: [{ name: "智能去水印", href: "/zh-cn/image/gemini-remove-waterprint" }, { name: "图片压缩", href: "/zh-cn/image/image-compressor" }] },
-    pdf: { title: "PDF 工具", items: [{ name: "PDF 转图片", href: "/zh-cn/pdf/pdf-to-image" }] },
-    file: { title: "文件工具", items: [{ name: "创建 ZIP", href: "/zh-cn/file/zip-creator" }] }
+    image: { 
+      title: "图片工具", 
+      items: [
+        { name: "智能去水印", href: "/zh-cn/image/gemini-remove-waterprint" },
+        { name: "图片压缩", href: "/zh-cn/image/image-compressor" }
+      ] 
+    },
+    pdf: { 
+      title: "PDF 工具", 
+      items: [
+        { name: "PDF 转图片", href: "/zh-cn/pdf/pdf-to-image" }
+      ] 
+    },
+    file: { 
+      title: "文件工具", 
+      items: [
+        { name: "创建 ZIP", href: "/zh-cn/file/zip-creator" }
+      ] 
+    }
   }
 };
 
+// 2. 界面文本翻译 (首页、Footer、SEO 使用)
 export const ui = {
   en: {
+    // --- 网站基础信息 (SEO) ---
     'site.title': 'AIxZIP',
+    'site.seo_keywords': 'Free AI Tools, PDF Tools, Image Tools, File Converters',
+
+    // --- Hero 区域 ---
     'hero.title': 'Free Online AI Tools & File Converter',
     'hero.subtitle': '100% Client-side processing. No file uploads to server. Secure, Fast, and Free.',
     'hero.search_placeholder': 'Search tools (e.g. "Watermark", "PDF")',
-    'section.all': 'All Tools',
     
-    // 亮点
+    // --- 分类标题 ---
+    'section.all': 'All Tools',
+    'category.image': 'Image Tools',
+    'category.pdf': 'PDF Tools',
+    'category.file': 'File Tools',
+
+    // --- 功能亮点 ---
     'feat.nologin.title': 'No Sign Up',
     'feat.nologin.desc': 'Start using tools immediately without registration.',
     'feat.client.title': 'Client-Side',
@@ -32,7 +74,7 @@ export const ui = {
     'feat.secure.title': '100% Secure',
     'feat.secure.desc': 'Your data never leaves your device.',
 
-    // FAQ & Testimonials
+    // --- FAQ & 评论 ---
     'faq.title': 'Frequently Asked Questions',
     'faq.q1': 'Is AIxZIP free?',
     'faq.a1': 'Yes, all tools are completely free to use.',
@@ -42,7 +84,7 @@ export const ui = {
     'testi.1.text': 'The watermark remover is magic! And I love that I do not need to upload my private contracts to a server.',
     'testi.1.author': 'Sarah J., Designer',
 
-    // --- ✨ 新增：Footer 底部栏翻译 ---
+    // --- Footer 底部栏 ---
     'footer.desc': 'Free online tools to convert, compress, and edit your files. No registration required.',
     'footer.col.pdf': 'PDF Tools',
     'footer.col.image': 'Image Tools',
@@ -54,12 +96,22 @@ export const ui = {
     'footer.rights': 'All rights reserved.'
   },
   'zh-cn': {
+    // --- 网站基础信息 (SEO) ---
     'site.title': 'AIxZIP',
+    'site.seo_keywords': '免费 AI 工具、PDF 工具、图片处理及文件格式转换',
+
+    // --- Hero 区域 ---
     'hero.title': '免费在线 AI 工具箱 & 文件转换器',
     'hero.subtitle': '100% 纯前端处理。文件不上传服务器。安全、快速、免费。',
     'hero.search_placeholder': '搜索工具 (例如 "去水印", "PDF")',
+    
+    // --- 分类标题 ---
     'section.all': '所有工具',
+    'category.image': '图片工具',
+    'category.pdf': 'PDF 工具',
+    'category.file': '文件工具',
 
+    // --- 功能亮点 ---
     'feat.nologin.title': '无需登录',
     'feat.nologin.desc': '直接使用，无需繁琐的注册流程。',
     'feat.client.title': '纯前端处理',
@@ -69,17 +121,17 @@ export const ui = {
     'feat.secure.title': '数据安全',
     'feat.secure.desc': '您的文件从未离开过您的设备，隐私绝对安全。',
 
+    // --- FAQ & 评论 ---
     'faq.title': '常见问题',
     'faq.q1': 'AIxZIP 是免费的吗？',
     'faq.a1': '是的，所有工具完全免费，没有任何隐藏费用。',
     'faq.q2': '我的文件安全吗？',
     'faq.a2': '绝对安全。我们使用 WebAssembly 等技术在您的浏览器本地处理文件，您的文件从未上传到我们的服务器。',
-
     'testi.title': '用户评价',
     'testi.1.text': '去水印效果太神奇了！最重要的是，我不需要把保密的合同上传到云端，这让我很放心。',
     'testi.1.author': '李娜, 设计师',
 
-    // --- ✨ 新增：Footer 底部栏翻译 ---
+    // --- Footer 底部栏 ---
     'footer.desc': '免费的在线工具，用于转换、压缩和编辑您的文件。无需注册。',
     'footer.col.pdf': 'PDF 工具',
     'footer.col.image': '图片工具',
