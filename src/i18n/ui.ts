@@ -50,7 +50,7 @@ export const navData = {
 export const ui = {
   en: {
     // --- 网站基础信息 (SEO) ---
-    'site.title': 'AIxZIP',
+    'site.title': 'AIxZIP ｜ ai tools ',
     'site.seo_keywords': 'Free AI Tools, PDF Tools, Image Tools, File Converters',
 
     // --- Hero 区域 ---
@@ -97,7 +97,7 @@ export const ui = {
   },
   'zh-cn': {
     // --- 网站基础信息 (SEO) ---
-    'site.title': 'AIxZIP',
+    'site.title': 'AIxZIP ｜ ai tools ',
     'site.seo_keywords': '免费 AI 工具、PDF 工具、图片处理及文件格式转换',
 
     // --- Hero 区域 ---
