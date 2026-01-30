@@ -10,16 +10,19 @@ export default function ImageCompressor({ lang }) {
 
   // 设置项
   const [settings, setSettings] = useState({
-    // 尺寸调整相关
-    tab: 'pixels',         // 'pixels' | 'percentage'
-    width: '',             // 目标宽度 (空代表自动)
-    height: '',            // 目标高度 (空代表自动)
-    noEnlarge: false,      // 如果原图小于目标，是否保持原样
-    percent: 50,           // 百分比缩放值
+    // 尺寸调整
+    tab: 'pixels',         
+    width: '',             
+    height: '',            
+    noEnlarge: true,       
+    percent: 75,           
 
-    // 压缩相关
-    enableCompress: true,  // 是否开启压缩
-    quality: 90,           // 1-100
+    // 压缩设置
+    enableCompress: true,  
+    quality: 90,
+    
+    // 隐私设置 (默认开启)
+    stripMetadata: true, 
   });
 
   // 内部翻译
@@ -32,7 +35,6 @@ export default function ImageCompressor({ lang }) {
         clear_list: '清空列表',
         empty_hint: '等待添加图片...',
         
-        // Right Panel
         settings_title: '调整尺寸选项',
         tab_pixels: '按像素',
         tab_percent: '按百分比',
@@ -44,16 +46,19 @@ export default function ImageCompressor({ lang }) {
         sec_compress: '压缩设置',
         chk_compress: '启用压缩',
         lbl_quality: '画质强度',
-        val_quality_high: '高画质',
+        val_quality_high: '高画质 (视觉无损)',
+        val_quality_low: '高压缩比',
+        hint_smart: '推荐 90%：在不影响视觉观感的前提下最大化压缩体积。',
+
+        sec_privacy: '隐私设置',
+        chk_strip_metadata: '移除元数据 (EXIF/GPS)',
+        hint_strip_metadata: '已启用: 将自动清除地理位置和相机拍摄参数。',
         
         btn_download: '打包下载 (保留原名)',
-        
-        // Status
         status_pending: '等待',
         status_processing: '处理中...',
         status_done: '完成',
         status_error: '失败',
-        
         stat_saved: '已优化体积',
       },
       'en': {
@@ -74,22 +79,26 @@ export default function ImageCompressor({ lang }) {
         sec_compress: 'Compression',
         chk_compress: 'Enable Compression',
         lbl_quality: 'Quality',
-        val_quality_high: 'High',
+        val_quality_high: 'High Quality',
+        val_quality_low: 'High Compression',
+        hint_smart: '90% is recommended for visually lossless compression.',
+
+        sec_privacy: 'Privacy',
+        chk_strip_metadata: 'Strip Metadata (EXIF/GPS)',
+        hint_strip_metadata: 'Active: Location and camera info will be removed.',
         
         btn_download: 'Download ZIP (Original Names)',
-        
         status_pending: 'Pending',
         status_processing: 'Processing...',
         status_done: 'Done',
         status_error: 'Failed',
-        
         stat_saved: 'Size Saved',
       }
     };
     return dict[lang]?.[key] || dict['en'][key];
   };
 
-  // --- 核心逻辑：计算尺寸 + 压缩 ---
+  // --- 核心算法 ---
   const processImage = async (file) => {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -104,22 +113,16 @@ export default function ImageCompressor({ lang }) {
         let targetW = originalW;
         let targetH = originalH;
 
-        // 1. 计算目标尺寸
+        // 1. Resize Logic
         if (settings.tab === 'percentage') {
-          // A. 按百分比
           const p = Math.max(1, Math.min(100, settings.percent)) / 100;
           targetW = Math.round(originalW * p);
           targetH = Math.round(originalH * p);
         } else {
-          // B. 按像素
           const inputW = parseInt(settings.width);
           const inputH = parseInt(settings.height);
 
           if (inputW && inputH) {
-            // 强制宽高 (可能会变形，或者我们可以选择 Fit 模式。这里参考 iLoveIMG 简单逻辑：强制缩放)
-            // 更好的做法是：保持纵横比。如果用户输入了 W 和 H，通常意味着强制。
-            // 但如果模仿 iLoveIMG 的 "Maintain aspect ratio"，通常只输入一项。
-            // 这里我们实现：如果只输入一项，则按比例；如果输入两项，则强制。
              targetW = inputW;
              targetH = inputH;
           } else if (inputW) {
@@ -130,7 +133,6 @@ export default function ImageCompressor({ lang }) {
              targetW = Math.round(originalW * (inputH / originalH));
           }
 
-          // C. 检查“不放大” (No Enlarge)
           if (settings.noEnlarge) {
              if (targetW > originalW || targetH > originalH) {
                  targetW = originalW;
@@ -139,7 +141,7 @@ export default function ImageCompressor({ lang }) {
           }
         }
 
-        // 2. 绘制到 Canvas (Resize)
+        // 2. Draw to Canvas (This implicitly STRIPS metadata)
         const canvas = document.createElement('canvas');
         canvas.width = targetW;
         canvas.height = targetH;
@@ -148,31 +150,33 @@ export default function ImageCompressor({ lang }) {
         ctx.imageSmoothingQuality = 'high';
         ctx.drawImage(img, 0, 0, targetW, targetH);
 
-        // 3. 压缩并导出 (Compress)
-        const isPng = file.type === 'image/png';
-        // 如果未开启压缩，则质量为 1.0 (接近原画)；开启则使用 settings.quality
-        const quality0to1 = settings.enableCompress ? (settings.quality / 100) : 1.0;
-
+        // 3. Compress & Export
         if (!settings.enableCompress) {
-           // 不压缩：尝试尽可能保留原样 (JPG 默认 0.92, 强行给 1.0)
            canvas.toBlob((blob) => resolve(blob), file.type, 1.0);
-        } else {
-           // 压缩模式
-           if (isPng) {
-             // PNG 使用 UPNG
-             try {
+           return;
+        }
+
+        const isPng = file.type === 'image/png';
+        const qualityDecimal = settings.quality / 100;
+
+        if (isPng) {
+            // PNG (UPNG.js Quantization)
+            try {
                const rgbaData = ctx.getImageData(0, 0, targetW, targetH).data.buffer;
-               // 映射 quality (1-100) -> cnum (0-256)
-               const cnum = Math.floor(quality0to1 * 256); 
+               let cnum = 0; 
+               if (settings.quality <= 99) {
+                   cnum = Math.max(16, Math.min(256, Math.floor((settings.quality / 100) * 256 * 1.2)));
+                   if (cnum > 256) cnum = 256;
+               }
                const pngBuffer = UPNG.encode([rgbaData], targetW, targetH, cnum);
                resolve(new Blob([pngBuffer], {type: 'image/png'}));
-             } catch (e) {
-               canvas.toBlob((blob) => resolve(blob), 'image/png');
-             }
-           } else {
-             // JPG / WebP
-             canvas.toBlob((blob) => resolve(blob), file.type, quality0to1);
-           }
+            } catch (e) {
+               console.error("UPNG Error", e);
+               canvas.toBlob(b => resolve(b), 'image/png');
+            }
+        } else {
+            // JPG/WebP
+            canvas.toBlob((blob) => resolve(blob), file.type, qualityDecimal);
         }
       };
 
@@ -183,7 +187,7 @@ export default function ImageCompressor({ lang }) {
     });
   };
 
-  // --- 队列调度 (自动处理) ---
+  // --- Queue Management ---
   useEffect(() => {
     if (processing) return;
     const nextItem = queue.find(i => i.status === 'pending');
@@ -211,7 +215,15 @@ export default function ImageCompressor({ lang }) {
     }
   };
 
-  // --- 交互事件 ---
+  useEffect(() => {
+      if (queue.length > 0 && !processing) {
+          const doneOrError = queue.some(i => i.status === 'done' || i.status === 'error');
+          if (doneOrError) {
+              setQueue(prev => prev.map(i => ({...i, status: 'pending'})));
+          }
+      }
+  }, [settings.tab, settings.width, settings.height, settings.percent, settings.noEnlarge, settings.enableCompress, settings.quality]);
+
   const handleFiles = (files) => {
     const validFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
     const newItems = validFiles.map(file => ({
@@ -223,24 +235,6 @@ export default function ImageCompressor({ lang }) {
     }));
     setQueue(prev => [...prev, ...newItems]);
   };
-  
-  // 重新处理所有 (当设置改变时，将已完成的重置为 pending)
-  // 为了用户体验，我们做个简单的 debounce 或者只在用户点击“应用”时处理？
-  // 这里为了简单直观：设置改变时，不自动重置，而是用户需要重新上传？
-  // 不，更好的体验是：设置改变后，只有新加入的图片受影响？
-  // 参考 iLoveIMG：上传 -> 设置 -> 点击“处理”。
-  // 但我们目前的架构是“自动处理”。
-  // 妥协方案：用户修改设置后，手动点击一个“重新处理”按钮？或者我们简单点：
-  // 每次修改关键设置，把所有 item 状态设回 pending。
-  useEffect(() => {
-     if (queue.length > 0 && !processing) {
-         // 只有当有文件且没在处理时，才允许重置状态
-         // 这是一个激进的策略：只要改了任何设置，所有图片重做
-         // 为了防止 slider 滑动时频繁触发，最好加 debounce，这里简化处理
-         setQueue(prev => prev.map(i => ({...i, status: 'pending'})));
-     }
-  }, [settings.tab, settings.width, settings.height, settings.percent, settings.noEnlarge, settings.enableCompress, settings.quality]);
-
 
   const onDragOver = (e) => { e.preventDefault(); e.stopPropagation(); setIsDragging(true); };
   const onDragLeave = (e) => { e.preventDefault(); e.stopPropagation(); setIsDragging(false); };
@@ -254,7 +248,6 @@ export default function ImageCompressor({ lang }) {
     if (validItems.length === 0) return;
 
     const zip = new JSZip();
-    // 不用文件夹，直接平铺
     validItems.forEach((item) => {
         zip.file(item.file.name, item.blob);
     });
@@ -263,7 +256,7 @@ export default function ImageCompressor({ lang }) {
         const content = await zip.generateAsync({type: "blob"});
         const link = document.createElement('a');
         link.href = URL.createObjectURL(content);
-        link.download = `resized_images_${Date.now()}.zip`;
+        link.download = `optimized_images_${Date.now()}.zip`;
         link.click();
     } catch (e) {
         alert("Zip failed: " + e.message);
@@ -285,10 +278,9 @@ export default function ImageCompressor({ lang }) {
   return (
     <div className="flex flex-col lg:flex-row h-[800px] lg:h-[700px] overflow-hidden bg-white rounded-2xl shadow-xl border border-slate-100">
         
-        {/* 左侧：文件列表与上传 */}
+        {/* Left: Files & Upload */}
         <div className="flex-1 flex flex-col bg-slate-50/50 overflow-hidden relative">
-            
-            {/* 顶部工具条 */}
+            {/* Toolbar */}
             <div className="px-4 py-3 border-b border-slate-200 bg-white flex justify-between items-center shadow-sm z-10">
                  <button onClick={() => document.getElementById('addFile').click()} className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow-blue-500/30 shadow-lg flex items-center gap-2">
                     <i className="fa-solid fa-plus"></i> Add Images
@@ -305,26 +297,28 @@ export default function ImageCompressor({ lang }) {
                  </div>
             </div>
 
-            {/* 中间：列表或空状态 */}
+            {/* File List */}
             <div 
                 className={`flex-1 overflow-y-auto p-4 space-y-3 custom-scroll ${isDragging ? 'bg-blue-50 ring-2 ring-inset ring-blue-500' : ''}`}
                 onDragOver={onDragOver} onDragLeave={onDragLeave} onDrop={onDrop}
             >
                 {queue.length === 0 ? (
-                    <div className="h-full flex flex-col items-center justify-center text-slate-300">
-                        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-slate-100">
+                    // ✨ 修复优化：上传区域现在可点击且覆盖全区域
+                    <div 
+                        className="h-full flex flex-col items-center justify-center text-slate-300 cursor-pointer relative"
+                        onClick={() => document.getElementById('addFile').click()} // 显式绑定点击
+                    >
+                        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-slate-100 pointer-events-none">
                              <i className="fa-regular fa-image text-4xl text-slate-200"></i>
                         </div>
-                        <p className="text-sm font-bold text-slate-400">{t('drag_drop')}</p>
+                        <p className="text-sm font-bold text-slate-400 pointer-events-none">{t('drag_drop')}</p>
                     </div>
                 ) : (
                     queue.map(item => (
                         <div key={item.id} className="flex items-center gap-4 p-3 bg-white rounded-xl border border-slate-200 shadow-sm animate-fade-in-up">
-                             {/* 缩略图模拟 */}
                              <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-400 font-bold text-xs border border-slate-200 shrink-0">
                                 {item.file.name.split('.').pop().toUpperCase()}
                              </div>
-                             
                              <div className="min-w-0 flex-1">
                                  <p className="text-xs font-bold text-slate-700 truncate">{item.file.name}</p>
                                  <div className="flex items-center gap-2 mt-1">
@@ -337,7 +331,6 @@ export default function ImageCompressor({ lang }) {
                                      )}
                                  </div>
                              </div>
-
                              <div className="shrink-0 text-right">
                                  {item.status === 'processing' && <i className="fa-solid fa-spinner fa-spin text-blue-500"></i>}
                                  {item.status === 'done' && <i className="fa-solid fa-check text-green-500"></i>}
@@ -350,34 +343,21 @@ export default function ImageCompressor({ lang }) {
             </div>
         </div>
 
-        {/* 右侧：iLoveIMG 风格设置面板 */}
+        {/* Right: Settings */}
         <div className="w-full lg:w-[340px] bg-white border-l border-slate-200 flex flex-col shadow-xl z-20">
-            
-            {/* Header */}
             <div className="p-5 border-b border-slate-100">
                 <h3 className="text-sm font-black text-slate-800 uppercase tracking-wide flex items-center gap-2">
                     <i className="fa-solid fa-sliders text-blue-600"></i> {t('settings_title')}
                 </h3>
             </div>
 
-            {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto p-5 space-y-8 custom-scroll">
                 
-                {/* 1. Tabs */}
+                {/* 1. Resize Options */}
                 <div>
                     <div className="flex p-1 bg-slate-100 rounded-xl mb-4">
-                        <button 
-                            onClick={() => setSettings(s => ({...s, tab: 'pixels'}))}
-                            className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${settings.tab === 'pixels' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
-                        >
-                            {t('tab_pixels')}
-                        </button>
-                        <button 
-                            onClick={() => setSettings(s => ({...s, tab: 'percentage'}))}
-                            className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${settings.tab === 'percentage' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
-                        >
-                            {t('tab_percent')}
-                        </button>
+                        <button onClick={() => setSettings(s => ({...s, tab: 'pixels'}))} className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${settings.tab === 'pixels' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>{t('tab_pixels')}</button>
+                        <button onClick={() => setSettings(s => ({...s, tab: 'percentage'}))} className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${settings.tab === 'percentage' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>{t('tab_percent')}</button>
                     </div>
 
                     {settings.tab === 'pixels' ? (
@@ -385,24 +365,13 @@ export default function ImageCompressor({ lang }) {
                             <div className="grid grid-cols-2 gap-3">
                                 <div>
                                     <label className="text-[10px] font-bold text-slate-400 mb-1 block">{t('lbl_width')}</label>
-                                    <input 
-                                        type="number" placeholder="Auto"
-                                        value={settings.width}
-                                        onChange={(e) => setSettings(s => ({...s, width: e.target.value}))}
-                                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition"
-                                    />
+                                    <input type="number" placeholder="Auto" value={settings.width} onChange={(e) => setSettings(s => ({...s, width: e.target.value}))} className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" />
                                 </div>
                                 <div>
                                     <label className="text-[10px] font-bold text-slate-400 mb-1 block">{t('lbl_height')}</label>
-                                    <input 
-                                        type="number" placeholder="Auto"
-                                        value={settings.height}
-                                        onChange={(e) => setSettings(s => ({...s, height: e.target.value}))}
-                                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition"
-                                    />
+                                    <input type="number" placeholder="Auto" value={settings.height} onChange={(e) => setSettings(s => ({...s, height: e.target.value}))} className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" />
                                 </div>
                             </div>
-                            
                             <label className="flex items-center gap-2 cursor-pointer group">
                                 <div className={`w-4 h-4 rounded border flex items-center justify-center transition ${settings.noEnlarge ? 'bg-blue-600 border-blue-600' : 'border-slate-300 bg-white'}`}>
                                     {settings.noEnlarge && <i className="fa-solid fa-check text-[10px] text-white"></i>}
@@ -415,20 +384,11 @@ export default function ImageCompressor({ lang }) {
                         <div className="space-y-4 animate-fade-in-up">
                              <div className="grid grid-cols-3 gap-2">
                                  {[25, 50, 75].map(p => (
-                                     <button 
-                                        key={p}
-                                        onClick={() => setSettings(s => ({...s, percent: p}))}
-                                        className={`py-2 text-xs font-bold rounded-lg border transition ${settings.percent === p ? 'bg-blue-50 border-blue-200 text-blue-600' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'}`}
-                                     >{p}%</button>
+                                     <button key={p} onClick={() => setSettings(s => ({...s, percent: p}))} className={`py-2 text-xs font-bold rounded-lg border transition ${settings.percent === p ? 'bg-blue-50 border-blue-200 text-blue-600' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'}`}>{p}%</button>
                                  ))}
                              </div>
                              <div className="relative">
-                                 <input 
-                                    type="number" 
-                                    value={settings.percent}
-                                    onChange={(e) => setSettings(s => ({...s, percent: parseInt(e.target.value)}))}
-                                    className="w-full pl-3 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-bold focus:border-blue-500 outline-none"
-                                 />
+                                 <input type="number" value={settings.percent} onChange={(e) => setSettings(s => ({...s, percent: parseInt(e.target.value)}))} className="w-full pl-3 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-bold focus:border-blue-500 outline-none" />
                                  <span className="absolute right-3 top-2 text-xs font-bold text-slate-400">%</span>
                              </div>
                         </div>
@@ -437,7 +397,7 @@ export default function ImageCompressor({ lang }) {
 
                 <hr className="border-slate-100" />
 
-                {/* 2. Compression */}
+                {/* 2. Compression Settings */}
                 <div>
                     <div className="flex items-center justify-between mb-3">
                          <h4 className="text-xs font-bold text-slate-500 uppercase">{t('sec_compress')}</h4>
@@ -453,53 +413,67 @@ export default function ImageCompressor({ lang }) {
                                 <span className="text-xs font-bold text-slate-600">{t('lbl_quality')}</span>
                                 <span className="text-xs font-black text-blue-600">{settings.quality}%</span>
                             </div>
-                            <input 
-                                type="range" min="1" max="100" 
-                                value={settings.quality}
-                                onChange={(e) => setSettings(s => ({...s, quality: parseInt(e.target.value)}))}
-                                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                            />
+                            <input type="range" min="1" max="100" value={settings.quality} onChange={(e) => setSettings(s => ({...s, quality: parseInt(e.target.value)}))} className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600" />
                             <div className="flex justify-between mt-1">
-                                <span className="text-[10px] text-slate-400">Low</span>
+                                <span className="text-[10px] text-slate-400">{t('val_quality_low')}</span>
                                 <span className="text-[10px] text-slate-400">{t('val_quality_high')}</span>
                             </div>
+                            <p className="text-[10px] text-blue-500 mt-2 bg-blue-50 p-2 rounded leading-tight">{t('hint_smart')}</p>
                         </div>
                     )}
                 </div>
-            </div>
 
-            {/* Bottom: Download */}
-            <div className="p-5 border-t border-slate-100 bg-slate-50">
-                 {/* Progress Bar */}
-                 {queue.length > 0 && (
-                     <div className="mb-4">
-                        <div className="flex justify-between text-[10px] font-bold text-slate-500 mb-1">
-                            <span>{totalProgress === 100 ? t('status_done') : t('status_processing')}</span>
-                            <span>{totalProgress}%</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-blue-600 transition-all duration-300" style={{ width: `${totalProgress}%` }}></div>
-                        </div>
-                        <div className="text-right mt-1 text-[10px] font-mono text-green-600">
-                             Saved: {formatSize(totalSaved)}
-                        </div>
-                     </div>
-                 )}
+                <hr className="border-slate-100" />
 
-                 <button 
-                    onClick={handleDownloadAll}
-                    disabled={doneItems.length === 0}
-                    className="w-full py-4 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-xl font-bold transition-all shadow-xl shadow-slate-300 flex items-center justify-center gap-2 active:scale-95"
-                >
-                    {doneItems.length > 0 ? (
-                        <>
-                           <i className="fa-solid fa-download"></i> {t('btn_download')}
-                        </>
-                    ) : (
-                        t('status_pending')
+                {/* 3. Privacy Settings */}
+                <div>
+                    <h4 className="text-xs font-bold text-slate-500 uppercase mb-3">{t('sec_privacy')}</h4>
+                    <div className="bg-green-50 p-3 rounded-xl border border-green-100 flex items-start gap-3">
+                        <div className="text-green-600 mt-0.5"><i className="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <div className="text-xs font-bold text-slate-700 flex items-center gap-2">
+                                {t('chk_strip_metadata')}
+                                <i className="fa-solid fa-check-circle text-green-500"></i>
+                            </div>
+                            <p className="text-[10px] text-slate-500 mt-1 leading-tight">{t('hint_strip_metadata')}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                {/* ✨ 优化：下载按钮上移至设置流中，不再固定底部，方便一眼看到 */}
+                <div className="pt-4">
+                    {queue.length > 0 && (
+                        <div className="mb-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                           <div className="flex justify-between text-[10px] font-bold text-slate-500 mb-1">
+                               <span>{totalProgress === 100 ? t('status_done') : t('status_processing')}</span>
+                               <span>{totalProgress}%</span>
+                           </div>
+                           <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
+                               <div className="h-full bg-blue-600 transition-all duration-300" style={{ width: `${totalProgress}%` }}></div>
+                           </div>
+                           <div className="text-right mt-1 text-[10px] font-mono text-green-600">
+                                {t('stat_saved')}: {formatSize(totalSaved)}
+                           </div>
+                        </div>
                     )}
-                </button>
+
+                    <button 
+                       onClick={handleDownloadAll}
+                       disabled={doneItems.length === 0}
+                       className="w-full py-4 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-xl font-bold transition-all shadow-xl shadow-slate-300 flex items-center justify-center gap-2 active:scale-95"
+                   >
+                       {doneItems.length > 0 ? (
+                           <>
+                              <i className="fa-solid fa-download"></i> {t('btn_download')}
+                           </>
+                       ) : (
+                           t('status_pending')
+                       )}
+                   </button>
+                </div>
+
             </div>
+            {/* Removed fixed bottom footer */}
         </div>
     </div>
   );
