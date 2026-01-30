@@ -1,53 +1,93 @@
 ---
-import Home from '../components/pages/Home.astro';
+// src/pages/index.astro
+// 这是一个纯路由分发页面，不包含实际内容
+// 作用：根据用户浏览器语言，通过 JS 立即重定向到对应的语言子目录（如 /en/ 或 /zh-cn/）
 ---
 
-<Home lang="en" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LimaxAI - Redirecting...</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="noindex" /> {/* 引导页不需要被收录 */}
 
-<script is:inline>
-  (function() {
-    // 1. 获取浏览器语言 (例如 "zh-CN", "en-US")
-    const browserLang = navigator.language.toLowerCase();
-    
-    // 2. 你的网站支持的语言列表 (必须小写，对应路由前缀)
-    // 注意：这里没有 'en'，因为 en 是根路径，不需要跳转
-    const supportedLocales = [
-      'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 'fr', 'ru', 'hi', 
-      'ja', 'de', 'ko', 'tr', 'vi', 'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro'
-    ];
-
-    // 3. 检查是否有历史选择记录
-    const savedLang = localStorage.getItem('user_lang');
-
-    // 4. 决定目标语言
-    let targetLang = null;
-
-    if (savedLang) {
-      // 如果用户以前手动选过，优先尊重历史选择
-      if (savedLang !== 'en' && window.location.pathname === '/') {
-        targetLang = savedLang;
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        font-family: system-ui, -apple-system, sans-serif;
       }
-    } else {
-      // 首次访问，检测浏览器语言
-      // 特殊处理中文：zh-cn, zh-sg -> zh-cn; zh-hk, zh-tw -> zh-tw
-      if (browserLang.includes('zh')) {
-        targetLang = (browserLang.includes('tw') || browserLang.includes('hk')) ? 'zh-tw' : 'zh-cn';
-      } else {
-        // 其他语言直接匹配前缀 (例如 'es-ES' -> 'es')
-        const prefix = browserLang.split('-')[0];
-        if (supportedLocales.includes(prefix)) {
-          targetLang = prefix;
+      .loader {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #e5e7eb;
+        border-top-color: #2563eb; /* Blue-600 */
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      .logo {
+        margin-bottom: 24px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #111827;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+
+    <script is:inline>
+      (function() {
+        try {
+          // 1. 获取浏览器语言
+          var browserLang = navigator.language.toLowerCase();
+          var targetLang = 'en'; // 默认回退语言
+
+          // 2. 支持的语言列表
+          var supportedLocales = [
+            'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 'fr', 'ru', 'hi', 
+            'ja', 'de', 'ko', 'tr', 'vi', 'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro'
+          ];
+
+          // 3. 检查历史选择
+          var savedLang = localStorage.getItem('user_lang');
+
+          if (savedLang && savedLang !== 'en') {
+            targetLang = savedLang;
+          } else {
+            // 4. 智能匹配逻辑
+            if (browserLang.includes('zh')) {
+              // 中文特殊处理
+              targetLang = (browserLang.includes('tw') || browserLang.includes('hk')) ? 'zh-tw' : 'zh-cn';
+            } else {
+              // 前缀匹配 (例如 es-MX -> es)
+              var prefix = browserLang.split('-')[0];
+              if (supportedLocales.includes(prefix)) {
+                targetLang = prefix;
+              }
+            }
+          }
+
+          // 5. 执行跳转 (使用 replace 防止返回键死循环)
+          // 如果目标是 en，也跳转到 /en/ 保持一致性
+          window.location.replace('/' + targetLang + '/');
+
+        } catch (e) {
+          // 兜底：如果出错，直接去英文版
+          window.location.replace('/en/');
         }
-      }
-    }
-
-    // 5. 执行跳转 (仅当当前在根路径且需要跳转时)
-    if (targetLang && window.location.pathname === '/') {
-      window.location.replace('/' + targetLang + '/');
-    }
-    
-    // 6. 记录当前语言到 localStorage (只要页面加载就记录，方便下次)
-    // 这里的逻辑稍微 tricky：我们在 Layout 或 Header 里切换语言链接点击时，也应该更新这个 storage
-    // 为了简单，我们只在自动跳转时记录。更严谨的做法是在 Header 的语言切换链接加 onclick 事件。
-  })();
-</script>
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="logo">LimaxAI</div>
+    <div class="loader"></div>
+  </body>
+</html>
