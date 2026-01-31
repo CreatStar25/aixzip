@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import JSZip from 'jszip';
 import UPNG from 'upng-js';
 
 const ASSETS_BASE = "https://raw.githubusercontent.com/journey-ad/gemini-watermark-remover/main/src/assets";
 
 export default function WatermarkRemover({ lang }) {
+  // --- State ---
   const [queue, setQueue] = useState([]);
   const [processing, setProcessing] = useState(false);
   const [resources, setResources] = useState({ bg48: null, bg96: null, ready: false });
@@ -14,8 +15,11 @@ export default function WatermarkRemover({ lang }) {
     prefix: '' 
   });
   const [isDragging, setIsDragging] = useState(false);
+  
+  // ✨ 新增：控制清空确认弹窗的显示
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
 
-  // 内部翻译
+  // --- I18n ---
   const t = {
     drag_text: lang === 'zh-cn' ? '点击或拖拽上传图片' : 'Click or Drag Images Here',
     drag_hint: lang === 'zh-cn' ? '支持 JPG, PNG, WebP · 自动批量处理' : 'Supports JPG, PNG, WebP · Auto Batch Processing',
@@ -38,6 +42,13 @@ export default function WatermarkRemover({ lang }) {
     hint_lossy: lang === 'zh-cn' ? '有损压缩 + 极致体积' : 'Lossy Compression',
     
     title: lang === 'zh-cn' ? 'Gemini 智能去水印' : 'Gemini Smart Cleaner',
+    
+    // ✨ 弹窗文案
+    modal_title: lang === 'zh-cn' ? '确认清空列表?' : 'Clear All Items?',
+    modal_desc: lang === 'zh-cn' ? '所有已处理的图片都将丢失，此操作无法撤销。' : 'All processed images will be lost. This action cannot be undone.',
+    modal_cancel: lang === 'zh-cn' ? '取消' : 'Cancel',
+    modal_confirm: lang === 'zh-cn' ? '确认清空' : 'Clear All',
+    leave_warning: lang === 'zh-cn' ? '您有正在处理或未下载的图片，离开页面将导致数据丢失。' : 'You have unsaved images. Leaving this page will lose your progress.'
   };
 
   // --- 1. 初始化资源 ---
@@ -60,7 +71,23 @@ export default function WatermarkRemover({ lang }) {
     });
   }, []);
 
-  // --- 2. 核心处理逻辑 ---
+  // --- ✨ 2. 安全防护：防止意外关闭页面 ---
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      // 只要队列里有东西，就阻拦
+      if (queue.length > 0) {
+        e.preventDefault();
+        e.returnValue = t.leave_warning; // 大部分现代浏览器会忽略自定义文本，显示默认提示，但这行必须有
+        return t.leave_warning;
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [queue, t.leave_warning]);
+
+
+  // --- 3. 核心处理逻辑 ---
   const processImage = async (file) => {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -96,7 +123,6 @@ export default function WatermarkRemover({ lang }) {
                 let significantMaskPixels = 0;
                 let impossiblePixels = 0;
                 let n = 0; let sum_i = 0; let sum_m = 0; let sum_im = 0;
-
                 const tolerance = 15;
 
                 for (let i = 0; i < data.length; i += 4) {
@@ -155,13 +181,24 @@ export default function WatermarkRemover({ lang }) {
     });
   };
 
-  // --- 3. 队列调度 ---
+  // --- 4. 队列调度 (✨ 优化：强制串行 + 呼吸时间) ---
   useEffect(() => {
+    // 如果正在处理，或者资源没准备好，直接跳过
     if (processing || !resources.ready) return;
+
+    // 寻找下一个待处理任务
     const nextItem = queue.find(i => i.status === 'pending');
+    
     if (nextItem) {
-        setProcessing(true);
-        processItem(nextItem);
+        // ✨ 关键优化：使用 setTimeout 将任务推入下一个事件循环
+        // 给浏览器 UI 线程留出 100ms 的"呼吸时间"来重绘界面、响应点击等
+        // 防止连续处理大量图片导致浏览器假死
+        const timer = setTimeout(() => {
+            setProcessing(true);
+            processItem(nextItem);
+        }, 100); 
+
+        return () => clearTimeout(timer);
     }
   }, [queue, processing, resources.ready]);
 
@@ -173,11 +210,11 @@ export default function WatermarkRemover({ lang }) {
     } catch (error) {
         setQueue(prev => prev.map(i => i.id === item.id ? { ...i, status: 'error' } : i));
     } finally {
-        setProcessing(false);
+        setProcessing(false); // 处理完成，触发 useEffect 进行下一张
     }
   };
 
-  // --- 4. 交互处理 ---
+  // --- 5. 交互处理 ---
   const handleFiles = (files) => {
     if (!resources.ready) return;
     const validFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
@@ -240,12 +277,40 @@ export default function WatermarkRemover({ lang }) {
   };
 
   const doneItems = queue.filter(i => i.status === 'done');
-  const totalSaved = doneItems.reduce((acc, i) => acc + Math.max(0, i.file.size - i.resultSize), 0);
 
   // --- UI Render ---
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 relative">
         
+        {/* ✨ 确认清空弹窗 (Custom Modal) */}
+        {showClearConfirm && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-fade-in">
+                <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 transform transition-all scale-100">
+                    <div className="text-center mb-6">
+                        <div className="w-12 h-12 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i className="fa-solid fa-triangle-exclamation text-xl"></i>
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-800 mb-2">{t.modal_title}</h3>
+                        <p className="text-sm text-slate-500">{t.modal_desc}</p>
+                    </div>
+                    <div className="flex gap-3">
+                        <button 
+                            onClick={() => setShowClearConfirm(false)}
+                            className="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-sm hover:bg-slate-50 transition"
+                        >
+                            {t.modal_cancel}
+                        </button>
+                        <button 
+                            onClick={() => { setQueue([]); setShowClearConfirm(false); }}
+                            className="flex-1 px-4 py-2.5 rounded-xl bg-red-500 text-white font-bold text-sm hover:bg-red-600 shadow-lg shadow-red-500/30 transition"
+                        >
+                            {t.modal_confirm}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )}
+
         {/* 上方：上传与预览区 */}
         <div 
             className={`bg-white rounded-3xl shadow-sm border border-slate-100 min-h-[300px] flex flex-col relative transition-all duration-200 overflow-hidden
@@ -267,7 +332,8 @@ export default function WatermarkRemover({ lang }) {
             {queue.length > 0 && (
                 <div className="px-5 py-3 border-b border-slate-50 flex justify-between items-center bg-white/80 backdrop-blur-sm sticky top-0 z-10">
                     <span className="text-sm font-bold text-slate-500">{t.title} ({queue.length})</span>
-                    <button onClick={() => setQueue([])} className="text-xs text-red-400 hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-full transition">
+                    {/* ✨ 修改：点击清空时，不直接清空，而是显示确认弹窗 */}
+                    <button onClick={() => setShowClearConfirm(true)} className="text-xs text-red-400 hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-full transition">
                         <i className="fa-solid fa-trash-can mr-1"></i> {t.clear_list}
                     </button>
                 </div>
@@ -302,7 +368,7 @@ export default function WatermarkRemover({ lang }) {
                                         <i className="fa-regular fa-image text-2xl"></i>
                                     )}
                                     
-                                    {/* ✨ 右上角操作区：下载按钮 + 状态图标 */}
+                                    {/* 右上角操作区 */}
                                     <div className="absolute top-1 right-1 flex gap-1 z-10">
                                         {/* 下载按钮 (仅完成显示) */}
                                         {item.status === 'done' && (
