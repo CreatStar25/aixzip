@@ -15,7 +15,7 @@ export default function WatermarkRemover({ lang }) {
   });
   const [isDragging, setIsDragging] = useState(false);
 
-  // 简单的内部翻译
+  // 内部翻译
   const t = {
     drag_text: lang === 'zh-cn' ? '点击或拖拽上传图片' : 'Click or Drag Images Here',
     drag_hint: lang === 'zh-cn' ? '支持 JPG, PNG, WebP · 自动批量处理' : 'Supports JPG, PNG, WebP · Auto Batch Processing',
@@ -29,6 +29,7 @@ export default function WatermarkRemover({ lang }) {
     placeholder_rename: lang === 'zh-cn' ? '例如: 毕业照' : 'e.g. Photo',
     
     btn_download: lang === 'zh-cn' ? '打包下载' : 'Download All',
+    btn_download_one: lang === 'zh-cn' ? '下载此张' : 'Download',
     btn_processing: lang === 'zh-cn' ? '处理中...' : 'Processing...',
     clear_list: lang === 'zh-cn' ? '清空列表' : 'Clear',
     
@@ -59,7 +60,7 @@ export default function WatermarkRemover({ lang }) {
     });
   }, []);
 
-  // --- 2. 核心处理逻辑 (含双重检测) ---
+  // --- 2. 核心处理逻辑 ---
   const processImage = async (file) => {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -75,7 +76,7 @@ export default function WatermarkRemover({ lang }) {
             const ctx = cvs.getContext('2d', { willReadFrequently: true });
             ctx.drawImage(img, 0, 0);
 
-            // === A. 水印检测与去除 ===
+            // A. 水印检测与去除
             const cfg = (img.width > 1024 && img.height > 1024) 
                 ? { size: 96, margin: 64, bg: resources.bg96 } 
                 : { size: 48, margin: 32, bg: resources.bg48 };
@@ -91,98 +92,46 @@ export default function WatermarkRemover({ lang }) {
                 tCvs.getContext('2d').drawImage(cfg.bg, 0, 0);
                 const bgData = tCvs.getContext('2d').getImageData(0, 0, cfg.size, cfg.size).data;
 
-                // --- 🛡️ 智能检测算法 (Detection) ---
-                let significantPixels = 0; // 水印区域有效像素数
-                let impossiblePixels = 0;  // 物理上不可能存在水印的像素数 (过暗)
-                
-                // 统计变量用于计算相关性 (Correlation)
-                let n = 0;
-                let sum_i = 0; // Image Sum
-                let sum_m = 0; // Mask Sum
-                let sum_im = 0; // Image * Mask Sum
-                let sum_i2 = 0; // Image^2 Sum
-                let sum_m2 = 0; // Mask^2 Sum
+                // 智能检测
+                let significantMaskPixels = 0;
+                let impossiblePixels = 0;
+                let n = 0; let sum_i = 0; let sum_m = 0; let sum_im = 0;
 
-                const tolerance = 15; // 容错阈值
+                const tolerance = 15;
 
                 for (let i = 0; i < data.length; i += 4) {
-                    // 取RGB平均亮度
                     const val_i = (data[i] + data[i+1] + data[i+2]) / 3;
                     const val_m = (bgData[i] + bgData[i+1] + bgData[i+2]) / 3;
 
-                    // 只分析水印模板中“有内容”的部分 (避免背景干扰)
                     if (val_m > 20) {
-                        significantPixels++;
-
-                        // 检测1: 亮度物理检测
-                        // 如果原图比水印模板还暗，说明不可能叠加上这个白色水印
-                        if (val_i < val_m - tolerance) {
-                            impossiblePixels++;
-                        }
-
-                        // 收集统计数据 (用于检测2)
-                        n++;
-                        sum_i += val_i;
-                        sum_m += val_m;
-                        sum_im += val_i * val_m;
-                        sum_i2 += val_i * val_i;
-                        sum_m2 += val_m * val_m;
+                        significantMaskPixels++;
+                        if (val_i < val_m - tolerance) impossiblePixels++;
+                        n++; sum_i += val_i; sum_m += val_m; sum_im += val_i * val_m;
                     }
                 }
 
-                // 判定1: 物理不可能检测
-                // 如果超过 20% 的关键像素过暗，则判定无水印
-                const isPhysicallyPossible = significantPixels > 0 && (impossiblePixels / significantPixels) < 0.2;
-
-                // 判定2: 统计相关性检测 (解决白图误判问题)
-                // 计算皮尔逊相关系数的分子 (Covariance)
-                // 如果图片在水印亮的地方也亮，暗的地方也暗，说明存在正相关
-                // 如果是纯色背景或杂乱背景，协方差会接近0或为负
-                let isCorrelated = false;
-                if (n > 0) {
-                    const numerator = n * sum_im - sum_i * sum_m;
-                    // 我们不需要计算完整相关系数，只要协方差显著为正即可
-                    // 阈值需要实验，这里取一个保守值防止误删
-                    // 对于纯白图，sum_i * sum_m ≈ n * 255 * avg_m, sum_im ≈ n * 255 * avg_m -> numerator ≈ 0
-                    const variance_m = n * sum_m2 - sum_m * sum_m;
-                    if (variance_m > 0) {
-                         // 简单的归一化检查
-                         isCorrelated = numerator > (variance_m * 0.5); 
-                    }
-                }
-
-                // 🚀 最终判定：必须同时满足 "物理可能" 和 "特征相关"
-                // 注意：对于非常明显的Gemini水印，correlation通常极高
-                // 放宽一点策略：只要物理检测通过，且协方差是正的 (numerator > 0)，就认为是水印
-                // 纯白图的 numerator 接近 0
+                const isPhysicallyPossible = significantMaskPixels > 0 && (impossiblePixels / significantMaskPixels) < 0.2;
                 const hasWatermark = isPhysicallyPossible && (n * sum_im - sum_i * sum_m) > 10000; 
 
-                // --- 执行去除或跳过 ---
                 if (hasWatermark) {
-                    // console.log("Watermark detected, removing...");
                     for (let i = 0; i < data.length; i += 4) {
                         const alpha = Math.min(Math.max(bgData[i], bgData[i+1], bgData[i+2]) / 255.0, 0.99);
                         if (alpha > 0) {
                             for(let c=0; c<3; c++) {
-                                // 还原公式
                                 data[i+c] = Math.max(0, Math.min(255, (data[i+c] - alpha * 255) / (1 - alpha)));
                             }
                         }
                     }
                     ctx.putImageData(imgData, x, y);
-                } else {
-                    // console.log("No watermark detected, skipping.");
                 }
             }
 
-            // === B. 智能压缩与导出 ===
+            // B. 导出
             const isPng = file.type === 'image/png';
-            
             if (settings.mode === 'lossy') {
                 if (isPng) {
                     try {
                         const rgbaData = ctx.getImageData(0, 0, img.naturalWidth, img.naturalHeight).data.buffer;
-                        // 100% -> cnum=0 (纯无损); 99% -> cnum=253 (256色量化)
                         const cnum = settings.quality >= 100 ? 0 : Math.floor((settings.quality / 100) * 256);
                         const pngBuffer = UPNG.encode([rgbaData], img.naturalWidth, img.naturalHeight, cnum);
                         resolve(new Blob([pngBuffer], {type: 'image/png'}));
@@ -242,6 +191,16 @@ export default function WatermarkRemover({ lang }) {
     setQueue(prev => [...prev, ...newItems]);
   };
 
+  const handleDownloadSingle = (item) => {
+    if (!item.blob) return;
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(item.blob);
+    link.download = item.file.name; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleDownloadAll = async () => {
     const validItems = queue.filter(i => i.status === 'done' && i.blob);
     if (validItems.length === 0) return;
@@ -287,7 +246,7 @@ export default function WatermarkRemover({ lang }) {
   return (
     <div className="flex flex-col gap-4">
         
-        {/* 1. 上方：上传与预览区 */}
+        {/* 上方：上传与预览区 */}
         <div 
             className={`bg-white rounded-3xl shadow-sm border border-slate-100 min-h-[300px] flex flex-col relative transition-all duration-200 overflow-hidden
                 ${isDragging ? 'ring-4 ring-emerald-100 border-emerald-400' : ''}`}
@@ -342,9 +301,27 @@ export default function WatermarkRemover({ lang }) {
                                     ) : (
                                         <i className="fa-regular fa-image text-2xl"></i>
                                     )}
-                                    <div className="absolute top-1 right-1">
-                                        {item.status === 'processing' && <i className="fa-solid fa-spinner fa-spin text-emerald-500"></i>}
-                                        {item.status === 'done' && <div className="w-4 h-4 bg-emerald-500 rounded-full flex items-center justify-center text-white text-[8px]"><i className="fa-solid fa-check"></i></div>}
+                                    
+                                    {/* ✨ 右上角操作区：下载按钮 + 状态图标 */}
+                                    <div className="absolute top-1 right-1 flex gap-1 z-10">
+                                        {/* 下载按钮 (仅完成显示) */}
+                                        {item.status === 'done' && (
+                                            <button 
+                                                onClick={(e) => { e.stopPropagation(); handleDownloadSingle(item); }}
+                                                className="w-5 h-5 bg-white rounded-full flex items-center justify-center text-emerald-600 shadow-sm hover:scale-110 hover:bg-emerald-50 transition-transform cursor-pointer border border-emerald-100"
+                                                title={t.btn_download_one}
+                                            >
+                                                <i className="fa-solid fa-download text-[10px]"></i>
+                                            </button>
+                                        )}
+
+                                        {/* 状态图标 */}
+                                        {item.status === 'processing' && <i className="fa-solid fa-spinner fa-spin text-emerald-500 drop-shadow-md"></i>}
+                                        {item.status === 'done' && (
+                                            <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center text-white text-[9px] shadow-sm">
+                                                <i className="fa-solid fa-check"></i>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -370,7 +347,7 @@ export default function WatermarkRemover({ lang }) {
             </div>
         </div>
 
-        {/* 2. 下方：横向操作栏 (底部对齐 md:items-end) */}
+        {/* 底部操作栏 */}
         <div className="bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 p-4 flex flex-col md:flex-row items-center md:items-end justify-between gap-4">
             
             {/* 左侧：压缩设置 */}
@@ -385,27 +362,12 @@ export default function WatermarkRemover({ lang }) {
                 </div>
                 <div className="flex items-center gap-3 bg-slate-50 p-1.5 rounded-xl border border-slate-100">
                     <div className="flex bg-white rounded-lg p-1 shadow-sm border border-slate-100">
-                        <button 
-                            onClick={() => setSettings(s => ({...s, mode: 'lossy'}))}
-                            className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${settings.mode === 'lossy' ? 'bg-emerald-500 text-white shadow-md' : 'text-slate-500 hover:text-slate-700'}`}
-                        >
-                            {t.opt_smart}
-                        </button>
-                        <button 
-                            onClick={() => setSettings(s => ({...s, mode: 'lossless'}))}
-                            className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${settings.mode === 'lossless' ? 'bg-emerald-500 text-white shadow-md' : 'text-slate-500 hover:text-slate-700'}`}
-                        >
-                            {t.opt_original}
-                        </button>
+                        <button onClick={() => setSettings(s => ({...s, mode: 'lossy'}))} className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${settings.mode === 'lossy' ? 'bg-emerald-500 text-white shadow-md' : 'text-slate-500 hover:text-slate-700'}`}>{t.opt_smart}</button>
+                        <button onClick={() => setSettings(s => ({...s, mode: 'lossless'}))} className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${settings.mode === 'lossless' ? 'bg-emerald-500 text-white shadow-md' : 'text-slate-500 hover:text-slate-700'}`}>{t.opt_original}</button>
                     </div>
                     {settings.mode === 'lossy' && (
                         <div className="flex items-center gap-2 flex-1 px-1 animate-fade-in">
-                            <input 
-                                type="range" min="1" max="100" 
-                                value={settings.quality}
-                                onChange={(e) => setSettings(s => ({...s, quality: parseInt(e.target.value)}))}
-                                className="w-20 md:w-28 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"
-                            />
+                            <input type="range" min="1" max="100" value={settings.quality} onChange={(e) => setSettings(s => ({...s, quality: parseInt(e.target.value)}))} className="w-20 md:w-28 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
                             <span className="text-sm font-bold text-emerald-600 min-w-[32px]">{settings.quality}%</span>
                         </div>
                     )}
@@ -416,33 +378,18 @@ export default function WatermarkRemover({ lang }) {
             <div className="flex-1 w-full md:w-auto flex flex-col gap-1.5">
                 <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.label_rename}</span>
                 <div className="relative">
-                    <input 
-                        type="text" 
-                        placeholder={t.placeholder_rename}
-                        value={settings.prefix}
-                        onChange={(e) => setSettings(s => ({...s, prefix: e.target.value}))}
-                        className="w-full pl-3 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition shadow-inner"
-                    />
+                    <input type="text" placeholder={t.placeholder_rename} value={settings.prefix} onChange={(e) => setSettings(s => ({...s, prefix: e.target.value}))} className="w-full pl-3 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition shadow-inner" />
                     <span className="absolute right-3 top-3.5 text-slate-400 text-xs font-mono select-none">_#</span>
                 </div>
             </div>
 
             {/* 右侧：下载按钮 */}
             <div className="w-full md:w-auto flex-shrink-0 pt-4 md:pt-0">
-                <button 
-                    onClick={handleDownloadAll}
-                    disabled={doneItems.length === 0}
-                    className="w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white rounded-xl font-bold text-sm shadow-lg shadow-emerald-500/30 transition-all active:scale-95 flex items-center justify-center gap-2"
-                >
+                <button onClick={handleDownloadAll} disabled={doneItems.length === 0} className="w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white rounded-xl font-bold text-sm shadow-lg shadow-emerald-500/30 transition-all active:scale-95 flex items-center justify-center gap-2">
                     {processing ? (
-                        <>
-                            <i className="fa-solid fa-spinner fa-spin"></i> {t.btn_processing}
-                        </>
+                        <> <i className="fa-solid fa-spinner fa-spin"></i> {t.btn_processing} </>
                     ) : (
-                        <>
-                            <i className="fa-solid fa-download"></i> {t.btn_download}
-                            {doneItems.length > 0 && <span className="bg-emerald-600 px-1.5 py-0.5 rounded-full text-xs opacity-90">{doneItems.length}</span>}
-                        </>
+                        <> <i className="fa-solid fa-download"></i> {t.btn_download} {doneItems.length > 0 && <span className="bg-emerald-600 px-1.5 py-0.5 rounded-full text-xs opacity-90">{doneItems.length}</span>} </>
                     )}
                 </button>
             </div>
