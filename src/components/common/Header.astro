@@ -15,27 +15,27 @@ const languageNames = {
 };
 const locales = Object.keys(languageNames);
 
-// ✨✨✨ 核心修复：智能路径生成函数 ✨✨✨
+// ✨ 路径生成逻辑：
+// 1. 英文首页 -> /
+// 2. 英文工具页 -> /en/image/...
+// 3. 其他语言 -> /zh-cn/...
 const { pathname, search } = Astro.url;
 
 const getLocalizedPath = (targetLang) => {
-  // 1. 将路径拆分为数组，过滤空项
   const segments = pathname.split('/').filter(Boolean);
   
-  // 2. 如果当前不是英文，且路径第一段是当前语言代码，则移除它
-  // 例如：从 /zh-cn/image/tool 变成 [image, tool]
-  if (lang !== 'en' && segments[0] === lang) {
+  // 移除当前的语言前缀 (如果存在)
+  if (locales.includes(segments[0])) {
     segments.shift();
   }
   
-  // 3. 如果目标不是英文，则在头部添加目标语言代码
-  // 例如：变成 [es, image, tool]
-  if (targetLang !== 'en') {
-    segments.unshift(targetLang);
+  if (segments.length === 0) {
+    // 首页情况
+    return targetLang === 'en' ? '/' : `/${targetLang}/`;
+  } else {
+    // 内页/工具页情况 (英文内页也需要 /en/ 前缀)
+    return `/${targetLang}/${segments.join('/')}${search}`;
   }
-  
-  // 4. 重新组合路径，并保留 URL 查询参数 (例如 ?q=pdf)
-  return '/' + segments.join('/') + search;
 };
 ---
 

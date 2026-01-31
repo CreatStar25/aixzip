@@ -1,93 +1,54 @@
 ---
-// src/pages/index.astro
-// 这是一个纯路由分发页面，不包含实际内容
-// 作用：根据用户浏览器语言，通过 JS 立即重定向到对应的语言子目录（如 /en/ 或 /zh-cn/）
+import Home from '../components/pages/Home.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LimaxAI - Redirecting...</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="robots" content="noindex" /> {/* 引导页不需要被收录 */}
+<Home lang="en" />
 
-    <style>
-      body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #ffffff;
-        font-family: system-ui, -apple-system, sans-serif;
+<script is:inline>
+  (function() {
+    // 1. 定义非英文的支持语言列表 (en 是根路径，不在此列)
+    const supportedLocales = [
+      'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 'fr', 'ru', 'hi', 
+      'ja', 'de', 'ko', 'tr', 'vi', 'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro'
+    ];
+
+    // 2. 获取用户历史选择 (最高优先级)
+    const savedLang = localStorage.getItem('user_lang');
+
+    if (savedLang) {
+      // === 场景 A: 用户手动选过语言 ===
+      
+      // 如果用户选的是 'en'，显式保留在当前页 (根路径)，不跳转
+      if (savedLang === 'en') {
+        return; 
       }
-      .loader {
-        width: 40px;
-        height: 40px;
-        border: 3px solid #e5e7eb;
-        border-top-color: #2563eb; /* Blue-600 */
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
+      
+      // 如果用户选的是其他语言，且该语言在支持列表中，则跳转
+      if (supportedLocales.includes(savedLang)) {
+        window.location.replace('/' + savedLang + '/');
       }
-      .logo {
-        margin-bottom: 24px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #111827;
+      return; // 只要有历史记录，就不再检测浏览器
+    }
+
+    // === 场景 B: 初次访问 (检测浏览器语言) ===
+    const browserLang = navigator.language.toLowerCase();
+    let targetLang = null;
+
+    if (browserLang.includes('zh')) {
+      // 中文特殊处理
+      targetLang = (browserLang.includes('tw') || browserLang.includes('hk')) ? 'zh-tw' : 'zh-cn';
+    } else {
+      // 其他语言匹配前缀
+      const prefix = browserLang.split('-')[0];
+      if (supportedLocales.includes(prefix)) {
+        targetLang = prefix;
       }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-    </style>
+    }
 
-    <script is:inline>
-      (function() {
-        try {
-          // 1. 获取浏览器语言
-          var browserLang = navigator.language.toLowerCase();
-          var targetLang = 'en'; // 默认回退语言
-
-          // 2. 支持的语言列表
-          var supportedLocales = [
-            'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 'fr', 'ru', 'hi', 
-            'ja', 'de', 'ko', 'tr', 'vi', 'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro'
-          ];
-
-          // 3. 检查历史选择
-          var savedLang = localStorage.getItem('user_lang');
-
-          if (savedLang && savedLang !== 'en') {
-            targetLang = savedLang;
-          } else {
-            // 4. 智能匹配逻辑
-            if (browserLang.includes('zh')) {
-              // 中文特殊处理
-              targetLang = (browserLang.includes('tw') || browserLang.includes('hk')) ? 'zh-tw' : 'zh-cn';
-            } else {
-              // 前缀匹配 (例如 es-MX -> es)
-              var prefix = browserLang.split('-')[0];
-              if (supportedLocales.includes(prefix)) {
-                targetLang = prefix;
-              }
-            }
-          }
-
-          // 5. 执行跳转 (使用 replace 防止返回键死循环)
-          // 如果目标是 en，也跳转到 /en/ 保持一致性
-          window.location.replace('/' + targetLang + '/');
-
-        } catch (e) {
-          // 兜底：如果出错，直接去英文版
-          window.location.replace('/en/');
-        }
-      })();
-    </script>
-  </head>
-  <body>
-    <div class="logo">LimaxAI</div>
-    <div class="loader"></div>
-  </body>
-</html>
+    // 如果检测出的目标语言不是英文 (即不在根路径)，则跳转
+    if (targetLang) {
+      window.location.replace('/' + targetLang + '/');
+    }
+    // 如果检测结果是英文，则什么都不做，直接显示当前页面
+  })();
+</script>

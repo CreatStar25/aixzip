@@ -16,13 +16,23 @@ const languageNames = {
 const locales = Object.keys(languageNames);
 const currentYear = new Date().getFullYear();
 
-// ✨ 同样的路径生成逻辑
+// ✨ 核心修复：适应新路由规则的路径生成
 const { pathname, search } = Astro.url;
 const getLocalizedPath = (targetLang) => {
   const segments = pathname.split('/').filter(Boolean);
-  if (lang !== 'en' && segments[0] === lang) segments.shift();
-  if (targetLang !== 'en') segments.unshift(targetLang);
-  return '/' + segments.join('/') + search;
+  
+  // 移除当前的语言前缀 (如果存在)
+  if (locales.includes(segments[0])) {
+    segments.shift();
+  }
+  
+  if (segments.length === 0) {
+    // 首页情况: 英文去根路径 /, 其他去 /lang/
+    return targetLang === 'en' ? '/' : `/${targetLang}/`;
+  } else {
+    // 内页情况: 英文去 /en/..., 其他去 /lang/...
+    return `/${targetLang}/${segments.join('/')}${search}`;
+  }
 };
 ---
 
@@ -47,16 +57,16 @@ const getLocalizedPath = (targetLang) => {
       <div>
         <h3 class="font-bold text-white mb-4 uppercase text-xs tracking-wider opacity-80">{t('footer.col.pdf')}</h3>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="text-slate-400 hover:text-blue-400 transition">PDF to Word</a></li>
-          <li><a href="#" class="text-slate-400 hover:text-blue-400 transition">Word to PDF</a></li>
+          {/* 这里可以使用实际链接 */}
+          <li><a href={`/${lang === 'en' ? 'en' : lang}/pdf/pdf-to-image`} class="text-slate-400 hover:text-blue-400 transition">PDF to Image</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="font-bold text-white mb-4 uppercase text-xs tracking-wider opacity-80">{t('footer.col.image')}</h3>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="text-slate-400 hover:text-blue-400 transition">Compress Image</a></li>
-          <li><a href="#" class="text-slate-400 hover:text-blue-400 transition">Remove Watermark</a></li>
+          <li><a href={`/${lang === 'en' ? 'en' : lang}/image/image-compressor`} class="text-slate-400 hover:text-blue-400 transition">Image Compressor</a></li>
+          <li><a href={`/${lang === 'en' ? 'en' : lang}/image/gemini-remove-waterprint`} class="text-slate-400 hover:text-blue-400 transition">Watermark Remover</a></li>
         </ul>
       </div>
 
@@ -66,7 +76,7 @@ const getLocalizedPath = (targetLang) => {
           <li><a href="#" class="text-slate-400 hover:text-blue-400 transition">{t('footer.link.about')}</a></li>
           <li><a href="#" class="text-slate-400 hover:text-blue-400 transition">{t('footer.link.privacy')}</a></li>
           <li><a href="#" class="text-slate-400 hover:text-blue-400 transition">{t('footer.link.terms')}</a></li>
-          <li><a href="mailto:support@aixzip.com" class="text-slate-400 hover:text-blue-400 transition">support@aixzip.com</a></li>
+          <li><a href="mailto:support@aixzip.com" class="text-slate-400 hover:text-blue-400 transition">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -94,7 +104,7 @@ const getLocalizedPath = (targetLang) => {
                 {locales.map((l) => (
                     <a 
                         href={getLocalizedPath(l)} 
-                        onclick={`localStorage.setItem('user_lang', '${l}')`}
+                        data-lang-link={l}
                         class={`text-sm px-3 py-2 rounded-lg transition-colors flex items-center justify-between ${lang === l ? 'bg-blue-50 text-blue-600 font-bold' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}
                     >
                         {languageNames[l]}
@@ -108,3 +118,16 @@ const getLocalizedPath = (targetLang) => {
     </div>
   </div>
 </footer>
+
+<script>
+  // 监听底部语言链接点击，保存用户偏好
+  const links = document.querySelectorAll('footer [data-lang-link]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const lang = link.getAttribute('data-lang-link');
+      if (lang) {
+        localStorage.setItem('user_lang', lang);
+      }
+    });
+  });
+</script>

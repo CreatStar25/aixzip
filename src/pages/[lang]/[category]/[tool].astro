@@ -1,14 +1,14 @@
 ---
+// ✅ 引入必要的依赖
 import { tools, locales } from '../../../config/tools';
 import Layout from '../../../layouts/Layout.astro';
 import ToolDispatcher from '../../../components/tools/ToolDispatcher.jsx';
 import { ui } from '../../../i18n/ui';
 
-// 1. 生成静态路径 (逻辑不变)
+// 1. 生成静态路径
 export function getStaticPaths() {
   const paths = [];
-  const otherLocales = locales.filter(l => l !== 'en');
-  otherLocales.forEach((lang) => {
+  locales.forEach((lang) => {
     tools.forEach((t) => {
       paths.push({
         params: { lang: lang, category: t.category, tool: t.id },
@@ -24,8 +24,7 @@ const { lang, category, tool } = Astro.params;
 // 2. 国际化 Helper
 const t = (key) => ui[lang]?.[key] || ui['en'][key] || key;
 
-// 3. 动态获取 SEO 标题和描述
-// 尝试从 ui.ts 获取 tool.xxx.title，如果没定义则自动生成默认标题
+// 3. SEO 标题与描述
 const i18nTitleKey = `tool.${tool}.title`;
 const i18nDescKey = `tool.${tool}.desc`;
 
@@ -37,11 +36,8 @@ const seoDesc = t(i18nDescKey) !== i18nDescKey
     ? t(i18nDescKey)
     : `Free online ${tool.replace(/-/g, ' ')} tool. fast and secure.`;
 
-// 4. 面包屑文字
-const homeText = t('breadcrumb.home');
-// 尝试获取分类名称翻译，如果没有则首字母大写
-const categoryText = ui[lang]?.[category]?.title || category.charAt(0).toUpperCase() + category.slice(1);
-const toolName = seoTitle.split('-')[0].trim(); // 简单截取标题前半部分作为面包屑
+// 4. 判断是否为去水印工具 (用于特殊样式处理)
+const isWatermarkTool = tool === 'gemini-remove-waterprint';
 ---
 
 <Layout title={seoTitle} lang={lang}>
@@ -51,43 +47,33 @@ const toolName = seoTitle.split('-')[0].trim(); // 简单截取标题前半部�
     <meta property="og:description" content={seoDesc} />
   </head>
 
-  <main class="min-h-screen bg-slate-50">
+  <main class="min-h-screen bg-[#F9FAFB]">
     
-    <section class="pt-8 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <nav class="text-sm text-slate-500 mb-8 flex items-center gap-2">
-            <a href={`/${lang === 'en' ? '' : lang}`} class="hover:text-blue-600 transition flex items-center gap-1">
-                <i class="fa-solid fa-house text-xs"></i> {homeText}
-            </a> 
-            <i class="fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
-            <span class="capitalize hover:text-slate-800 transition cursor-default">{categoryText}</span>
-            <i class="fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
-            <span class="text-slate-900 font-bold truncate max-w-[200px]">{toolName}</span>
-        </nav>
-
+    <section class="pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center mb-10">
             <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">{seoTitle}</h1>
             <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">{seoDesc}</p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-2xl shadow-slate-200/50 overflow-hidden min-h-[600px] border border-slate-100">
+        <div class={isWatermarkTool ? "max-w-5xl mx-auto" : "bg-white rounded-2xl shadow-2xl shadow-slate-200/50 overflow-hidden min-h-[600px] border border-slate-100"}>
             <ToolDispatcher toolId={tool} lang={lang} client:load />
         </div>
     </section>
 
-    {tool === 'gemini-remove-waterprint' && (
+    {isWatermarkTool && (
         <div class="space-y-24 pb-24">
             
+            {/* How it works */}
             <section class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black text-slate-800 mb-4">{t('section.how_it_works')}</h2>
-                    <div class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
+                    <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 relative">
                     {[1, 2, 3].map(step => (
                         <div class="relative pl-8 md:pl-0 md:text-center group">
                             {step !== 3 && <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-100 -z-10"></div>}
-                            
-                            <div class="w-16 h-16 bg-white border-2 border-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-blue-500/10 md:mx-auto relative z-10 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br from-white to-blue-50">
+                            <div class="w-16 h-16 bg-white border-2 border-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-emerald-500/10 md:mx-auto relative z-10 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br from-white to-emerald-50">
                                 {step}
                             </div>
                             <h3 class="text-xl font-bold text-slate-800 mb-3">{t(`steps.watermark.${step}.title`)}</h3>
@@ -97,29 +83,30 @@ const toolName = seoTitle.split('-')[0].trim(); // 简单截取标题前半部�
                 </div>
             </section>
 
+            {/* Features */}
             <section class="bg-white py-24 border-y border-slate-100">
                 <div class="max-w-7xl mx-auto px-4">
                     <div class="text-center mb-16">
                         <h2 class="text-3xl font-black text-slate-800 mb-4">{t('section.features')}</h2>
-                         <div class="w-20 h-1.5 bg-purple-600 mx-auto rounded-full"></div>
+                         <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
                     </div>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 border border-transparent hover:border-slate-100 group">
-                            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 border border-transparent hover:border-slate-100 group">
+                            <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                             </div>
                             <h3 class="text-xl font-bold text-slate-800 mb-3">{t('feat.watermark.1.title')}</h3>
                             <p class="text-slate-500 leading-relaxed">{t('feat.watermark.1.desc')}</p>
                         </div>
-                        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 border border-transparent hover:border-slate-100 group">
-                             <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 border border-transparent hover:border-slate-100 group">
+                             <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-layer-group"></i>
                             </div>
                             <h3 class="text-xl font-bold text-slate-800 mb-3">{t('feat.watermark.2.title')}</h3>
                             <p class="text-slate-500 leading-relaxed">{t('feat.watermark.2.desc')}</p>
                         </div>
-                        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300 border border-transparent hover:border-slate-100 group">
-                             <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 border border-transparent hover:border-slate-100 group">
+                             <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
                             <h3 class="text-xl font-bold text-slate-800 mb-3">{t('feat.watermark.3.title')}</h3>
@@ -129,6 +116,7 @@ const toolName = seoTitle.split('-')[0].trim(); // 简单截取标题前半部�
                 </div>
             </section>
 
+            {/* Testimonials */}
             <section class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black text-slate-800 mb-4">{t('section.testimonials')}</h2>
@@ -136,7 +124,7 @@ const toolName = seoTitle.split('-')[0].trim(); // 简单截取标题前半部�
                 </div>
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-white p-10 md:p-14 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 text-center relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
-                        <i class="fa-solid fa-quote-left text-8xl text-slate-50 absolute top-0 left-4 -z-0 group-hover:text-blue-50 transition-colors"></i>
+                        <i class="fa-solid fa-quote-left text-8xl text-slate-50 absolute top-0 left-4 -z-0 group-hover:text-emerald-50 transition-colors"></i>
                         <div class="relative z-10">
                              <div class="flex justify-center mb-6 text-yellow-400 text-lg gap-1">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -156,17 +144,18 @@ const toolName = seoTitle.split('-')[0].trim(); // 简单截取标题前半部�
                 </div>
             </section>
 
+            {/* FAQ */}
             <section class="max-w-3xl mx-auto px-4 pb-12">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black text-slate-800 mb-4">{t('section.faq')}</h2>
-                    <div class="w-20 h-1.5 bg-slate-800 mx-auto rounded-full"></div>
+                    <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
                 </div>
                 <div class="space-y-4">
                     {[1, 2, 3].map(q => (
                         <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-md">
-                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-800 group-open:text-blue-600 transition text-lg select-none">
+                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-800 group-open:text-emerald-600 transition text-lg select-none">
                                 <span>{t(`faq.watermark.q${q}`)}</span>
-                                <span class="transition-transform duration-300 group-open:rotate-180 w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 group-hover:bg-blue-50">
+                                <span class="transition-transform duration-300 group-open:rotate-180 w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 group-hover:bg-emerald-50">
                                     <i class="fa-solid fa-chevron-down text-sm"></i>
                                 </span>
                             </summary>
@@ -179,12 +168,11 @@ const toolName = seoTitle.split('-')[0].trim(); // 简单截取标题前半部�
             </section>
         </div>
     )}
-    
+
     {tool !== 'gemini-remove-waterprint' && (
         <article class="prose lg:prose-xl mx-auto mt-24 px-4 text-center text-slate-400 pb-24">
             <p>SEO content for {tool.replace(/-/g, ' ')} will appear here.</p>
         </article>
     )}
-
   </main>
 </Layout>

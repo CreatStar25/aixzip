@@ -1,13 +1,14 @@
 ---
-import Home from '../../components/pages/Home.astro';
 import { locales } from '../../config/tools';
+import Home from '../../components/pages/Home.astro';
 
-// 生成所有语言的首页路径 (排除英文，英文在 pages/index.astro)
+// 1. 生成静态路径
 export function getStaticPaths() {
-  const otherLocales = locales.filter(l => l !== 'en');
-  return otherLocales.map(lang => ({
-    params: { lang },
-  }));
+  // ✨ 修改点：过滤掉 'en'。
+  // 英文首页由根目录的 index.astro 处理，这里只处理 /zh-cn/, /es/ 等
+  return locales
+    .filter(lang => lang !== 'en') 
+    .map(lang => ({ params: { lang } }));
 }
 
 const { lang } = Astro.params;

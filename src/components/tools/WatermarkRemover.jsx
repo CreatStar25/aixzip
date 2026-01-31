@@ -10,34 +10,36 @@ export default function WatermarkRemover({ lang }) {
   const [resources, setResources] = useState({ bg48: null, bg96: null, ready: false });
   const [settings, setSettings] = useState({
     mode: 'lossy',
-    quality: 90,
+    quality: 99,
     prefix: '' 
   });
-  const [isDragging, setIsDragging] = useState(false); // 新增拖拽状态
+  const [isDragging, setIsDragging] = useState(false);
 
-  // 简单的内部翻译 (组件内部 UI)
+  // 简单的内部翻译
   const t = {
-    drag_drop: lang === 'zh-cn' ? '点击或拖拽上传图片' : 'Click or Drag to Upload Images',
-    support_hint: lang === 'zh-cn' ? '支持 JPG, PNG, WebP · 支持批量上传' : 'Supports JPG, PNG, WebP · Batch Processing',
-    queue_title: lang === 'zh-cn' ? '处理队列' : 'Process Queue',
-    clear_list: lang === 'zh-cn' ? '清空列表' : 'Clear List',
-    empty_hint: lang === 'zh-cn' ? '等待添加图片...' : 'Waiting for images...',
-    settings_title: lang === 'zh-cn' ? '输出设置' : 'Output Settings',
-    mode_smart: lang === 'zh-cn' ? '智能压缩' : 'Smart Compress',
-    mode_lossless: lang === 'zh-cn' ? '无损模式' : 'Lossless',
-    quality_label: lang === 'zh-cn' ? '画质强度' : 'Quality',
-    rename_label: lang === 'zh-cn' ? '批量重命名 (可选)' : 'Batch Rename',
-    rename_placeholder: lang === 'zh-cn' ? '例如: 毕业照' : 'e.g. Vacation',
-    rename_hint: lang === 'zh-cn' ? '留空则保持原名，输入则自动编号' : 'Empty to keep original name',
-    stats_saved: lang === 'zh-cn' ? '已优化体积' : 'Size Saved',
-    btn_download: lang === 'zh-cn' ? '批量打包下载' : 'Download All as ZIP',
-    status_pending: lang === 'zh-cn' ? '等待中' : 'Pending',
-    status_processing: lang === 'zh-cn' ? '处理中...' : 'Processing...',
-    status_done: lang === 'zh-cn' ? '完成' : 'Done',
-    status_error: lang === 'zh-cn' ? '失败' : 'Failed',
-    algo_loading: lang === 'zh-cn' ? '正在加载算法资源...' : 'Loading AI resources...',
+    drag_text: lang === 'zh-cn' ? '点击或拖拽上传图片' : 'Click or Drag Images Here',
+    drag_hint: lang === 'zh-cn' ? '支持 JPG, PNG, WebP · 自动批量处理' : 'Supports JPG, PNG, WebP · Auto Batch Processing',
+    loading_algo: lang === 'zh-cn' ? '正在加载 AI 算法...' : 'Loading AI Engine...',
+    
+    label_quality: lang === 'zh-cn' ? '输出画质' : 'Quality',
+    opt_smart: lang === 'zh-cn' ? '智能处理' : 'Smart',
+    opt_original: lang === 'zh-cn' ? '原画模式' : 'Original',
+    
+    label_rename: lang === 'zh-cn' ? '批量重命名' : 'Batch Rename',
+    placeholder_rename: lang === 'zh-cn' ? '例如: 毕业照' : 'e.g. Photo',
+    
+    btn_download: lang === 'zh-cn' ? '打包下载' : 'Download All',
+    btn_processing: lang === 'zh-cn' ? '处理中...' : 'Processing...',
+    clear_list: lang === 'zh-cn' ? '清空列表' : 'Clear',
+    
+    hint_recommend: lang === 'zh-cn' ? '视觉无损 + 显著减小体积 (推荐)' : 'Visually Lossless + Small Size',
+    hint_100: lang === 'zh-cn' ? '完全无损 (体积较大)' : 'Lossless (Large Size)',
+    hint_lossy: lang === 'zh-cn' ? '有损压缩 + 极致体积' : 'Lossy Compression',
+    
+    title: lang === 'zh-cn' ? 'Gemini 智能去水印' : 'Gemini Smart Cleaner',
   };
 
+  // --- 1. 初始化资源 ---
   useEffect(() => {
     const loadImg = (src) => new Promise((resolve, reject) => {
       const img = new Image();
@@ -54,10 +56,10 @@ export default function WatermarkRemover({ lang }) {
       setResources({ bg48, bg96, ready: true });
     }).catch(err => {
       console.error("Failed to load assets", err);
-      alert(lang === 'zh-cn' ? '资源加载失败' : 'Failed to load resources');
     });
   }, []);
 
+  // --- 2. 核心处理逻辑 (含双重检测) ---
   const processImage = async (file) => {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -73,6 +75,7 @@ export default function WatermarkRemover({ lang }) {
             const ctx = cvs.getContext('2d', { willReadFrequently: true });
             ctx.drawImage(img, 0, 0);
 
+            // === A. 水印检测与去除 ===
             const cfg = (img.width > 1024 && img.height > 1024) 
                 ? { size: 96, margin: 64, bg: resources.bg96 } 
                 : { size: 48, margin: 32, bg: resources.bg48 };
@@ -88,33 +91,113 @@ export default function WatermarkRemover({ lang }) {
                 tCvs.getContext('2d').drawImage(cfg.bg, 0, 0);
                 const bgData = tCvs.getContext('2d').getImageData(0, 0, cfg.size, cfg.size).data;
 
+                // --- 🛡️ 智能检测算法 (Detection) ---
+                let significantPixels = 0; // 水印区域有效像素数
+                let impossiblePixels = 0;  // 物理上不可能存在水印的像素数 (过暗)
+                
+                // 统计变量用于计算相关性 (Correlation)
+                let n = 0;
+                let sum_i = 0; // Image Sum
+                let sum_m = 0; // Mask Sum
+                let sum_im = 0; // Image * Mask Sum
+                let sum_i2 = 0; // Image^2 Sum
+                let sum_m2 = 0; // Mask^2 Sum
+
+                const tolerance = 15; // 容错阈值
+
                 for (let i = 0; i < data.length; i += 4) {
-                    const alpha = Math.min(Math.max(bgData[i], bgData[i+1], bgData[i+2]) / 255.0, 0.99);
-                    if (alpha > 0) {
-                        for(let c=0; c<3; c++) {
-                            data[i+c] = Math.max(0, Math.min(255, (data[i+c] - alpha * 255) / (1 - alpha)));
+                    // 取RGB平均亮度
+                    const val_i = (data[i] + data[i+1] + data[i+2]) / 3;
+                    const val_m = (bgData[i] + bgData[i+1] + bgData[i+2]) / 3;
+
+                    // 只分析水印模板中“有内容”的部分 (避免背景干扰)
+                    if (val_m > 20) {
+                        significantPixels++;
+
+                        // 检测1: 亮度物理检测
+                        // 如果原图比水印模板还暗，说明不可能叠加上这个白色水印
+                        if (val_i < val_m - tolerance) {
+                            impossiblePixels++;
                         }
+
+                        // 收集统计数据 (用于检测2)
+                        n++;
+                        sum_i += val_i;
+                        sum_m += val_m;
+                        sum_im += val_i * val_m;
+                        sum_i2 += val_i * val_i;
+                        sum_m2 += val_m * val_m;
                     }
                 }
-                ctx.putImageData(imgData, x, y);
+
+                // 判定1: 物理不可能检测
+                // 如果超过 20% 的关键像素过暗，则判定无水印
+                const isPhysicallyPossible = significantPixels > 0 && (impossiblePixels / significantPixels) < 0.2;
+
+                // 判定2: 统计相关性检测 (解决白图误判问题)
+                // 计算皮尔逊相关系数的分子 (Covariance)
+                // 如果图片在水印亮的地方也亮，暗的地方也暗，说明存在正相关
+                // 如果是纯色背景或杂乱背景，协方差会接近0或为负
+                let isCorrelated = false;
+                if (n > 0) {
+                    const numerator = n * sum_im - sum_i * sum_m;
+                    // 我们不需要计算完整相关系数，只要协方差显著为正即可
+                    // 阈值需要实验，这里取一个保守值防止误删
+                    // 对于纯白图，sum_i * sum_m ≈ n * 255 * avg_m, sum_im ≈ n * 255 * avg_m -> numerator ≈ 0
+                    const variance_m = n * sum_m2 - sum_m * sum_m;
+                    if (variance_m > 0) {
+                         // 简单的归一化检查
+                         isCorrelated = numerator > (variance_m * 0.5); 
+                    }
+                }
+
+                // 🚀 最终判定：必须同时满足 "物理可能" 和 "特征相关"
+                // 注意：对于非常明显的Gemini水印，correlation通常极高
+                // 放宽一点策略：只要物理检测通过，且协方差是正的 (numerator > 0)，就认为是水印
+                // 纯白图的 numerator 接近 0
+                const hasWatermark = isPhysicallyPossible && (n * sum_im - sum_i * sum_m) > 10000; 
+
+                // --- 执行去除或跳过 ---
+                if (hasWatermark) {
+                    // console.log("Watermark detected, removing...");
+                    for (let i = 0; i < data.length; i += 4) {
+                        const alpha = Math.min(Math.max(bgData[i], bgData[i+1], bgData[i+2]) / 255.0, 0.99);
+                        if (alpha > 0) {
+                            for(let c=0; c<3; c++) {
+                                // 还原公式
+                                data[i+c] = Math.max(0, Math.min(255, (data[i+c] - alpha * 255) / (1 - alpha)));
+                            }
+                        }
+                    }
+                    ctx.putImageData(imgData, x, y);
+                } else {
+                    // console.log("No watermark detected, skipping.");
+                }
             }
 
+            // === B. 智能压缩与导出 ===
             const isPng = file.type === 'image/png';
-            if (isPng && settings.mode === 'lossy') {
-                try {
-                    const rgbaData = ctx.getImageData(0, 0, img.naturalWidth, img.naturalHeight).data.buffer;
-                    const cnum = Math.floor((settings.quality / 100) * 256); 
-                    const pngBuffer = UPNG.encode([rgbaData], img.naturalWidth, img.naturalHeight, cnum);
-                    resolve(new Blob([pngBuffer], {type: 'image/png'}));
-                } catch (err) {
-                    cvs.toBlob(b => resolve(b), 'image/png');
+            
+            if (settings.mode === 'lossy') {
+                if (isPng) {
+                    try {
+                        const rgbaData = ctx.getImageData(0, 0, img.naturalWidth, img.naturalHeight).data.buffer;
+                        // 100% -> cnum=0 (纯无损); 99% -> cnum=253 (256色量化)
+                        const cnum = settings.quality >= 100 ? 0 : Math.floor((settings.quality / 100) * 256);
+                        const pngBuffer = UPNG.encode([rgbaData], img.naturalWidth, img.naturalHeight, cnum);
+                        resolve(new Blob([pngBuffer], {type: 'image/png'}));
+                    } catch (err) {
+                        cvs.toBlob(b => resolve(b), 'image/png');
+                    }
+                } else {
+                    const q = settings.quality / 100;
+                    cvs.toBlob(b => resolve(b), file.type, q);
                 }
             } else {
-                const q = settings.mode === 'lossless' ? 1.0 : (settings.quality / 100);
                 cvs.toBlob((blob) => {
                     if(blob) resolve(blob);
                     else reject(new Error("Export failed"));
-                }, file.type, q);
+                }, file.type, 1.0);
             }
         };
         img.onerror = reject;
@@ -123,6 +206,7 @@ export default function WatermarkRemover({ lang }) {
     });
   };
 
+  // --- 3. 队列调度 ---
   useEffect(() => {
     if (processing || !resources.ready) return;
     const nextItem = queue.find(i => i.status === 'pending');
@@ -144,6 +228,7 @@ export default function WatermarkRemover({ lang }) {
     }
   };
 
+  // --- 4. 交互处理 ---
   const handleFiles = (files) => {
     if (!resources.ready) return;
     const validFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
@@ -157,43 +242,6 @@ export default function WatermarkRemover({ lang }) {
     setQueue(prev => [...prev, ...newItems]);
   };
 
-  // --- 修复拖拽问题 ---
-  // 阻止浏览器默认打开行为 (在容器上处理)
-  const onDragOver = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(true);
-  };
-  
-  const onDragLeave = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
-  };
-
-  const onDrop = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-        handleFiles(e.dataTransfer.files);
-        e.dataTransfer.clearData();
-    }
-  };
-
-  const handleUploadClick = (e) => {
-    handleFiles(e.target.files);
-    e.target.value = '';
-  };
-
-  const handleDownloadSingle = (item) => {
-    if (!item.blob) return;
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(item.blob);
-    link.download = `clean_${item.file.name}`;
-    link.click();
-  };
-
   const handleDownloadAll = async () => {
     const validItems = queue.filter(i => i.status === 'done' && i.blob);
     if (validItems.length === 0) return;
@@ -201,9 +249,6 @@ export default function WatermarkRemover({ lang }) {
 
     const zip = new JSZip();
     const prefix = settings.prefix.trim();
-    
-    // --- 修改点：文件夹命名 ---
-    // 如果有前缀，就用前缀做文件夹名；如果没有，就用 default，但不加 cleaned 后缀
     const folderName = prefix || 'images'; 
     const folder = zip.folder(folderName);
 
@@ -221,162 +266,187 @@ export default function WatermarkRemover({ lang }) {
         const content = await zip.generateAsync({type: "blob"});
         const link = document.createElement('a');
         link.href = URL.createObjectURL(content);
-        link.download = prefix ? `${prefix}.zip` : `batch_images_${Date.now()}.zip`;
+        link.download = prefix ? `${prefix}.zip` : `cleaned_images_${Date.now()}.zip`;
         link.click();
     } catch (e) {
-        alert("Zip creation failed: " + e.message);
+        alert("Zip Error: " + e.message);
     }
   };
 
   const formatSize = (bytes) => {
     if (bytes === 0) return '0 B';
-    const k = 1024;
-    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const k = 1024; const sizes = ['B', 'KB', 'MB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
   };
 
   const doneItems = queue.filter(i => i.status === 'done');
   const totalSaved = doneItems.reduce((acc, i) => acc + Math.max(0, i.file.size - i.resultSize), 0);
-  const totalProgress = queue.length === 0 ? 0 : Math.round((doneItems.length / queue.length) * 100);
 
+  // --- UI Render ---
   return (
-    <div className="flex flex-col lg:flex-row h-[800px] lg:h-[700px] overflow-hidden bg-white rounded-2xl shadow-xl border border-slate-100">
+    <div className="flex flex-col gap-4">
         
-        {/* 左侧：上传与列表区 */}
-        <div className="flex-1 flex flex-col p-4 md:p-6 bg-slate-50/50 gap-4 overflow-hidden">
-            
-            {/* 上传区域：加高 + 拖拽修复 */}
-            <div 
-                onDragOver={onDragOver}
-                onDragLeave={onDragLeave}
-                onDrop={onDrop}
-                className={`flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed rounded-2xl transition-all relative overflow-hidden bg-white ${isDragging ? 'border-blue-500 bg-blue-50' : 'border-slate-300 hover:border-blue-400'}`}
-            >
-                <input 
-                    type="file" 
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20" 
-                    accept="image/png, image/jpeg, image/webp" 
-                    multiple 
-                    onChange={handleUploadClick} 
-                    disabled={!resources.ready}
-                />
-                
-                <div className="flex flex-col items-center justify-center relative z-10 pointer-events-none">
-                    <i className={`fa-solid fa-cloud-arrow-up text-4xl md:text-5xl mb-4 transition-colors ${isDragging ? 'text-blue-600' : 'text-slate-400'}`}></i>
-                    <p className="text-base font-bold text-slate-700">{t.drag_drop}</p>
-                    <p className="text-xs text-slate-400 mt-2">{t.support_hint}</p>
-                </div>
-                
-                {!resources.ready && (
-                    <div className="absolute inset-0 bg-white/90 flex items-center justify-center z-30">
-                        <p className="text-sm font-bold text-slate-500 flex items-center gap-2">
-                            <i className="fa-solid fa-spinner fa-spin"></i> {t.algo_loading}
-                        </p>
-                    </div>
-                )}
-            </div>
+        {/* 1. 上方：上传与预览区 */}
+        <div 
+            className={`bg-white rounded-3xl shadow-sm border border-slate-100 min-h-[300px] flex flex-col relative transition-all duration-200 overflow-hidden
+                ${isDragging ? 'ring-4 ring-emerald-100 border-emerald-400' : ''}`}
+            onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+            onDragLeave={(e) => { e.preventDefault(); setIsDragging(false); }}
+            onDrop={(e) => { 
+                e.preventDefault(); setIsDragging(false); 
+                if(e.dataTransfer.files) handleFiles(e.dataTransfer.files); 
+            }}
+        >
+            <input 
+                type="file" id="fileInput" 
+                className="hidden" multiple accept="image/*" 
+                onChange={(e) => { handleFiles(e.target.files); e.target.value = ''; }}
+            />
 
-            {/* 列表区域 */}
-            <div className="flex-1 bg-white border border-slate-200 rounded-2xl flex flex-col overflow-hidden shadow-sm">
-                <div className="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-10">
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{t.queue_title} ({queue.length})</span>
-                    {queue.length > 0 && (
-                        <button onClick={() => setQueue([])} className="text-xs text-red-500 hover:text-red-600 font-medium px-2 py-1 hover:bg-red-50 rounded transition">
-                            {t.clear_list}
-                        </button>
-                    )}
+            {/* 顶部标题栏 */}
+            {queue.length > 0 && (
+                <div className="px-5 py-3 border-b border-slate-50 flex justify-between items-center bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+                    <span className="text-sm font-bold text-slate-500">{t.title} ({queue.length})</span>
+                    <button onClick={() => setQueue([])} className="text-xs text-red-400 hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-full transition">
+                        <i className="fa-solid fa-trash-can mr-1"></i> {t.clear_list}
+                    </button>
                 </div>
-                <div className="flex-1 overflow-y-auto p-2 space-y-2 custom-scroll">
-                    {queue.length === 0 ? (
-                        <div className="h-full flex flex-col items-center justify-center text-slate-300 pb-10">
-                            <i className="fa-regular fa-image text-4xl mb-3 opacity-30"></i>
-                            <p className="text-xs font-medium">{t.empty_hint}</p>
+            )}
+
+            {/* 内容区 */}
+            <div className="flex-1 p-4 overflow-y-auto max-h-[500px] custom-scroll">
+                {queue.length === 0 ? (
+                    <div 
+                        onClick={() => document.getElementById('fileInput').click()}
+                        className="h-full flex flex-col items-center justify-center cursor-pointer py-10 group min-h-[250px]"
+                    >
+                        <div className="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-3xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-100 transition-all duration-300 shadow-sm">
+                            <i className="fa-solid fa-cloud-arrow-up text-2xl"></i>
                         </div>
-                    ) : (
-                        queue.map(item => (
-                            <div key={item.id} className="flex items-center justify-between p-3 bg-white hover:bg-slate-50 rounded-xl border border-slate-100 transition-colors">
-                                <div className="flex items-center gap-3 overflow-hidden">
-                                    <div className={`w-10 h-10 border rounded-lg flex flex-col items-center justify-center text-[10px] font-bold leading-none flex-shrink-0 ${item.file.type.includes('png') ? 'bg-purple-50 text-purple-600 border-purple-100' : 'bg-blue-50 text-blue-600 border-blue-100'}`}>
-                                        {item.file.type.split('/')[1].toUpperCase()}
-                                    </div>
-                                    <div className="min-w-0">
-                                        <p className="text-xs font-bold text-slate-700 truncate max-w-[150px]">{item.file.name}</p>
-                                        <p className="text-[10px] text-slate-400 font-mono mt-0.5">
-                                            {formatSize(item.file.size)} 
-                                            {item.status === 'done' && (
-                                                <span className="text-green-600 ml-1">
-                                                    → {formatSize(item.resultSize)}
-                                                </span>
-                                            )}
-                                        </p>
+                        <h3 className="text-lg font-bold text-slate-700 mb-1">{t.drag_text}</h3>
+                        <p className="text-slate-400 text-xs">{t.drag_hint}</p>
+                        {!resources.ready && (
+                            <span className="mt-4 px-4 py-1 bg-slate-100 text-slate-500 text-xs rounded-full animate-pulse">
+                                {t.loading_algo}
+                            </span>
+                        )}
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                        {queue.map(item => (
+                            <div key={item.id} className="relative group bg-slate-50 rounded-xl p-2 border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all">
+                                <div className="aspect-square bg-white rounded-lg flex items-center justify-center mb-2 text-slate-300 relative overflow-hidden">
+                                    {item.status === 'done' && item.blob ? (
+                                        <img src={URL.createObjectURL(item.blob)} className="w-full h-full object-cover opacity-80" alt="" />
+                                    ) : (
+                                        <i className="fa-regular fa-image text-2xl"></i>
+                                    )}
+                                    <div className="absolute top-1 right-1">
+                                        {item.status === 'processing' && <i className="fa-solid fa-spinner fa-spin text-emerald-500"></i>}
+                                        {item.status === 'done' && <div className="w-4 h-4 bg-emerald-500 rounded-full flex items-center justify-center text-white text-[8px]"><i className="fa-solid fa-check"></i></div>}
                                     </div>
                                 </div>
-                                <div className="text-right">
-                                    {item.status === 'pending' && <span className="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">{t.status_pending}</span>}
-                                    {item.status === 'processing' && <span className="text-xs text-blue-600 flex items-center gap-1"><i className="fa-solid fa-spinner fa-spin"></i> {t.status_processing}</span>}
-                                    {item.status === 'error' && <span className="text-xs text-red-500">{t.status_error}</span>}
-                                    {item.status === 'done' && (
-                                        <button onClick={() => handleDownloadSingle(item)} className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition flex items-center justify-center">
-                                            <i className="fa-solid fa-download text-xs"></i>
-                                        </button>
-                                    )}
+                                <div className="text-center">
+                                    <p className="text-[10px] font-bold text-slate-700 truncate w-full mb-0.5">{item.file.name}</p>
+                                    <p className="text-[9px] text-slate-400 font-mono">
+                                        {item.status === 'done' 
+                                            ? <span className="text-emerald-600 font-bold">↓ {formatSize(Math.max(0, item.file.size - item.resultSize))}</span>
+                                            : formatSize(item.file.size)
+                                        }
+                                    </p>
                                 </div>
                             </div>
-                        ))
-                    )}
-                </div>
+                        ))}
+                        <div 
+                            onClick={() => document.getElementById('fileInput').click()}
+                            className="aspect-square rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:border-emerald-400 hover:bg-emerald-50 transition-colors text-slate-300 hover:text-emerald-500"
+                        >
+                            <i className="fa-solid fa-plus text-xl mb-1"></i>
+                            <span className="text-[10px] font-bold">Add</span>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
 
-        {/* 右侧：设置面板 */}
-        <div className="w-full lg:w-80 bg-white border-l border-slate-100 p-6 flex flex-col gap-6 shadow-sm z-20 overflow-y-auto">
-            {/* 统计卡片 */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
-                <div className="text-xs font-medium opacity-80 mb-1">{t.stats_saved}</div>
-                <div className="text-3xl font-bold tracking-tight">{formatSize(totalSaved)}</div>
-                <div className="mt-4 h-1.5 bg-black/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-white transition-all duration-500" style={{ width: `${totalProgress}%` }}></div>
+        {/* 2. 下方：横向操作栏 (底部对齐 md:items-end) */}
+        <div className="bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 p-4 flex flex-col md:flex-row items-center md:items-end justify-between gap-4">
+            
+            {/* 左侧：压缩设置 */}
+            <div className="flex-1 w-full md:w-auto flex flex-col gap-1.5">
+                <div className="flex items-center gap-2 mb-0.5">
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.label_quality}</span>
+                    {settings.mode === 'lossy' && (
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded ${settings.quality === 99 ? 'bg-emerald-50 text-emerald-600' : 'bg-slate-50 text-slate-500'}`}>
+                            {settings.quality === 100 ? t.hint_100 : (settings.quality >= 99 ? t.hint_recommend : t.hint_lossy)}
+                        </span>
+                    )}
                 </div>
-            </div>
-
-            <div className="space-y-6">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100 pb-2">{t.settings_title}</h3>
-                
-                <div className="flex bg-slate-100 p-1 rounded-xl">
-                    <button onClick={() => setSettings(s => ({...s, mode: 'lossy'}))} className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${settings.mode === 'lossy' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>{t.mode_smart}</button>
-                    <button onClick={() => setSettings(s => ({...s, mode: 'lossless'}))} className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${settings.mode === 'lossless' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>{t.mode_lossless}</button>
-                </div>
-
-                {settings.mode === 'lossy' && (
-                    <div className="space-y-3">
-                        <div className="flex justify-between items-center">
-                            <span className="text-xs font-bold text-slate-500">{t.quality_label}</span>
-                            <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">{settings.quality}%</span>
+                <div className="flex items-center gap-3 bg-slate-50 p-1.5 rounded-xl border border-slate-100">
+                    <div className="flex bg-white rounded-lg p-1 shadow-sm border border-slate-100">
+                        <button 
+                            onClick={() => setSettings(s => ({...s, mode: 'lossy'}))}
+                            className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${settings.mode === 'lossy' ? 'bg-emerald-500 text-white shadow-md' : 'text-slate-500 hover:text-slate-700'}`}
+                        >
+                            {t.opt_smart}
+                        </button>
+                        <button 
+                            onClick={() => setSettings(s => ({...s, mode: 'lossless'}))}
+                            className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${settings.mode === 'lossless' ? 'bg-emerald-500 text-white shadow-md' : 'text-slate-500 hover:text-slate-700'}`}
+                        >
+                            {t.opt_original}
+                        </button>
+                    </div>
+                    {settings.mode === 'lossy' && (
+                        <div className="flex items-center gap-2 flex-1 px-1 animate-fade-in">
+                            <input 
+                                type="range" min="1" max="100" 
+                                value={settings.quality}
+                                onChange={(e) => setSettings(s => ({...s, quality: parseInt(e.target.value)}))}
+                                className="w-20 md:w-28 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                            />
+                            <span className="text-sm font-bold text-emerald-600 min-w-[32px]">{settings.quality}%</span>
                         </div>
-                        <input type="range" min="50" max="99" value={settings.quality} onChange={(e) => setSettings(s => ({...s, quality: parseInt(e.target.value)}))} className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600" />
-                    </div>
-                )}
-
-                <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-500 flex justify-between">
-                        {t.rename_label}
-                        <span className="text-[10px] text-blue-500 font-normal bg-blue-50 px-1.5 rounded">Auto Sort</span>
-                    </label>
-                    <div className="relative">
-                        <input type="text" placeholder={t.rename_placeholder} value={settings.prefix} onChange={(e) => setSettings(s => ({...s, prefix: e.target.value}))} className="w-full pl-3 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" />
-                        <span className="absolute right-3 top-2.5 text-slate-400 text-xs font-mono">_#</span>
-                    </div>
-                    <p className="text-[10px] text-slate-400">{t.rename_hint}</p>
+                    )}
                 </div>
             </div>
 
-            <div className="mt-auto pt-4 border-t border-slate-100">
-                <button onClick={handleDownloadAll} disabled={doneItems.length === 0} className="w-full py-3.5 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-100 disabled:text-slate-400 text-white rounded-xl font-bold transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-2 active:scale-95">
-                    <i className="fa-solid fa-file-zipper"></i>
-                    {t.btn_download}
+            {/* 中间：重命名 */}
+            <div className="flex-1 w-full md:w-auto flex flex-col gap-1.5">
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.label_rename}</span>
+                <div className="relative">
+                    <input 
+                        type="text" 
+                        placeholder={t.placeholder_rename}
+                        value={settings.prefix}
+                        onChange={(e) => setSettings(s => ({...s, prefix: e.target.value}))}
+                        className="w-full pl-3 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition shadow-inner"
+                    />
+                    <span className="absolute right-3 top-3.5 text-slate-400 text-xs font-mono select-none">_#</span>
+                </div>
+            </div>
+
+            {/* 右侧：下载按钮 */}
+            <div className="w-full md:w-auto flex-shrink-0 pt-4 md:pt-0">
+                <button 
+                    onClick={handleDownloadAll}
+                    disabled={doneItems.length === 0}
+                    className="w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white rounded-xl font-bold text-sm shadow-lg shadow-emerald-500/30 transition-all active:scale-95 flex items-center justify-center gap-2"
+                >
+                    {processing ? (
+                        <>
+                            <i className="fa-solid fa-spinner fa-spin"></i> {t.btn_processing}
+                        </>
+                    ) : (
+                        <>
+                            <i className="fa-solid fa-download"></i> {t.btn_download}
+                            {doneItems.length > 0 && <span className="bg-emerald-600 px-1.5 py-0.5 rounded-full text-xs opacity-90">{doneItems.length}</span>}
+                        </>
+                    )}
                 </button>
             </div>
+
         </div>
     </div>
   );
