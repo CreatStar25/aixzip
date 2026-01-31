@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Batch Image Compressor - Optimize JPG/PNG/WebP",
+    "keywords": "image compressor, reduce image size, compress png, optimize jpg, free online tool",
+    "description": "Compress unlimited images locally. Reduce file size up to 90% without quality loss. Supports JPG, PNG, and WebP."
+  },
+  "hero": {
+    "title": "Batch Image Compressor",
+    "subtitle": "Compress locally. No server upload. Fast, Secure, and Free."
+  },
+  "steps": [
+    { "title": "Upload Images", "desc": "Drag & drop multiple JPG, PNG, or WebP images." },
+    { "title": "Adjust Quality", "desc": "Choose compression level. Use the slider to balance quality and size." },
+    { "title": "Download", "desc": "Download optimized images individually or as a ZIP." }
+  ],
+  "features": [
+    { "title": "High Efficiency", "desc": "Smart compression algorithms reduce size significantly while maintaining visual quality." },
+    { "title": "Privacy First", "desc": "Everything happens in your browser. Your photos never leave your device." },
+    { "title": "Bulk Processing", "desc": "Handle hundreds of images at once with no limits." }
+  ],
+  "faq": [
+    { "q": "Is quality affected?", "a": "We use smart lossy compression that is visually lossless to the human eye in most cases." },
+    { "q": "Is it secure?", "a": "Yes, it runs 100% offline in your browser." }
+  ]
+}
