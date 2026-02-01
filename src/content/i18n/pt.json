@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Ferramentas de Imagem",
+      "items": [
+        {
+          "name": "Removedor de Marca d'Água Gemini",
+          "href": "/pt/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Editor de Imagem (Girar/Inverter)",
+          "href": "/pt/image/image-editor"
+        },
+        {
+          "name": "Redimensionador de Imagens em Lote",
+          "href": "/pt/image/image-resizer"
+        },
+        {
+          "name": "Compressor de Imagens em Lote",
+          "href": "/pt/image/image-compressor"
+        },
+        {
+          "name": "Conversor de Imagens em Lote",
+          "href": "/pt/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Ferramentas PDF",
+      "items": [
+        {
+          "name": "PDF para Imagem",
+          "href": "/pt/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Ferramentas de Arquivo",
+      "items": [
+        {
+          "name": "Criar ZIP",
+          "href": "/pt/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Ferramentas IA Gratuitas, Ferramentas PDF, Ferramentas de Imagem, Conversores de Arquivo",
+    "hero.title": "Ferramentas IA Online Gratuitas & Conversor de Arquivos",
+    "hero.subtitle": "Processamento 100% no cliente. Nenhum upload de arquivos para o servidor. Seguro, Rápido e Gratuito.",
+    "hero.search_placeholder": "Buscar ferramentas (ex: \"Marca d'Água\", \"PDF\")",
+    "section.all": "Todas as Ferramentas",
+    "footer.desc": "Ferramentas online gratuitas para converter, comprimir e editar seus arquivos.",
+    "footer.rights": "Todos os direitos reservados.",
+    "footer.col.pdf": "Ferramentas PDF",
+    "footer.col.image": "Ferramentas de Imagem",
+    "footer.col.company": "Empresa",
+    "footer.col.lang": "Internacional",
+    "footer.link.about": "Sobre Nós",
+    "footer.link.privacy": "Política de Privacidade",
+    "footer.link.terms": "Termos de Serviço",
+    "breadcrumb.home": "Início",
+    "section.how_it_works": "Como Funciona",
+    "section.features": "Principais Recursos",
+    "section.testimonials": "O Que os Usuários Dizem",
+    "section.faq": "Perguntas Frequentes",
+    "feat.nologin.title": "Sem Cadastro",
+    "feat.nologin.desc": "Comece a usar as ferramentas imediatamente sem registro.",
+    "feat.client.title": "No Cliente",
+    "feat.client.desc": "Arquivos são processados no seu navegador. Sem uploads para servidor.",
+    "feat.offline.title": "Funciona Offline",
+    "feat.offline.desc": "Funciona mesmo sem internet após carregar.",
+    "feat.secure.title": "100% Seguro",
+    "feat.secure.desc": "Seus dados nunca saem do seu dispositivo.",
+    "faq.title": "Perguntas Frequentes",
+    "faq.q1": "O AIxZIP é gratuito?",
+    "faq.a1": "Sim, todas as ferramentas são completamente gratuitas.",
+    "faq.q2": "Meus arquivos estão seguros?",
+    "faq.a2": "Absolutamente. Usamos tecnologia baseada no navegador, então seus arquivos são processados localmente.",
+    "testi.title": "Amado pelos Usuários",
+    "drag_drop": "Clique ou Arraste para Fazer Upload de Imagens",
+    "support_hint": "Suporta JPG, PNG, WebP · Processamento em Lote",
+    "queue_title": "Fila de Processamento",
+    "clear_list": "Limpar Lista",
+    "empty_hint": "Aguardando imagens...",
+    "settings_title": "Opções",
+    "tab_pixels": "Por Pixels",
+    "tab_percent": "Por Porcentagem",
+    "lbl_width": "Largura (px)",
+    "lbl_height": "Altura (px)",
+    "lbl_percent": "Porcentagem (%)",
+    "lbl_auto": "Automático",
+    "chk_no_enlarge": "Não ampliar se for menor",
+    "label_rename": "Renomear em Lote",
+    "placeholder_rename": "ex: Foto",
+    "label_quality": "Qualidade",
+    "sec_compress": "Compressão",
+    "chk_compress": "Ativar Compressão",
+    "lbl_quality": "Qualidade",
+    "val_quality_high": "Alta Qualidade",
+    "val_quality_low": "Alta Compressão",
+    "hint_smart": "Recomendado para equilíbrio.",
+    "hint_recommend": "Visualmente Sem Perdas + Tamanho Pequeno",
+    "hint_100": "Sem Perdas (Tamanho Grande)",
+    "hint_lossy": "Compressão com Perdas",
+    "opt_smart": "Inteligente",
+    "opt_original": "Original",
+    "sec_privacy": "Privacidade",
+    "chk_strip_metadata": "Remover Metadados",
+    "hint_strip_metadata": "Remove informações EXIF/GPS.",
+    "btn_download": "Baixar ZIP",
+    "btn_download_one": "Baixar",
+    "btn_processing": "Processando...",
+    "status_pending": "Pendente",
+    "status_processing": "Processando...",
+    "status_done": "Concluído",
+    "status_error": "Falhou",
+    "stat_saved": "Salvo",
+    "modal_title": "Limpar Todos os Itens?",
+    "modal_desc": "Todas as imagens processadas serão perdidas. Esta ação não pode ser desfeita.",
+    "modal_cancel": "Cancelar",
+    "modal_confirm": "Limpar Tudo",
+    "leave_warning": "Você tem imagens não salvas. Sair desta página perderá seu progresso."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Penyingkir Tanda Air Imej AI Gemini - Buang SynthID & Jalur",
+    "keywords": "Penyingkir Tanda Air Gemini, Tanda Air NanoBanana, Buang SynthID, Alat AI Percuma, Buang Jalur AI",
+    "description": "Percuma, pantas, tanpa kehilangan kualiti. Mengesan dan membuang tanda air tidak kelihatan serta jalur lutsinar daripada imej yang dijana oleh Gemini / NanoBanana secara automatik."
+  },
+  "hero": {
+    "title": "Penyingkir Tanda Air Imej AI Gemini",
+    "subtitle": "Percuma, Pantas, Tanpa Kehilangan Kualiti. Mengesan dan membuang tanda air tidak kelihatan daripada imej yang dijana oleh Gemini / NanoBanana secara automatik."
+  },
+  "steps": [
+    {
+      "title": "Muat Naik Imej AI",
+      "desc": "Muat naik imej yang dijana oleh Gemini, NanoBanana, atau alat AI lain."
+    },
+    {
+      "title": "Pengesanan Automatik",
+      "desc": "Algoritma mengenal pasti corak tanda air AI tertentu dan jalur yang kelihatan."
+    },
+    {
+      "title": "Bersihkan & Simpan",
+      "desc": "Muat turun imej bersih tanpa jalur tanda air."
+    }
+  ],
+  "features": [
+    {
+      "title": "Sedia untuk Gemini/NanoBanana",
+      "desc": "Ditala khusus untuk membuang jalur tanda air putih/lutsinar daripada imej yang dijana oleh Gemini."
+    },
+    {
+      "title": "Pemulihan Tanpa Kehilangan Kualiti",
+      "desc": "Memulihkan piksel asal yang tersembunyi di belakang tanda air tanpa kesan kabur."
+    },
+    {
+      "title": "Penyingkiran Kelompok",
+      "desc": "Seret lebih 50 imej dan bersihkan semuanya dalam beberapa saat secara tempatan."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Sangat sesuai untuk membuang jalur Gemini yang menjengkelkan. Berfungsi dengan sempurna dan mod kelompok menjimatkan masa.",
+      "author": "Sarah J., Jurutera Prompt"
+    },
+    {
+      "text": "Saya menggunakan NanoBanana untuk aliran kerja harian dan alat ini satu-satunya yang membuang tanda air dengan bersih.",
+      "author": "Mike T., Pencipta AI"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Adakah ia berfungsi pada imej NanoBanana?",
+      "a": "Ya! NanoBanana menggunakan teknologi asas yang sama seperti Gemini untuk penjanaan imej. Algoritma kami mengesan dan membuang jalur lutsinar ciri yang terdapat pada kedua-duanya dengan sempurna."
+    },
+    {
+      "q": "Bagaimana ia membuang tanda air tanpa kesan kabur?",
+      "a": "Tidak seperti alat 'penyembuhan' standard yang mengaburkan kawasan tersebut, AI kami mengira nilai piksel tepat yang tersembunyi di belakang lapisan tanda air separa lutsinar, memulihkan imej asal secara matematik."
+    },
+    {
+      "q": "Adakah foto saya akan dimuat naik ke pelayan?",
+      "a": "Tidak. Semua pemprosesan berlaku 100% secara tempatan dalam pelayar anda menggunakan WebAssembly. Imej anda tidak pernah meninggalkan peranti anda, memastikan privasi sepenuhnya."
+    },
+    {
+      "q": "Adakah ia membuang SynthID (tanda air tidak kelihatan)?",
+      "a": "Kami terutamanya fokus pada membuang artifak yang kelihatan (jalur) untuk memulihkan estetik visual. Walaupun proses penyandian semula mungkin mengganggu tandatangan digital seperti SynthID, kami tidak menjamin penyingkiran lengkap tanda air kriptografi tidak kelihatan."
+    },
+    {
+      "q": "Adakah terdapat had pada bilangan imej yang boleh saya proses?",
+      "a": "Tiada had. Memandangkan ia berjalan pada peranti anda sendiri, anda boleh memproses seberapa banyak imej yang boleh dikendalikan oleh memori komputer anda."
+    }
+  ]
+}

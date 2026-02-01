@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Suppresseur de Filigrane d'Images Gemini AI - Retirer SynthID & Bandes",
+    "keywords": "Suppresseur de Filigrane Gemini, Filigrane NanoBanana, Retirer SynthID, Outils IA Gratuits, Retirer Bande IA",
+    "description": "Gratuit, rapide, sans perte. Détecte et supprime automatiquement les filigranes invisibles et les bandes translucides des images générées par Gemini / NanoBanana."
+  },
+  "hero": {
+    "title": "Suppresseur de Filigrane d'Images Gemini AI",
+    "subtitle": "Gratuit, Rapide, Sans Perte. Détecte et supprime automatiquement les filigranes invisibles des images générées par Gemini / NanoBanana."
+  },
+  "steps": [
+    {
+      "title": "Télécharger des Images IA",
+      "desc": "Téléchargez des images générées par Gemini, NanoBanana ou d'autres outils d'IA."
+    },
+    {
+      "title": "Détection Automatique",
+      "desc": "L'algorithme identifie les motifs spécifiques de filigrane IA et les bandes visibles."
+    },
+    {
+      "title": "Nettoyer & Sauvegarder",
+      "desc": "Téléchargez l'image nettoyée sans la bande de filigrane."
+    }
+  ],
+  "features": [
+    {
+      "title": "Prêt pour Gemini/NanoBanana",
+      "desc": "Spécialement conçu pour retirer les bandes de filigrane blanches/translucides des images générées par Gemini."
+    },
+    {
+      "title": "Restauration Sans Perte",
+      "desc": "Restaure les pixels d'origine cachés derrière le filigrane sans flou."
+    },
+    {
+      "title": "Suppression par Lots",
+      "desc": "Glissez-déposez 50+ images et nettoyez-les toutes en quelques secondes localement."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Idéalement conçu pour retirer la bande gênante de Gemini. Fonctionne parfaitement et le mode par lots fait gagner un temps précieux.",
+      "author": "Sarah J., Ingénieure en Prompt"
+    },
+    {
+      "text": "J'utilise NanoBanana quotidiennement et cet outil est le seul à retirer le filigrane de manière propre.",
+      "author": "Mike T., Créateur IA"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fonctionne-t-il sur les images NanoBanana ?",
+      "a": "Oui ! NanoBanana utilise la même technologie sous-jacente que Gemini pour la génération d'images. Notre algorithme détecte et supprime parfaitement la bande translucide caractéristique présente sur les deux."
+    },
+    {
+      "q": "Comment retire-t-il le filigrane sans flou ?",
+      "a": "Contrairement aux outils de 'réparation' standards qui floutent la zone, notre IA calcule les valeurs exactes des pixels cachés derrière la couche de filigrane semi-transparente, restaurant mathématiquement l'image d'origine."
+    },
+    {
+      "q": "Mes photos seront-elles téléchargées sur un serveur ?",
+      "a": "Non. Tout le traitement se fait à 100 % localement dans votre navigateur via WebAssembly. Vos images ne quittent jamais votre appareil, garantissant une confidentialité totale."
+    },
+    {
+      "q": "Retire-t-il SynthID (filigranes invisibles) ?",
+      "a": "Nous nous concentrons principalement sur la suppression des artefacts visibles (la bande) pour restaurer l'esthétique visuelle. Bien que le processus de réencodage puisse perturber les signatures numériques comme SynthID, nous ne garantissons pas la suppression complète des filigranes cryptographiques invisibles."
+    },
+    {
+      "q": "Y a-t-il une limite au nombre d'images que je peux traiter ?",
+      "a": "Aucune limite. Comme l'outil fonctionne sur votre propre appareil, vous pouvez traiter autant d'images que la mémoire de votre ordinateur le permet."
+    }
+  ]
+}

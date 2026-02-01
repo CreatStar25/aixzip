@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Afbeeldingstools",
+      "items": [
+        {
+          "name": "Gemini Watermark Verwijderaar",
+          "href": "/nl/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Afbeeldingsbewerker (Draaien/Spiegelen)",
+          "href": "/nl/image/image-editor"
+        },
+        {
+          "name": "Batch Afbeeldingen Verkleinen",
+          "href": "/nl/image/image-resizer"
+        },
+        {
+          "name": "Batch Afbeeldingen Comprimeren",
+          "href": "/nl/image/image-compressor"
+        },
+        {
+          "name": "Batch Afbeeldingen Converteren",
+          "href": "/nl/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDF Tools",
+      "items": [
+        {
+          "name": "PDF naar Afbeelding",
+          "href": "/nl/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Bestandstools",
+      "items": [
+        {
+          "name": "ZIP Bestand Maken",
+          "href": "/nl/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Gratis AI Tools, PDF Tools, Afbeeldingstools, Bestandsconverters",
+    "hero.title": "Gratis Online AI Tools & Bestandsconverter",
+    "hero.subtitle": "100% Client-side verwerking. Geen bestandsuploads naar de server. Veilig, Snel en Gratis.",
+    "hero.search_placeholder": "Zoek tools (bijv. \"Watermerk\", \"PDF\")",
+    "section.all": "Alle Tools",
+    "footer.desc": "Gratis online tools om je bestanden te converteren, comprimeren en bewerken.",
+    "footer.rights": "Alle rechten voorbehouden.",
+    "footer.col.pdf": "PDF Tools",
+    "footer.col.image": "Afbeeldingstools",
+    "footer.col.company": "Bedrijf",
+    "footer.col.lang": "Internationaal",
+    "footer.link.about": "Over Ons",
+    "footer.link.privacy": "Privacybeleid",
+    "footer.link.terms": "Servicevoorwaarden",
+    "breadcrumb.home": "Home",
+    "section.how_it_works": "Hoe Het Werkt",
+    "section.features": "Kernfuncties",
+    "section.testimonials": "Wat Gebruikers Zeggen",
+    "section.faq": "FAQ",
+    "feat.nologin.title": "Geen Aanmelding",
+    "feat.nologin.desc": "Begin direct met het gebruik van tools zonder registratie.",
+    "feat.client.title": "Client-Side",
+    "feat.client.desc": "Bestanden worden in je browser verwerkt. Geen uploads naar de server.",
+    "feat.offline.title": "Offline Mogelijk",
+    "feat.offline.desc": "Werkt zelfs zonder internet na het laden.",
+    "feat.secure.title": "100% Veilig",
+    "feat.secure.desc": "Je data verlaat nooit je apparaat.",
+    "faq.title": "Veelgestelde Vragen",
+    "faq.q1": "Is AIxZIP gratis?",
+    "faq.a1": "Ja, alle tools zijn volledig gratis te gebruiken.",
+    "faq.q2": "Zijn mijn bestanden veilig?",
+    "faq.a2": "Absoluut. We gebruiken browsergebaseerde technologie, dus je bestanden worden lokaal verwerkt.",
+    "testi.title": "Geliefd bij Gebruikers",
+    "drag_drop": "Klik of Sleep om Afbeeldingen te Uploaden",
+    "support_hint": "Ondersteunt JPG, PNG, WebP · Batchverwerking",
+    "queue_title": "Verwerkingswachtrij",
+    "clear_list": "Lijst Wissen",
+    "empty_hint": "Wachten op afbeeldingen...",
+    "settings_title": "Opties",
+    "tab_pixels": "Op Pixels",
+    "tab_percent": "Op Percentage",
+    "lbl_width": "Breedte (px)",
+    "lbl_height": "Hoogte (px)",
+    "lbl_percent": "Percentage (%)",
+    "lbl_auto": "Automatisch",
+    "chk_no_enlarge": "Niet vergroten als kleiner",
+    "label_rename": "Batch Hernoemen",
+    "placeholder_rename": "bijv. Foto",
+    "label_quality": "Kwaliteit",
+    "sec_compress": "Compressie",
+    "chk_compress": "Compressie Inschakelen",
+    "lbl_quality": "Kwaliteit",
+    "val_quality_high": "Hoge Kwaliteit",
+    "val_quality_low": "Hoge Compressie",
+    "hint_smart": "Aanbevolen voor balans.",
+    "hint_recommend": "Visueel Verliesvrij + Kleine Grootte",
+    "hint_100": "Verliesvrij (Grote Grootte)",
+    "hint_lossy": "Verliesgevende Compressie",
+    "opt_smart": "Slim",
+    "opt_original": "Origineel",
+    "sec_privacy": "Privacy",
+    "chk_strip_metadata": "Metadata Verwijderen",
+    "hint_strip_metadata": "Verwijdert EXIF/GPS info.",
+    "btn_download": "ZIP Downloaden",
+    "btn_download_one": "Downloaden",
+    "btn_processing": "Verwerken...",
+    "status_pending": "In Afwachting",
+    "status_processing": "Verwerken...",
+    "status_done": "Voltooid",
+    "status_error": "Mislukt",
+    "stat_saved": "Opgeslagen",
+    "modal_title": "Alle Items Wissen?",
+    "modal_desc": "Alle verwerkte afbeeldingen gaan verloren. Deze actie kan niet ongedaan worden gemaakt.",
+    "modal_cancel": "Annuleren",
+    "modal_confirm": "Alles Wissen",
+    "leave_warning": "Je hebt niet-opgeslagen afbeeldingen. Deze pagina verlaten betekent dat je voortgang verloren gaat."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Batch-bildstorleksändrare - Ändra bildstorlek efter pixlar eller procent",
+    "keywords": "batch-bildstorleksändrare, ändra bildstorlek online, ändra fotostorlek, bulk-bildstorleksändrare, ändra storlek efter procent, pixelstorleksändrare, gratis onlineverktyg",
+    "description": "Ändra storlek på flera bilder samtidigt efter pixlar eller procent. Bevara bildförhållande, smart komprimering och integritetsfokuserad lokal bearbetning."
+  },
+  "hero": {
+    "title": "Batch-bildstorleksändrare",
+    "subtitle": "Ändra storlek på hundratals bilder på några sekunder. Definiera dimensioner efter pixlar eller procent. 100% klient-sida."
+  },
+  "steps": [
+    {
+      "title": "Ladda upp foton",
+      "desc": "Dra och släpp JPG-, PNG- eller WebP-bilder i uppladdningsområdet."
+    },
+    {
+      "title": "Ställ in dimensioner",
+      "desc": "Välj mellan 'Pixlar' (exakt bredd/höjd) eller 'Procentuell' skalning."
+    },
+    {
+      "title": "Bearbeta och spara",
+      "desc": "Klicka på 'Starta bearbetning' för att ändra storlek och komprimera, ladda sedan ner din zip-fil."
+    }
+  ],
+  "features": [
+    {
+      "title": "Exakt pixelkontroll",
+      "desc": "Ställ in specifika bredd- eller höjdvärden. Verktyget beräknar automatiskt den andra dimensionen för att förhindra förvrängning."
+    },
+    {
+      "title": "Massprocentuell skalning",
+      "desc": "Minska snabbt alla bilder till 50% eller 75% av deras ursprungliga storlek för delning eller miniatyrer."
+    },
+    {
+      "title": "Smart komprimering",
+      "desc": "Inbyggd optimering säkerställer att dina storleksändrade bilder har den minsta filstorleken utan synlig kvalitetsförlust."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kommer mina bilder att förvrängas?",
+      "a": "Nej. Som standard låser vi bildförhållandet. Om du ändrar bredden justeras höjden automatiskt för att behålla korrekt bildproportion."
+    },
+    {
+      "q": "Finns det en gräns för filstorlek?",
+      "a": "Eftersom bearbetningen sker lokalt på din enhet beror gränsen på datorns minne (RAM), inte vår server. Du kan vanligtvis bearbeta hundratals bilder."
+    },
+    {
+      "q": "Stöder den genomskinliga PNG-filer?",
+      "a": "Ja, storleksändring bevarar transparenskanalen i PNG- och WebP-filer."
+    }
+  ]
+}

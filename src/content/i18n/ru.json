@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Инструменты для изображений",
+      "items": [
+        {
+          "name": "Удаление водяных знаков Gemini",
+          "href": "/ru/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Редактор изображений (Поворот/Отражение)",
+          "href": "/ru/image/image-editor"
+        },
+        {
+          "name": "Пакетное изменение размера",
+          "href": "/ru/image/image-resizer"
+        },
+        {
+          "name": "Пакетное сжатие изображений",
+          "href": "/ru/image/image-compressor"
+        },
+        {
+          "name": "Пакетный конвертер изображений",
+          "href": "/ru/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Инструменты для PDF",
+      "items": [
+        {
+          "name": "PDF в изображение",
+          "href": "/ru/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Инструменты для файлов",
+      "items": [
+        {
+          "name": "Создать ZIP",
+          "href": "/ru/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Бесплатные AI-инструменты, PDF-инструменты, Инструменты для изображений, Конвертеры файлов",
+    "hero.title": "Бесплатные онлайн AI-инструменты и конвертер файлов",
+    "hero.subtitle": "100% обработка на стороне клиента. Файлы не загружаются на сервер. Безопасно, быстро и бесплатно.",
+    "hero.search_placeholder": "Поиск инструментов (например, \"Водяной знак\", \"PDF\")",
+    "section.all": "Все инструменты",
+    "footer.desc": "Бесплатные онлайн-инструменты для конвертации, сжатия и редактирования ваших файлов.",
+    "footer.rights": "Все права защищены.",
+    "footer.col.pdf": "PDF-инструменты",
+    "footer.col.image": "Инструменты для изображений",
+    "footer.col.company": "Компания",
+    "footer.col.lang": "Язык",
+    "footer.link.about": "О нас",
+    "footer.link.privacy": "Политика конфиденциальности",
+    "footer.link.terms": "Условия использования",
+    "breadcrumb.home": "Главная",
+    "section.how_it_works": "Как это работает",
+    "section.features": "Ключевые особенности",
+    "section.testimonials": "Отзывы пользователей",
+    "section.faq": "Частые вопросы",
+    "feat.nologin.title": "Без регистрации",
+    "feat.nologin.desc": "Начните использовать инструменты сразу, без регистрации.",
+    "feat.client.title": "На стороне клиента",
+    "feat.client.desc": "Файлы обрабатываются в вашем браузере. Без загрузки на сервер.",
+    "feat.offline.title": "Работает офлайн",
+    "feat.offline.desc": "Работает даже без интернета после загрузки.",
+    "feat.secure.title": "100% безопасно",
+    "feat.secure.desc": "Ваши данные никогд�� не покидают ваше устройство.",
+    "faq.title": "Часто задаваемые вопросы",
+    "faq.q1": "AIxZIP бесплатен?",
+    "faq.a1": "Да, все инструменты полностью бесплатны.",
+    "faq.q2": "Мои файлы в безопасности?",
+    "faq.a2": "Абсолютно. Мы используем браузерные технологии, поэтому ваши файлы обрабатываются локально.",
+    "testi.title": "Любим пользователями",
+    "drag_drop": "Нажмите или перетащите для загрузки изображений",
+    "support_hint": "Поддерживает JPG, PNG, WebP · Пакетная обработка",
+    "queue_title": "Очередь обработки",
+    "clear_list": "Очистить список",
+    "empty_hint": "Ожидание изображений...",
+    "settings_title": "Настройки",
+    "tab_pixels": "В пикселях",
+    "tab_percent": "В процентах",
+    "lbl_width": "Ширина (px)",
+    "lbl_height": "Высота (px)",
+    "lbl_percent": "Процент (%)",
+    "lbl_auto": "Авто",
+    "chk_no_enlarge": "Не увеличивать, если меньше",
+    "label_rename": "Пакетное переименование",
+    "placeholder_rename": "например, Фото",
+    "label_quality": "Качество",
+    "sec_compress": "Сжатие",
+    "chk_compress": "Включить сжатие",
+    "lbl_quality": "Качество",
+    "val_quality_high": "Высокое качество",
+    "val_quality_low": "Высокое сжатие",
+    "hint_smart": "Рекомендуется для баланса.",
+    "hint_recommend": "Визуально без потерь + малый размер",
+    "hint_100": "Без потерь (Большой размер)",
+    "hint_lossy": "Сжатие с потерями",
+    "opt_smart": "Умное",
+    "opt_original": "Оригинал",
+    "sec_privacy": "Конфиденциальность",
+    "chk_strip_metadata": "Удалить метаданные",
+    "hint_strip_metadata": "Удаляет EXIF/GPS информацию.",
+    "btn_download": "Скачать ZIP",
+    "btn_download_one": "Скачать",
+    "btn_processing": "Обработка...",
+    "status_pending": "В ожидании",
+    "status_processing": "Обработка...",
+    "status_done": "Готово",
+    "status_error": "Ошибка",
+    "stat_saved": "Сохранено",
+    "modal_title": "Очистить все элементы?",
+    "modal_desc": "Все обработанные изображения будут удалены. Это действие нельзя отменить.",
+    "modal_cancel": "Отмена",
+    "modal_confirm": "Очистить всё",
+    "leave_warning": "У вас есть несохранённые изображения. Выход со страницы приведёт к потере прогресса."
+  }
+}

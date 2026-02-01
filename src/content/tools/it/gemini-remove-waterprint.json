@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Rimuovi Filigrana da Immagini Gemini AI - Elimina SynthID & Strisce",
+    "keywords": "Rimuovi Filigrana Gemini, Filigrana NanoBanana, Rimuovi SynthID, Strumenti AI Gratuiti, Rimuovi Striscia AI",
+    "description": "Gratuito, veloce, senza perdita di qualità. Rileva e rimuove automaticamente filigrane invisibili e strisce traslucide dalle immagini generate da Gemini / NanoBanana."
+  },
+  "hero": {
+    "title": "Rimuovi Filigrana da Immagini Gemini AI",
+    "subtitle": "Gratuito, Veloce, Senza Perdita di Qualità. Rileva e rimuove automaticamente filigrane invisibili dalle immagini generate da Gemini / NanoBanana."
+  },
+  "steps": [
+    {
+      "title": "Carica Immagini AI",
+      "desc": "Carica immagini generate da Gemini, NanoBanana o altri strumenti AI."
+    },
+    {
+      "title": "Rilevamento Automatico",
+      "desc": "L'algoritmo identifica i modelli specifici di filigrana AI e le strisce visibili."
+    },
+    {
+      "title": "Pulisci e Salva",
+      "desc": "Scarica l'immagine pulita senza la striscia di filigrana."
+    }
+  ],
+  "features": [
+    {
+      "title": "Pronto per Gemini/NanoBanana",
+      "desc": "Specificamente ottimizzato per rimuovere le strisce di filigrana bianche/traslucide dalle immagini generate da Gemini."
+    },
+    {
+      "title": "Ripristino Senza Perdita",
+      "desc": "Ripristina i pixel originali nascosti dietro la filigrana senza sfocature."
+    },
+    {
+      "title": "Rimozione in Batch",
+      "desc": "Trascina oltre 50 immagini e puliscile tutte in pochi secondi localmente."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Ideale specificamente per rimuovere la fastidiosa striscia di Gemini. Funziona perfettamente e la modalità batch fa risparmiare tempo.",
+      "author": "Sarah J., Prompt Engineer"
+    },
+    {
+      "text": "Uso NanoBanana nel mio flusso di lavoro quotidiano e questo strumento è l'unico che rimuove la filigrana in modo pulito.",
+      "author": "Mike T., Creatore AI"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Funziona con le immagini di NanoBanana?",
+      "a": "Sì! NanoBanana utilizza la stessa tecnologia sottostante di Gemini per la generazione di immagini. Il nostro algoritmo rileva e rimuove perfettamente la caratteristica striscia traslucida presente in entrambi."
+    },
+    {
+      "q": "Come rimuove la filigrana senza sfocare?",
+      "a": "A differenza degli strumenti di 'riparazione' standard che sfocano l'area, la nostra AI calcola i valori esatti dei pixel nascosti dietro lo strato di filigrana semi-trasparente, ripristinando matematicamente l'immagine originale."
+    },
+    {
+      "q": "Le mie foto verranno caricate su un server?",
+      "a": "No. Tutta l'elaborazione avviene al 100% localmente nel tuo browser utilizzando WebAssembly. Le tue immagini non lasciano mai il tuo dispositivo, garantendo la massima privacy."
+    },
+    {
+      "q": "Rimuove SynthID (filigrane invisibili)?",
+      "a": "Ci concentriamo principalmente sulla rimozione di artefatti visibili (la striscia) per ripristinare l'estetica visiva. Sebbene il processo di ricodifica possa interrompere firme digitali come SynthID, non garantiamo la rimozione completa di filigrane crittografiche invisibili."
+    },
+    {
+      "q": "C'è un limite al numero di immagini che posso elaborare?",
+      "a": "Nessun limite. Poiché viene eseguito sul tuo dispositivo, puoi elaborare quante immagini la memoria del tuo computer può gestire."
+    }
+  ]
+}

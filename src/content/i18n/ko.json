@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "이미지 도구",
+      "items": [
+        {
+          "name": "Gemini 워터마크 제거",
+          "href": "/ko/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "이미지 편집기 (회전/뒤집기)",
+          "href": "/ko/image/image-editor"
+        },
+        {
+          "name": "일괄 이미지 크기 조정",
+          "href": "/ko/image/image-resizer"
+        },
+        {
+          "name": "일괄 이미지 압축",
+          "href": "/ko/image/image-compressor"
+        },
+        {
+          "name": "일괄 이미지 변환",
+          "href": "/ko/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDF 도구",
+      "items": [
+        {
+          "name": "PDF를 이미지로",
+          "href": "/ko/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "파일 도구",
+      "items": [
+        {
+          "name": "ZIP 생성",
+          "href": "/ko/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "무료 AI 도구, PDF 도구, 이미지 도구, 파일 변환기",
+    "hero.title": "무료 온라인 AI 도구 & 파일 변환기",
+    "hero.subtitle": "100% 클라이언트 측 처리. 서버에 파일 업로드 없음. 안전하고 빠르며 무료입니다.",
+    "hero.search_placeholder": "도구 검색 (예: \"워터마크\", \"PDF\")",
+    "section.all": "모든 도구",
+    "footer.desc": "파일을 변환, 압축, 편집하는 무료 온라인 도구입니다.",
+    "footer.rights": "모든 권리 보유.",
+    "footer.col.pdf": "PDF 도구",
+    "footer.col.image": "이미지 도구",
+    "footer.col.company": "회사",
+    "footer.col.lang": "국제",
+    "footer.link.about": "회사 소개",
+    "footer.link.privacy": "개인정보 처리방침",
+    "footer.link.terms": "서비스 약관",
+    "breadcrumb.home": "홈",
+    "section.how_it_works": "작동 방식",
+    "section.features": "주요 기능",
+    "section.testimonials": "사용자 평가",
+    "section.faq": "자주 묻는 질문",
+    "feat.nologin.title": "회원가입 불필요",
+    "feat.nologin.desc": "등록 없이 즉시 도구를 사용하세요.",
+    "feat.client.title": "클라이언트 측 처리",
+    "feat.client.desc": "파일은 브라우저에서 처리됩니다. 서버 업로드 없음.",
+    "feat.offline.title": "오프라인 가능",
+    "feat.offline.desc": "로딩 후 인터넷 없이도 작동합니다.",
+    "feat.secure.title": "100% 안전",
+    "feat.secure.desc": "귀하의 데이터는 기기를 떠나지 않습니다.",
+    "faq.title": "자주 묻는 질문",
+    "faq.q1": "AIxZIP는 무료인가요?",
+    "faq.a1": "네, 모든 도구는 완전히 무료로 사용할 수 있습니다.",
+    "faq.q2": "내 파일은 안전한가요?",
+    "faq.a2": "물론입니다. 브라우저 기반 기술을 사용하므로 파일은 로컬에서 처리됩니다.",
+    "testi.title": "사용자들에게 사랑받는",
+    "drag_drop": "클릭하거나 드래그하여 이미지 업로드",
+    "support_hint": "JPG, PNG, WebP 지원 · 일괄 처리",
+    "queue_title": "처리 대기열",
+    "clear_list": "목록 지우기",
+    "empty_hint": "이미지 대기 중...",
+    "settings_title": "옵션",
+    "tab_pixels": "픽셀 기준",
+    "tab_percent": "백분율 기준",
+    "lbl_width": "너비 (px)",
+    "lbl_height": "높이 (px)",
+    "lbl_percent": "백분율 (%)",
+    "lbl_auto": "자동",
+    "chk_no_enlarge": "더 작으면 확대하지 않음",
+    "label_rename": "일괄 이름 변경",
+    "placeholder_rename": "예: 사진",
+    "label_quality": "품질",
+    "sec_compress": "압축",
+    "chk_compress": "압축 활성화",
+    "lbl_quality": "품질",
+    "val_quality_high": "고품질",
+    "val_quality_low": "고압축",
+    "hint_smart": "균형을 위해 권장됩니다.",
+    "hint_recommend": "시각적 무손실 + 작은 크기",
+    "hint_100": "무손실 (큰 크기)",
+    "hint_lossy": "손실 압축",
+    "opt_smart": "스마트",
+    "opt_original": "원본",
+    "sec_privacy": "개인정보",
+    "chk_strip_metadata": "메타데이터 제거",
+    "hint_strip_metadata": "EXIF/GPS 정보를 제거합니다.",
+    "btn_download": "ZIP 다운로드",
+    "btn_download_one": "다운로드",
+    "btn_processing": "처리 중...",
+    "status_pending": "대기 중",
+    "status_processing": "처리 중...",
+    "status_done": "완료",
+    "status_error": "실패",
+    "stat_saved": "저장됨",
+    "modal_title": "모든 항목을 지우시겠습니까?",
+    "modal_desc": "처리된 모든 이미지가 손실됩니다. 이 작업은 취소할 수 없습니다.",
+    "modal_cancel": "취소",
+    "modal_confirm": "모두 지우기",
+    "leave_warning": "저장되지 않은 이미지가 있습니다. 이 페이지를 떠나면 진행 상황이 손실됩니다."
+  }
+}

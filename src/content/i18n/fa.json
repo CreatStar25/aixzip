@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "ابزارهای تصویر",
+      "items": [
+        {
+          "name": "حذف واترمارک Gemini",
+          "href": "/fa/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "ویرایشگر تصویر (چرخش/برگرداندن)",
+          "href": "/fa/image/image-editor"
+        },
+        {
+          "name": "تغییر اندازه دسته‌ای تصاویر",
+          "href": "/fa/image/image-resizer"
+        },
+        {
+          "name": "فشرده‌ساز دسته‌ای تصاویر",
+          "href": "/fa/image/image-compressor"
+        },
+        {
+          "name": "تبدیل‌گر دسته‌ای تصاویر",
+          "href": "/fa/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "ابزارهای PDF",
+      "items": [
+        {
+          "name": "تبدیل PDF به تصویر",
+          "href": "/fa/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "ابزارهای فایل",
+      "items": [
+        {
+          "name": "ساخت ZIP",
+          "href": "/fa/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "ابزارهای هوش مصنوعی رایگان، ابزارهای PDF، ابزارهای تصویر، تبدیل‌گرهای فایل",
+    "hero.title": "ابزارهای آنلاین رایگان هوش مصنوعی و تبدیل فایل",
+    "hero.subtitle": "پردازش ۱۰۰٪ سمت کاربر. بدون آپلود فایل روی سرور. امن، سریع و رایگان.",
+    "hero.search_placeholder": "جستجوی ابزارها (مثلاً \"واترمارک\"، \"PDF\")",
+    "section.all": "همه ابزارها",
+    "footer.desc": "ابزارهای آنلاین رایگان برای تبدیل، فشرده‌سازی و ویرایش فایل‌های شما.",
+    "footer.rights": "تمامی حقوق محفوظ است.",
+    "footer.col.pdf": "ابزارهای PDF",
+    "footer.col.image": "ابزارهای تصویر",
+    "footer.col.company": "شرکت",
+    "footer.col.lang": "بین‌المللی",
+    "footer.link.about": "درباره ما",
+    "footer.link.privacy": "سیاست حفظ حریم خصوصی",
+    "footer.link.terms": "شرایط استفاده",
+    "breadcrumb.home": "خانه",
+    "section.how_it_works": "نحوه کار",
+    "section.features": "ویژگی‌های کلیدی",
+    "section.testimonials": "نظرات کاربران",
+    "section.faq": "سوالات متداول",
+    "feat.nologin.title": "بدون ثبت‌نام",
+    "feat.nologin.desc": "بدون نیاز به ثبت‌نام، بلافاصله از ابزارها استفاده کنید.",
+    "feat.client.title": "سمت کاربر",
+    "feat.client.desc": "فایل‌ها در مرورگر شما پردازش می‌شوند. بدون آپلود روی سرور.",
+    "feat.offline.title": "قابلیت کار آفلاین",
+    "feat.offline.desc": "حتی بدون اتصال اینترنت پس از بارگذاری کار می‌کند.",
+    "feat.secure.title": "۱۰۰٪ امن",
+    "feat.secure.desc": "داده‌های شما هرگز دستگاه شما را ترک نمی‌کنند.",
+    "faq.title": "سوالات متداول",
+    "faq.q1": "آیا AIxZIP رایگان است؟",
+    "faq.a1": "بله، تمام ابزارها کاملاً رایگان هستند.",
+    "faq.q2": "آیا فایل‌های من امن هستند؟",
+    "faq.a2": "قطعاً. ما از فناوری مبتنی بر مرورگر استفاده می‌کنیم، بنابراین فایل‌های شما به صورت محلی پردازش می‌شوند.",
+    "testi.title": "مورد علاقه کاربران",
+    "drag_drop": "برای آپلود تصاویر کلیک کنید یا بکشید و رها کنید",
+    "support_hint": "پشتیبانی از JPG، PNG، WebP · پردازش دسته‌ای",
+    "queue_title": "صف پردازش",
+    "clear_list": "پاک کردن لیست",
+    "empty_hint": "در انتظار تصاویر...",
+    "settings_title": "تنظیمات",
+    "tab_pixels": "بر اساس پیکسل",
+    "tab_percent": "بر اساس درصد",
+    "lbl_width": "عرض (پیکسل)",
+    "lbl_height": "ارتفاع (پیکسل)",
+    "lbl_percent": "درصد (%)",
+    "lbl_auto": "خودکار",
+    "chk_no_enlarge": "اگر کوچکتر است، بزرگ نکن",
+    "label_rename": "تغییر نام دسته‌ای",
+    "placeholder_rename": "مثلاً عکس",
+    "label_quality": "کیفیت",
+    "sec_compress": "فشرده‌سازی",
+    "chk_compress": "فعال‌سازی فشرده‌سازی",
+    "lbl_quality": "کیفیت",
+    "val_quality_high": "کیفیت بالا",
+    "val_quality_low": "فشرده‌سازی بالا",
+    "hint_smart": "برای تعادل توصیه می‌شود.",
+    "hint_recommend": "بدون افت بصری + حجم کوچک",
+    "hint_100": "بدون افت (حجم بزرگ)",
+    "hint_lossy": "فشرده‌سازی با افت",
+    "opt_smart": "هوشمند",
+    "opt_original": "اصلی",
+    "sec_privacy": "حریم خصوصی",
+    "chk_strip_metadata": "حذف متادیتا",
+    "hint_strip_metadata": "اطلاعات EXIF/GPS را حذف می‌کند.",
+    "btn_download": "دانلود ZIP",
+    "btn_download_one": "دانلود",
+    "btn_processing": "در حال پردازش...",
+    "status_pending": "در انتظار",
+    "status_processing": "در حال پردازش...",
+    "status_done": "انجام شد",
+    "status_error": "ناموفق",
+    "stat_saved": "ذخیره شد",
+    "modal_title": "پاک کردن همه موارد؟",
+    "modal_desc": "تمام تصاویر پردازش شده از دست خواهند رفت. این عمل قابل بازگشت نیست.",
+    "modal_cancel": "لغو",
+    "modal_confirm": "پاک کردن همه",
+    "leave_warning": "تصاویر ذخیره نشده دارید. ترک این صفحه باعث از دست رفتن پیشرفت شما می‌شود."
+  }
+}

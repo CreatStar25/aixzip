@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Toplu Görsel Boyutlandırıcı - Görselleri Piksel veya Yüzde ile Yeniden Boyutlandır",
+    "keywords": "toplu görsel boyutlandırıcı, görselleri çevrimiçi yeniden boyutlandır, fotoğraf boyutunu değiştir, toplu görsel boyutlandırıcı, yüzde ile yeniden boyutlandır, piksel boyutlandırıcı, ücretsiz çevrimiçi araç",
+    "description": "Birden fazla görseli aynı anda piksel veya yüzde ile yeniden boyutlandırın. En-boy oranını koruyun, akıllı sıkıştırma ve gizlilik odaklı yerel işleme."
+  },
+  "hero": {
+    "title": "Toplu Görsel Boyutlandırıcı",
+    "subtitle": "Yüzlerce görseli saniyeler içinde yeniden boyutlandırın. Boyutları piksel veya yüzde ile tanımlayın. %100 İstemci Tarafında."
+  },
+  "steps": [
+    {
+      "title": "Fotoğrafları Yükle",
+      "desc": "JPG, PNG veya WebP görsellerini sürükleyip bırakarak yükleme alanına ekleyin."
+    },
+    {
+      "title": "Boyutları Ayarla",
+      "desc": "'Piksel' (tam genişlik/yükseklik) veya 'Yüzde' ölçeklendirme arasında seçim yapın."
+    },
+    {
+      "title": "İşle ve Kaydet",
+      "desc": "Yeniden boyutlandırma ve sıkıştırma için 'İşleme Başla'ya tıklayın, ardından zip dosyanızı indirin."
+    }
+  ],
+  "features": [
+    {
+      "title": "Tam Piksel Kontrolü",
+      "desc": "Belirli genişlik veya yükseklik değerlerini ayarlayın. Araç, bozulmayı önlemek için diğer boyutu otomatik olarak hesaplar."
+    },
+    {
+      "title": "Toplu Yüzde Ölçeklendirme",
+      "desc": "Paylaşım veya küçük resimler için tüm görselleri hızlıca orijinal boyutunun %50 veya %75'ine düşürün."
+    },
+    {
+      "title": "Akıllı Sıkıştırma",
+      "desc": "Yerleşik optimizasyon, yeniden boyutlandırılmış görsellerinizin görünür kalite kaybı olmadan en küçük dosya boyutuna sahip olmasını sağlar."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Görsellerim bozulacak mı?",
+      "a": "Hayır. Varsayılan olarak en-boy oranını kilidini açıyoruz. Genişliği değiştirirseniz, görsel oranını doğru tutmak için yükseklik otomatik olarak ayarlanır."
+    },
+    {
+      "q": "Dosya boyutu sınırı var mı?",
+      "a": "İşleme cihazınızda yerel olarak gerçekleştiğinden, sınır sunucumuz değil bilgisayarınızın belleğine (RAM) bağlıdır. Genellikle yüzlerce görsel işleyebilirsiniz."
+    },
+    {
+      "q": "Şeffaf PNG'leri destekliyor mu?",
+      "a": "Evet, yeniden boyutlandırma PNG ve WebP dosyalarındaki şeffaflık kanalını korur."
+    }
+  ]
+}

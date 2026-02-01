@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Bildverktyg",
+      "items": [
+        {
+          "name": "Gemini Vattenstämpelborttagare",
+          "href": "/sv/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Bildredigerare (Rotera/Vänd)",
+          "href": "/sv/image/image-editor"
+        },
+        {
+          "name": "Batch-bildstorleksändrare",
+          "href": "/sv/image/image-resizer"
+        },
+        {
+          "name": "Batch-bildkomprimerare",
+          "href": "/sv/image/image-compressor"
+        },
+        {
+          "name": "Batch-bildkonverterare",
+          "href": "/sv/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDF-verktyg",
+      "items": [
+        {
+          "name": "PDF till bild",
+          "href": "/sv/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Filverktyg",
+      "items": [
+        {
+          "name": "Skapa ZIP",
+          "href": "/sv/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Gratis AI-verktyg, PDF-verktyg, Bildverktyg, Filkonverterare",
+    "hero.title": "Gratis Online AI-verktyg & Filkonverterare",
+    "hero.subtitle": "100% klientsidig bearbetning. Inga filuppladdningar till server. Säker, Snabb och Gratis.",
+    "hero.search_placeholder": "Sök verktyg (t.ex. \"Vattenstämpel\", \"PDF\")",
+    "section.all": "Alla Verktyg",
+    "footer.desc": "Gratis onlineverktyg för att konvertera, komprimera och redigera dina filer.",
+    "footer.rights": "Alla rättigheter förbehållna.",
+    "footer.col.pdf": "PDF-verktyg",
+    "footer.col.image": "Bildverktyg",
+    "footer.col.company": "Företag",
+    "footer.col.lang": "Internationellt",
+    "footer.link.about": "Om Oss",
+    "footer.link.privacy": "Integritetspolicy",
+    "footer.link.terms": "Användarvillkor",
+    "breadcrumb.home": "Hem",
+    "section.how_it_works": "Hur det fungerar",
+    "section.features": "Nyckelfunktioner",
+    "section.testimonials": "Vad användarna säger",
+    "section.faq": "Vanliga frågor",
+    "feat.nologin.title": "Inget konto behövs",
+    "feat.nologin.desc": "Börja använda verktygen direkt utan registrering.",
+    "feat.client.title": "Klientsidig",
+    "feat.client.desc": "Filer bearbetas i din webbläsare. Inga uppladdningar till server.",
+    "feat.offline.title": "Offline-kapabel",
+    "feat.offline.desc": "Fungerar även utan internet efter inläsning.",
+    "feat.secure.title": "100% Säker",
+    "feat.secure.desc": "Dina data lämnar aldrig din enhet.",
+    "faq.title": "Vanliga frågor",
+    "faq.q1": "Är AIxZIP gratis?",
+    "faq.a1": "Ja, alla verktyg är helt gratis att använda.",
+    "faq.q2": "Är mina filer säkra?",
+    "faq.a2": "Absolut. Vi använder webbläsarbaserad teknik, så dina filer bearbetas lokalt.",
+    "testi.title": "Älskad av användare",
+    "drag_drop": "Klicka eller dra för att ladda upp bilder",
+    "support_hint": "Stöder JPG, PNG, WebP · Batchbearbetning",
+    "queue_title": "Bearbetningskö",
+    "clear_list": "Rensa lista",
+    "empty_hint": "Väntar på bilder...",
+    "settings_title": "Alternativ",
+    "tab_pixels": "Efter pixlar",
+    "tab_percent": "Efter procent",
+    "lbl_width": "Bredd (px)",
+    "lbl_height": "Höjd (px)",
+    "lbl_percent": "Procent (%)",
+    "lbl_auto": "Auto",
+    "chk_no_enlarge": "Förstora inte om mindre",
+    "label_rename": "Batch-omdöpning",
+    "placeholder_rename": "t.ex. Foto",
+    "label_quality": "Kvalitet",
+    "sec_compress": "Komprimering",
+    "chk_compress": "Aktivera komprimering",
+    "lbl_quality": "Kvalitet",
+    "val_quality_high": "Hög kvalitet",
+    "val_quality_low": "Hög komprimering",
+    "hint_smart": "Rekommenderas för balans.",
+    "hint_recommend": "Visuellt förlustfritt + Liten storlek",
+    "hint_100": "Förlustfri (Stor storlek)",
+    "hint_lossy": "Förlustkomprimering",
+    "opt_smart": "Smart",
+    "opt_original": "Original",
+    "sec_privacy": "Integritet",
+    "chk_strip_metadata": "Ta bort metadata",
+    "hint_strip_metadata": "Tar bort EXIF/GPS-info.",
+    "btn_download": "Ladda ner ZIP",
+    "btn_download_one": "Ladda ner",
+    "btn_processing": "Bearbetar...",
+    "status_pending": "Väntar",
+    "status_processing": "Bearbetar...",
+    "status_done": "Klar",
+    "status_error": "Misslyckades",
+    "stat_saved": "Sparad",
+    "modal_title": "Rensa alla objekt?",
+    "modal_desc": "Alla bearbetade bilder kommer att förloras. Denna åtgärd kan inte ångras.",
+    "modal_cancel": "Avbryt",
+    "modal_confirm": "Rensa alla",
+    "leave_warning": "Du har osparade bilder. Om du lämnar sidan förloras ditt arbete."
+  }
+}

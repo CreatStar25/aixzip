@@ -1,9 +1,11 @@
 ---
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { navData, ui } from '../../i18n/ui';
+import { getLangFromUrl, getI18nData } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-const menu = navData[lang] || navData['en'];
+
+// ✨ 异步获取数据：直接从 JSON 读取导航配置
+const i18nData = await getI18nData(lang);
+const menu = i18nData.nav;
 
 const languageNames = {
   'en': 'English', 'zh-cn': '简体中文', 'zh-tw': '繁體中文', 'es': 'Español',
@@ -15,25 +17,17 @@ const languageNames = {
 };
 const locales = Object.keys(languageNames);
 
-// ✨ 路径生成逻辑：
-// 1. 英文首页 -> /
-// 2. 英文工具页 -> /en/image/...
-// 3. 其他语言 -> /zh-cn/...
 const { pathname, search } = Astro.url;
-
 const getLocalizedPath = (targetLang) => {
   const segments = pathname.split('/').filter(Boolean);
-  
-  // 移除当前的语言前缀 (如果存在)
   if (locales.includes(segments[0])) {
     segments.shift();
   }
   
   if (segments.length === 0) {
-    // 首页情况
     return targetLang === 'en' ? '/' : `/${targetLang}/`;
   } else {
-    // 内页/工具页情况 (英文内页也需要 /en/ 前缀)
+    // 英文内页必须加 /en/ 前缀，否则会 404
     return `/${targetLang}/${segments.join('/')}${search}`;
   }
 };
@@ -42,6 +36,7 @@ const getLocalizedPath = (targetLang) => {
 <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 transition-all">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
     
+    {/* Logo */}
     <a href={`/${lang === 'en' ? '' : lang}`} class="flex items-center gap-2 group flex-shrink-0">
       <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-black shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
         <i class="fa-solid fa-box-open"></i>
@@ -51,16 +46,15 @@ const getLocalizedPath = (targetLang) => {
       </span>
     </a>
 
+    {/* ✨ 动态渲染菜单 (数据源自 JSON) */}
     <div class="hidden md:flex gap-8 h-full items-center">
       {Object.entries(menu).map(([key, category]) => (
         <div class="group relative h-full flex items-center cursor-pointer">
           <span class="text-base md:text-lg font-extrabold text-slate-600 group-hover:text-blue-600 py-6 transition-colors tracking-wide flex items-center gap-1">
-            {/* @ts-ignore */}
             {category.title} 
             <i class="fa-solid fa-chevron-down text-[10px] opacity-40 group-hover:opacity-100 transition-opacity mt-1"></i>
           </span>
           <div class="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-white shadow-xl rounded-2xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-3 grid gap-1 z-50">
-             {/* @ts-ignore */}
              {category.items.map(item => (
                 <a href={item.href} class="block px-4 py-3 rounded-xl hover:bg-slate-50 text-slate-600 hover:text-blue-600 font-bold text-sm transition-colors flex items-center gap-3">
                     <i class="fa-solid fa-caret-right text-slate-300"></i> {item.name}
@@ -71,6 +65,7 @@ const getLocalizedPath = (targetLang) => {
       ))}
     </div>
 
+    {/* Language Selector */}
     <div class="flex items-center">
         <div class="group relative h-full flex items-center z-50">
             <button class="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-900 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors">

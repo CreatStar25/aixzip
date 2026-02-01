@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Outils d'Image",
+      "items": [
+        {
+          "name": "Suppresseur de Filigrane Gemini",
+          "href": "/fr/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Éditeur d'Image (Rotation/Retournement)",
+          "href": "/fr/image/image-editor"
+        },
+        {
+          "name": "Redimensionneur d'Images par Lot",
+          "href": "/fr/image/image-resizer"
+        },
+        {
+          "name": "Compresseur d'Images par Lot",
+          "href": "/fr/image/image-compressor"
+        },
+        {
+          "name": "Convertisseur d'Images par Lot",
+          "href": "/fr/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Outils PDF",
+      "items": [
+        {
+          "name": "PDF en Image",
+          "href": "/fr/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Outils de Fichier",
+      "items": [
+        {
+          "name": "Créer un ZIP",
+          "href": "/fr/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Outils IA Gratuits, Outils PDF, Outils d'Image, Convertisseurs de Fichiers",
+    "hero.title": "Outils IA en Ligne Gratuits & Convertisseur de Fichiers",
+    "hero.subtitle": "Traitement 100% côté client. Aucun téléchargement de fichiers sur le serveur. Sécurisé, Rapide et Gratuit.",
+    "hero.search_placeholder": "Rechercher des outils (ex. \"Filigrane\", \"PDF\")",
+    "section.all": "Tous les Outils",
+    "footer.desc": "Outils en ligne gratuits pour convertir, compresser et éditer vos fichiers.",
+    "footer.rights": "Tous droits réservés.",
+    "footer.col.pdf": "Outils PDF",
+    "footer.col.image": "Outils d'Image",
+    "footer.col.company": "Entreprise",
+    "footer.col.lang": "International",
+    "footer.link.about": "À Propos",
+    "footer.link.privacy": "Politique de Confidentialité",
+    "footer.link.terms": "Conditions d'Utilisation",
+    "breadcrumb.home": "Accueil",
+    "section.how_it_works": "Comment ça Marche",
+    "section.features": "Fonctionnalités Clés",
+    "section.testimonials": "Avis des Utilisateurs",
+    "section.faq": "FAQ",
+    "feat.nologin.title": "Pas d'Inscription",
+    "feat.nologin.desc": "Utilisez les outils immédiatement sans inscription.",
+    "feat.client.title": "Côté Client",
+    "feat.client.desc": "Les fichiers sont traités dans votre navigateur. Aucun téléchargement sur le serveur.",
+    "feat.offline.title": "Fonctionne Hors Ligne",
+    "feat.offline.desc": "Fonctionne même sans internet après le chargement.",
+    "feat.secure.title": "100% Sécurisé",
+    "feat.secure.desc": "Vos données ne quittent jamais votre appareil.",
+    "faq.title": "Questions Fréquemment Posées",
+    "faq.q1": "AIxZIP est-il gratuit ?",
+    "faq.a1": "Oui, tous les outils sont entièrement gratuits.",
+    "faq.q2": "Mes fichiers sont-ils en sécurité ?",
+    "faq.a2": "Absolument. Nous utilisons une technologie basée sur le navigateur, donc vos fichiers sont traités localement.",
+    "testi.title": "Adoré par les Utilisateurs",
+    "drag_drop": "Cliquez ou Glissez pour Télécharger des Images",
+    "support_hint": "Prend en charge JPG, PNG, WebP · Traitement par Lot",
+    "queue_title": "File d'Attente de Traitement",
+    "clear_list": "Vider la Liste",
+    "empty_hint": "En attente d'images...",
+    "settings_title": "Options",
+    "tab_pixels": "Par Pixels",
+    "tab_percent": "Par Pourcentage",
+    "lbl_width": "Largeur (px)",
+    "lbl_height": "Hauteur (px)",
+    "lbl_percent": "Pourcentage (%)",
+    "lbl_auto": "Auto",
+    "chk_no_enlarge": "Ne pas agrandir si plus petit",
+    "label_rename": "Renommage par Lot",
+    "placeholder_rename": "ex. Photo",
+    "label_quality": "Qualité",
+    "sec_compress": "Compression",
+    "chk_compress": "Activer la Compression",
+    "lbl_quality": "Qualité",
+    "val_quality_high": "Haute Qualité",
+    "val_quality_low": "Haute Compression",
+    "hint_smart": "Recommandé pour un bon équilibre.",
+    "hint_recommend": "Visuellement Sans Perte + Taille Réduite",
+    "hint_100": "Sans Perte (Taille Importante)",
+    "hint_lossy": "Compression Avec Perte",
+    "opt_smart": "Intelligent",
+    "opt_original": "Original",
+    "sec_privacy": "Confidentialité",
+    "chk_strip_metadata": "Supprimer les Métadonnées",
+    "hint_strip_metadata": "Supprime les informations EXIF/GPS.",
+    "btn_download": "Télécharger le ZIP",
+    "btn_download_one": "Télécharger",
+    "btn_processing": "Traitement en cours...",
+    "status_pending": "En Attente",
+    "status_processing": "Traitement en cours...",
+    "status_done": "Terminé",
+    "status_error": "Échec",
+    "stat_saved": "Économisé",
+    "modal_title": "Vider Tous les Éléments ?",
+    "modal_desc": "Toutes les images traitées seront perdues. Cette action est irréversible.",
+    "modal_cancel": "Annuler",
+    "modal_confirm": "Tout Vider",
+    "leave_warning": "Vous avez des images non enregistrées. Quitter cette page entraînera la perte de votre progression."
+  }
+}

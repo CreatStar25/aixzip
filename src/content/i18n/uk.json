@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Інструменти для зображень",
+      "items": [
+        {
+          "name": "Видалення водяних знаків Gemini",
+          "href": "/uk/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Редактор зображень (Поворот/Віддзеркалення)",
+          "href": "/uk/image/image-editor"
+        },
+        {
+          "name": "Пакетна зміна розміру зображень",
+          "href": "/uk/image/image-resizer"
+        },
+        {
+          "name": "Пакетне стиснення зображень",
+          "href": "/uk/image/image-compressor"
+        },
+        {
+          "name": "Пакетне конвертування зображень",
+          "href": "/uk/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Інструменти для PDF",
+      "items": [
+        {
+          "name": "PDF в зображення",
+          "href": "/uk/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Інструменти для файлів",
+      "items": [
+        {
+          "name": "Створити ZIP",
+          "href": "/uk/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Безкоштовні AI інструменти, PDF інструменти, Інструменти для зображень, Конвертери файлів",
+    "hero.title": "Безкоштовні онлайн AI інструменти та конвертер файлів",
+    "hero.subtitle": "100% обробка на стороні клієнта. Файли не завантажуються на сервер. Безпечно, Швидко та Безкоштовно.",
+    "hero.search_placeholder": "Пошук інструментів (напр. \"Водяний знак\", \"PDF\")",
+    "section.all": "Всі інструменти",
+    "footer.desc": "Безкоштовні онлайн інструменти для конвертації, стиснення та редагування ваших файлів.",
+    "footer.rights": "Всі права захищені.",
+    "footer.col.pdf": "PDF інструменти",
+    "footer.col.image": "Інструменти для зображень",
+    "footer.col.company": "Компанія",
+    "footer.col.lang": "Міжнародні",
+    "footer.link.about": "Про нас",
+    "footer.link.privacy": "Політика конфіденційності",
+    "footer.link.terms": "Умови використання",
+    "breadcrumb.home": "Головна",
+    "section.how_it_works": "Як це працює",
+    "section.features": "Ключові можливості",
+    "section.testimonials": "Відгуки користувачів",
+    "section.faq": "Часті питання",
+    "feat.nologin.title": "Без реєстрації",
+    "feat.nologin.desc": "Почніть використовувати інструменти негайно без реєстрації.",
+    "feat.client.title": "На стороні клієнта",
+    "feat.client.desc": "Файли обробляються у вашому браузері. Без завантаження на сервер.",
+    "feat.offline.title": "Працює офлайн",
+    "feat.offline.desc": "Працює навіть без інтернету після завантаження.",
+    "feat.secure.title": "100% Безпечно",
+    "feat.secure.desc": "Ваші дані ніколи не залишають ваш пристрій.",
+    "faq.title": "Часті питання",
+    "faq.q1": "AIxZIP безкоштовний?",
+    "faq.a1": "Так, усі інструменти абсолютно безкоштовні.",
+    "faq.q2": "Мої файли в безпеці?",
+    "faq.a2": "Абсолютно. Ми використовуємо технологію на основі браузера, тому ваші файли обробляються локально.",
+    "testi.title": "Люблять користувачі",
+    "drag_drop": "Натисніть або перетягніть для завантаження зображень",
+    "support_hint": "Підтримка JPG, PNG, WebP · Пакетна обробка",
+    "queue_title": "Черга обробки",
+    "clear_list": "Очистити список",
+    "empty_hint": "Очікування зображень...",
+    "settings_title": "Налаштування",
+    "tab_pixels": "За пікселями",
+    "tab_percent": "За відсотками",
+    "lbl_width": "Ширина (пкс)",
+    "lbl_height": "Висота (пкс)",
+    "lbl_percent": "Відсоток (%)",
+    "lbl_auto": "Авто",
+    "chk_no_enlarge": "Не збільшувати, якщо менше",
+    "label_rename": "Пакетне перейменування",
+    "placeholder_rename": "напр. Фото",
+    "label_quality": "Якість",
+    "sec_compress": "Стиснення",
+    "chk_compress": "Увімкнути стиснення",
+    "lbl_quality": "Якість",
+    "val_quality_high": "Висока якість",
+    "val_quality_low": "Високе стиснення",
+    "hint_smart": "Рекомендовано для балансу.",
+    "hint_recommend": "Візуально без втрат + Маленький розмір",
+    "hint_100": "Без втрат (Великий розмір)",
+    "hint_lossy": "Стиснення з втратами",
+    "opt_smart": "Розумне",
+    "opt_original": "Оригінал",
+    "sec_privacy": "Конфіденційність",
+    "chk_strip_metadata": "Видалити метадані",
+    "hint_strip_metadata": "Видаляє EXIF/GPS інформацію.",
+    "btn_download": "Завантажити ZIP",
+    "btn_download_one": "Завантажити",
+    "btn_processing": "Обробка...",
+    "status_pending": "В очікуванні",
+    "status_processing": "Обробка...",
+    "status_done": "Готово",
+    "status_error": "Помилка",
+    "stat_saved": "Збережено",
+    "modal_title": "Очистити всі елементи?",
+    "modal_desc": "Усі оброблені зображення будуть втрачені. Цю дію не можна скасувати.",
+    "modal_cancel": "Скасувати",
+    "modal_confirm": "Очистити все",
+    "leave_warning": "У вас є незбережені зображення. Закриття цієї сторінки призведе до втрати прогресу."
+  }
+}

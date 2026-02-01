@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "เครื่องมือรูปภาพ",
+      "items": [
+        {
+          "name": "เครื่องมือลบลายน้ำ Gemini",
+          "href": "/th/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "เครื่องมือแก้ไขรูปภาพ (หมุน/พลิก)",
+          "href": "/th/image/image-editor"
+        },
+        {
+          "name": "เครื่องมือปรับขนาดรูปภาพแบบกลุ่ม",
+          "href": "/th/image/image-resizer"
+        },
+        {
+          "name": "เครื่องมือบีบอัดรูปภาพแบบกลุ่ม",
+          "href": "/th/image/image-compressor"
+        },
+        {
+          "name": "เครื่องมือแปลงไฟล์รูปภาพแบบกลุ่ม",
+          "href": "/th/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "เครื่องมือ PDF",
+      "items": [
+        {
+          "name": "แปลง PDF เป็นรูปภาพ",
+          "href": "/th/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "เครื่องมือไฟล์",
+      "items": [
+        {
+          "name": "สร้างไฟล์ ZIP",
+          "href": "/th/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "เครื่องมือ AI ฟรี, เครื่องมือ PDF, เครื่องมือรูปภาพ, เครื่องมือแปลงไฟล์",
+    "hero.title": "เครื่องมือ AI ออนไลน์ฟรี & เครื่องมือแปลงไฟล์",
+    "hero.subtitle": "ประมวลผลฝั่งไคลเอ็นต์ 100% ไม่ต้องอัปโหลดไฟล์ไปยังเซิร์ฟเวอร์ ปลอดภัย รวดเร็ว และฟรี",
+    "hero.search_placeholder": "ค้นหาเครื่องมือ (เช่น \"ลายน้ำ\", \"PDF\")",
+    "section.all": "เครื่องมือทั้งหมด",
+    "footer.desc": "เครื่องมือออนไลน์ฟรีสำหรับแปลง บีบอัด และแก้ไขไฟล์ของคุณ",
+    "footer.rights": "สงวนลิขสิทธิ์",
+    "footer.col.pdf": "เครื่องมือ PDF",
+    "footer.col.image": "เครื่องมือรูปภาพ",
+    "footer.col.company": "บริษัท",
+    "footer.col.lang": "นานาชาติ",
+    "footer.link.about": "เกี่ยวกับเรา",
+    "footer.link.privacy": "นโยบายความเป็นส่วนตัว",
+    "footer.link.terms": "เงื่อนไขการให้บริการ",
+    "breadcrumb.home": "หน้าแรก",
+    "section.how_it_works": "วิธีการใช้งาน",
+    "section.features": "คุณสมบัติหลัก",
+    "section.testimonials": "สิ่งที่ผู้ใช้พูด",
+    "section.faq": "คำถามที่พบบ่อย",
+    "feat.nologin.title": "ไม่ต้องสมัครสมาชิก",
+    "feat.nologin.desc": "เริ่มใช้เครื่องมือได้ทันทีโดยไม่ต้องลงทะเบียน",
+    "feat.client.title": "ประมวลผลฝั่งไคลเอ็นต์",
+    "feat.client.desc": "ไฟล์ถูกประมวลผลในเบราว์เซอร์ของคุณ ไม่มีการอัปโหลดไปยังเซิร์ฟเวอร์",
+    "feat.offline.title": "ใช้งานแบบออฟไลน์ได้",
+    "feat.offline.desc": "ใช้งานได้แม้ไม่มีอินเทอร์เน็ตหลังจากโหลดหน้าเว็บแล้ว",
+    "feat.secure.title": "ปลอดภัย 100%",
+    "feat.secure.desc": "ข้อมูลของคุณไม่เคยออกจากอุปกรณ์ของคุณ",
+    "faq.title": "คำถามที่พบบ่อย",
+    "faq.q1": "AIxZIP ฟรีหรือไม่?",
+    "faq.a1": "ใช่ เครื่องมือทั้งหมดใช้งานได้ฟรี",
+    "faq.q2": "ไฟล์ของฉันปลอดภัยหรือไม่?",
+    "faq.a2": "ปลอดภัยแน่นอน เราใช้เทคโนโลยีที่ทำงานในเบราว์เซอร์ ดังนั้นไฟล์ของคุณจะถูกประมวลผลในเครื่อง",
+    "testi.title": "ได้รับความนิยมจากผู้ใช้",
+    "drag_drop": "คลิกหรือลากเพื่ออัปโหลดรูปภาพ",
+    "support_hint": "รองรับ JPG, PNG, WebP · ประมวลผลแบบกลุ่ม",
+    "queue_title": "คิวการประมวลผล",
+    "clear_list": "ล้างรายการ",
+    "empty_hint": "กำลังรอรูปภาพ...",
+    "settings_title": "ตัวเลือก",
+    "tab_pixels": "ตามพิกเซล",
+    "tab_percent": "ตามเปอร์เซ็นต์",
+    "lbl_width": "ความกว้าง (พิกเซล)",
+    "lbl_height": "ความสูง (พิกเซล)",
+    "lbl_percent": "เปอร์เซ็นต์ (%)",
+    "lbl_auto": "อัตโนมัติ",
+    "chk_no_enlarge": "ไม่ขยายหากรูปเล็กกว่า",
+    "label_rename": "เปลี่ยนชื่อแบบกลุ่ม",
+    "placeholder_rename": "เช่น รูปถ่าย",
+    "label_quality": "คุณภาพ",
+    "sec_compress": "การบีบอัด",
+    "chk_compress": "เปิดใช้งานการบีบอัด",
+    "lbl_quality": "คุณภาพ",
+    "val_quality_high": "คุณภาพสูง",
+    "val_quality_low": "บีบอัดสูง",
+    "hint_smart": "แนะนำสำหรับความสมดุล",
+    "hint_recommend": "สูญเสียน้อยทางสายตา + ขนาดเล็ก",
+    "hint_100": "ไม่สูญเสีย (ขนาดใหญ่)",
+    "hint_lossy": "การบีบอัดแบบสูญเสีย",
+    "opt_smart": "อัจฉริยะ",
+    "opt_original": "ต้นฉบับ",
+    "sec_privacy": "ความเป็นส่วนตัว",
+    "chk_strip_metadata": "ลบข้อมูลเมตา",
+    "hint_strip_metadata": "ลบข้อมูล EXIF/GPS",
+    "btn_download": "ดาวน์โหลด ZIP",
+    "btn_download_one": "ดาวน์โหลด",
+    "btn_processing": "กำลังประมวลผล...",
+    "status_pending": "รอดำเนินการ",
+    "status_processing": "กำลังประมวลผล...",
+    "status_done": "เสร็จสิ้น",
+    "status_error": "ล้มเหลว",
+    "stat_saved": "บันทึกแล้ว",
+    "modal_title": "ล้างรายการทั้งหมด?",
+    "modal_desc": "รูปภาพที่ประมวลผลทั้งหมดจะหายไป การกระทำนี้ไม่สามารถย้อนกลับได้",
+    "modal_cancel": "ยกเลิก",
+    "modal_confirm": "ล้างทั้งหมด",
+    "leave_warning": "คุณมีรูปภาพที่ยังไม่ได้บันทึก การออกจากหน้านี้จะทำให้ความคืบหน้าของคุณหายไป"
+  }
+}

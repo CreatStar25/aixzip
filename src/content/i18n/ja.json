@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "画像ツール",
+      "items": [
+        {
+          "name": "Gemini 透かし除去",
+          "href": "/ja/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "画像エディタ (回転/反転)",
+          "href": "/ja/image/image-editor"
+        },
+        {
+          "name": "一括画像リサイズ",
+          "href": "/ja/image/image-resizer"
+        },
+        {
+          "name": "一括画像圧縮",
+          "href": "/ja/image/image-compressor"
+        },
+        {
+          "name": "一括画像変換",
+          "href": "/ja/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDFツール",
+      "items": [
+        {
+          "name": "PDF から 画像",
+          "href": "/ja/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "ファイルツール",
+      "items": [
+        {
+          "name": "ZIP作成",
+          "href": "/ja/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "無料AIツール, PDFツール, 画像ツール, ファイルコンバーター",
+    "hero.title": "無料オンラインAIツール & ファイルコンバーター",
+    "hero.subtitle": "100%クライアントサイド処理。サーバーへのファイルアップロードなし。安全、高速、無料。",
+    "hero.search_placeholder": "ツールを検索 (例: \"透かし\", \"PDF\")",
+    "section.all": "すべてのツール",
+    "footer.desc": "ファイルを変換、圧縮、編集する無料オンラインツール。",
+    "footer.rights": "All rights reserved.",
+    "footer.col.pdf": "PDFツール",
+    "footer.col.image": "画像ツール",
+    "footer.col.company": "会社情報",
+    "footer.col.lang": "言語",
+    "footer.link.about": "当社について",
+    "footer.link.privacy": "プライバシーポリシー",
+    "footer.link.terms": "利用規約",
+    "breadcrumb.home": "ホーム",
+    "section.how_it_works": "使い方",
+    "section.features": "主な機能",
+    "section.testimonials": "ユーザーの声",
+    "section.faq": "よくある質問",
+    "feat.nologin.title": "サインアップ不要",
+    "feat.nologin.desc": "登録なしですぐにツールを使用開始。",
+    "feat.client.title": "クライアントサイド",
+    "feat.client.desc": "ファイルはブラウザ内で処理。サーバーアップロードなし。",
+    "feat.offline.title": "オフライン対応",
+    "feat.offline.desc": "読み込み後はインターネットなしでも動作。",
+    "feat.secure.title": "100%安全",
+    "feat.secure.desc": "データは端末から送信されません。",
+    "faq.title": "よくある質問",
+    "faq.q1": "AIxZIPは無料ですか？",
+    "faq.a1": "はい、すべてのツールは完全に無料でご利用いただけます。",
+    "faq.q2": "ファイルは安全ですか？",
+    "faq.a2": "もちろんです。ブラウザベースの技術を使用しているため、ファイルはローカルで処理されます。",
+    "testi.title": "ユーザーに愛されています",
+    "drag_drop": "クリックまたはドラッグで画像をアップロード",
+    "support_hint": "JPG, PNG, WebP 対応 · 一括処理",
+    "queue_title": "処理キュー",
+    "clear_list": "リストをクリア",
+    "empty_hint": "画像を待機中...",
+    "settings_title": "オプション",
+    "tab_pixels": "ピクセル指定",
+    "tab_percent": "パーセント指定",
+    "lbl_width": "幅 (px)",
+    "lbl_height": "高さ (px)",
+    "lbl_percent": "パーセント (%)",
+    "lbl_auto": "自動",
+    "chk_no_enlarge": "小さい場合は拡大しない",
+    "label_rename": "一括リネーム",
+    "placeholder_rename": "例: Photo",
+    "label_quality": "品質",
+    "sec_compress": "圧縮",
+    "chk_compress": "圧縮を有効にする",
+    "lbl_quality": "品質",
+    "val_quality_high": "高品質",
+    "val_quality_low": "高圧縮",
+    "hint_smart": "バランスを考慮した推奨設定。",
+    "hint_recommend": "視覚的ロスレス + 小サイズ",
+    "hint_100": "ロスレス (大サイズ)",
+    "hint_lossy": "ロッシー圧縮",
+    "opt_smart": "スマート",
+    "opt_original": "オリジナル",
+    "sec_privacy": "プライバシー",
+    "chk_strip_metadata": "メタデータを削除",
+    "hint_strip_metadata": "EXIF/GPS情報を削除します。",
+    "btn_download": "ZIPをダウンロード",
+    "btn_download_one": "ダウンロード",
+    "btn_processing": "処理中...",
+    "status_pending": "保留中",
+    "status_processing": "処理中...",
+    "status_done": "完了",
+    "status_error": "失敗",
+    "stat_saved": "保存済み",
+    "modal_title": "すべての項目をクリアしますか？",
+    "modal_desc": "処理済みの画像はすべて失われます。この操作は元に戻せません。",
+    "modal_cancel": "キャンセル",
+    "modal_confirm": "すべてクリア",
+    "leave_warning": "未保存の画像があります。このページを離れると進行状況が失われます。"
+  }
+}

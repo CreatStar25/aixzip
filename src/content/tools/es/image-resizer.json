@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Redimensionador de Imágenes por Lotes - Cambia el Tamaño por Píxeles o Porcentaje",
+    "keywords": "redimensionador de imágenes por lotes, cambiar tamaño de imágenes en línea, modificar tamaño de fotos, redimensionador masivo de imágenes, redimensionar por porcentaje, redimensionador por píxeles, herramienta gratuita en línea",
+    "description": "Redimensiona múltiples imágenes a la vez por píxeles o porcentaje. Mantiene la relación de aspecto, compresión inteligente y procesamiento local centrado en la privacidad."
+  },
+  "hero": {
+    "title": "Redimensionador de Imágenes por Lotes",
+    "subtitle": "Redimensiona cientos de imágenes en segundos. Define dimensiones por píxeles o porcentaje. 100% en el lado del cliente."
+  },
+  "steps": [
+    {
+      "title": "Sube Fotos",
+      "desc": "Arrastra y suelta imágenes JPG, PNG o WebP en el área de carga."
+    },
+    {
+      "title": "Establece Dimensiones",
+      "desc": "Elige entre 'Píxeles' (ancho/alto exactos) o escalado por 'Porcentaje'."
+    },
+    {
+      "title": "Procesa y Guarda",
+      "desc": "Haz clic en 'Iniciar Procesamiento' para redimensionar y comprimir, luego descarga tu archivo zip."
+    }
+  ],
+  "features": [
+    {
+      "title": "Control Exacto por Píxeles",
+      "desc": "Establece valores específicos de ancho o alto. La herramienta calcula automáticamente la otra dimensión para evitar distorsión."
+    },
+    {
+      "title": "Escalado Masivo por Porcentaje",
+      "desc": "Reduce rápidamente todas las imágenes al 50% o 75% de su tamaño original para compartir o crear miniaturas."
+    },
+    {
+      "title": "Compresión Inteligente",
+      "desc": "La optimización integrada garantiza que tus imágenes redimensionadas tengan el menor tamaño de archivo sin pérdida visible de calidad."
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Se distorsionarán mis imágenes?",
+      "a": "No. Por defecto, bloqueamos la relación de aspecto. Si cambias el ancho, la altura se ajusta automáticamente para mantener la proporción correcta de la imagen."
+    },
+    {
+      "q": "¿Hay un límite en el tamaño del archivo?",
+      "a": "Dado que el procesamiento ocurre localmente en tu dispositivo, el límite depende de la memoria (RAM) de tu computadora, no de nuestro servidor. Normalmente puedes procesar cientos de imágenes."
+    },
+    {
+      "q": "¿Admite PNGs transparentes?",
+      "a": "Sí, el redimensionado preserva el canal de transparencia en archivos PNG y WebP."
+    }
+  ]
+}

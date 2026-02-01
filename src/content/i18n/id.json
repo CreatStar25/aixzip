@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Alat Gambar",
+      "items": [
+        {
+          "name": "Penghapus Watermark Gemini",
+          "href": "/id/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Editor Gambar (Putar/Balik)",
+          "href": "/id/image/image-editor"
+        },
+        {
+          "name": "Pengubah Ukuran Gambar Batch",
+          "href": "/id/image/image-resizer"
+        },
+        {
+          "name": "Kompresor Gambar Batch",
+          "href": "/id/image/image-compressor"
+        },
+        {
+          "name": "Konverter Gambar Batch",
+          "href": "/id/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Alat PDF",
+      "items": [
+        {
+          "name": "PDF ke Gambar",
+          "href": "/id/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Alat File",
+      "items": [
+        {
+          "name": "Buat ZIP",
+          "href": "/id/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Alat AI Gratis, Alat PDF, Alat Gambar, Konverter File",
+    "hero.title": "Alat AI Online Gratis & Konverter File",
+    "hero.subtitle": "100% diproses di sisi klien. Tidak ada unggahan file ke server. Aman, Cepat, dan Gratis.",
+    "hero.search_placeholder": "Cari alat (contoh: \"Watermark\", \"PDF\")",
+    "section.all": "Semua Alat",
+    "footer.desc": "Alat online gratis untuk mengonversi, mengompres, dan mengedit file Anda.",
+    "footer.rights": "Hak cipta dilindungi.",
+    "footer.col.pdf": "Alat PDF",
+    "footer.col.image": "Alat Gambar",
+    "footer.col.company": "Perusahaan",
+    "footer.col.lang": "Internasional",
+    "footer.link.about": "Tentang Kami",
+    "footer.link.privacy": "Kebijakan Privasi",
+    "footer.link.terms": "Syarat Layanan",
+    "breadcrumb.home": "Beranda",
+    "section.how_it_works": "Cara Kerja",
+    "section.features": "Fitur Utama",
+    "section.testimonials": "Ulasan Pengguna",
+    "section.faq": "FAQ",
+    "feat.nologin.title": "Tanpa Daftar",
+    "feat.nologin.desc": "Mulai gunakan alat tanpa perlu registrasi.",
+    "feat.client.title": "Sisi Klien",
+    "feat.client.desc": "File diproses di browser Anda. Tidak ada unggahan ke server.",
+    "feat.offline.title": "Bisa Offline",
+    "feat.offline.desc": "Tetap berfungsi tanpa internet setelah dimuat.",
+    "feat.secure.title": "100% Aman",
+    "feat.secure.desc": "Data Anda tidak pernah meninggalkan perangkat.",
+    "faq.title": "Pertanyaan yang Sering Diajukan",
+    "faq.q1": "Apakah AIxZIP gratis?",
+    "faq.a1": "Ya, semua alat sepenuhnya gratis digunakan.",
+    "faq.q2": "Apakah file saya aman?",
+    "faq.a2": "Sangat aman. Kami menggunakan teknologi berbasis browser, jadi file Anda diproses secara lokal.",
+    "testi.title": "Disukai Pengguna",
+    "drag_drop": "Klik atau Seret untuk Mengunggah Gambar",
+    "support_hint": "Mendukung JPG, PNG, WebP · Pemrosesan Batch",
+    "queue_title": "Antrian Proses",
+    "clear_list": "Hapus Daftar",
+    "empty_hint": "Menunggu gambar...",
+    "settings_title": "Opsi",
+    "tab_pixels": "Berdasarkan Piksel",
+    "tab_percent": "Berdasarkan Persentase",
+    "lbl_width": "Lebar (px)",
+    "lbl_height": "Tinggi (px)",
+    "lbl_percent": "Persentase (%)",
+    "lbl_auto": "Otomatis",
+    "chk_no_enlarge": "Jangan perbesar jika lebih kecil",
+    "label_rename": "Ganti Nama Batch",
+    "placeholder_rename": "contoh: Foto",
+    "label_quality": "Kualitas",
+    "sec_compress": "Kompresi",
+    "chk_compress": "Aktifkan Kompresi",
+    "lbl_quality": "Kualitas",
+    "val_quality_high": "Kualitas Tinggi",
+    "val_quality_low": "Kompresi Tinggi",
+    "hint_smart": "Direkomendasikan untuk keseimbangan.",
+    "hint_recommend": "Tanpa Kehilangan Visual + Ukuran Kecil",
+    "hint_100": "Tanpa Kehilangan (Ukuran Besar)",
+    "hint_lossy": "Kompresi dengan Kehilangan",
+    "opt_smart": "Cerdas",
+    "opt_original": "Asli",
+    "sec_privacy": "Privasi",
+    "chk_strip_metadata": "Hapus Metadata",
+    "hint_strip_metadata": "Menghapus info EXIF/GPS.",
+    "btn_download": "Unduh ZIP",
+    "btn_download_one": "Unduh",
+    "btn_processing": "Memproses...",
+    "status_pending": "Tertunda",
+    "status_processing": "Memproses...",
+    "status_done": "Selesai",
+    "status_error": "Gagal",
+    "stat_saved": "Tersimpan",
+    "modal_title": "Hapus Semua Item?",
+    "modal_desc": "Semua gambar yang diproses akan hilang. Tindakan ini tidak dapat dibatalkan.",
+    "modal_cancel": "Batal",
+    "modal_confirm": "Hapus Semua",
+    "leave_warning": "Anda memiliki gambar yang belum disimpan. Meninggalkan halaman ini akan menghapus progres Anda."
+  }
+}

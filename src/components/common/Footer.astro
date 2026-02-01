@@ -1,9 +1,10 @@
 ---
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { ui } from '../../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
-const t = (key: string) => ui[lang]?.[key] || ui['en'][key];
+
+// ✨ 获取翻译函数 t()
+const t = await useTranslations(lang);
 
 const languageNames = {
   'en': 'English', 'zh-cn': '简体中文', 'zh-tw': '繁體中文', 'es': 'Español',
@@ -16,21 +17,16 @@ const languageNames = {
 const locales = Object.keys(languageNames);
 const currentYear = new Date().getFullYear();
 
-// ✨ 核心修复：适应新路由规则的路径生成
 const { pathname, search } = Astro.url;
 const getLocalizedPath = (targetLang) => {
   const segments = pathname.split('/').filter(Boolean);
-  
-  // 移除当前的语言前缀 (如果存在)
   if (locales.includes(segments[0])) {
     segments.shift();
   }
   
   if (segments.length === 0) {
-    // 首页情况: 英文去根路径 /, 其他去 /lang/
     return targetLang === 'en' ? '/' : `/${targetLang}/`;
   } else {
-    // 内页情况: 英文去 /en/..., 其他去 /lang/...
     return `/${targetLang}/${segments.join('/')}${search}`;
   }
 };
@@ -57,7 +53,6 @@ const getLocalizedPath = (targetLang) => {
       <div>
         <h3 class="font-bold text-white mb-4 uppercase text-xs tracking-wider opacity-80">{t('footer.col.pdf')}</h3>
         <ul class="space-y-3 text-sm">
-          {/* 这里可以使用实际链接 */}
           <li><a href={`/${lang === 'en' ? 'en' : lang}/pdf/pdf-to-image`} class="text-slate-400 hover:text-blue-400 transition">PDF to Image</a></li>
         </ul>
       </div>
@@ -120,7 +115,6 @@ const getLocalizedPath = (targetLang) => {
 </footer>
 
 <script>
-  // 监听底部语言链接点击，保存用户偏好
   const links = document.querySelectorAll('footer [data-lang-link]');
   links.forEach(link => {
     link.addEventListener('click', (e) => {

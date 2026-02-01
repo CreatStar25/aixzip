@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Instrumente pentru Imagini",
+      "items": [
+        {
+          "name": "Eliminator de Filigran Gemini",
+          "href": "/ro/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Editor de Imagini (Rotiți/Întoarceți)",
+          "href": "/ro/image/image-editor"
+        },
+        {
+          "name": "Redimensionator în Masă pentru Imagini",
+          "href": "/ro/image/image-resizer"
+        },
+        {
+          "name": "Compresor în Masă pentru Imagini",
+          "href": "/ro/image/image-compressor"
+        },
+        {
+          "name": "Convertor în Masă pentru Imagini",
+          "href": "/ro/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Instrumente PDF",
+      "items": [
+        {
+          "name": "PDF în Imagine",
+          "href": "/ro/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Instrumente pentru Fișiere",
+      "items": [
+        {
+          "name": "Creați ZIP",
+          "href": "/ro/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Instrumente AI Gratuite, Instrumente PDF, Instrumente pentru Imagini, Convertori de Fișiere",
+    "hero.title": "Instrumente AI Online Gratuite & Convertor de Fișiere",
+    "hero.subtitle": "Procesare 100% pe partea clientului. Nicio încărcare a fișierelor pe server. Sigur, Rapid și Gratuit.",
+    "hero.search_placeholder": "Căutați instrumente (ex: \"Filigran\", \"PDF\")",
+    "section.all": "Toate Instrumentele",
+    "footer.desc": "Instrumente online gratuite pentru a converti, comprima și edita fișierele dumneavoastră.",
+    "footer.rights": "Toate drepturile rezervate.",
+    "footer.col.pdf": "Instrumente PDF",
+    "footer.col.image": "Instrumente pentru Imagini",
+    "footer.col.company": "Companie",
+    "footer.col.lang": "Internațional",
+    "footer.link.about": "Despre Noi",
+    "footer.link.privacy": "Politica de Confidențialitate",
+    "footer.link.terms": "Termeni de Serviciu",
+    "breadcrumb.home": "Acasă",
+    "section.how_it_works": "Cum Funcționează",
+    "section.features": "Caracteristici Cheie",
+    "section.testimonials": "Ce Spun Utilizatorii",
+    "section.faq": "Întrebări Frecvente",
+    "feat.nologin.title": "Fără Înregistrare",
+    "feat.nologin.desc": "Începeți să folosiți instrumentele imediat, fără înregistrare.",
+    "feat.client.title": "Pe Partea Clientului",
+    "feat.client.desc": "Fișierele sunt procesate în browser-ul dumneavoastră. Nicio încărcare pe server.",
+    "feat.offline.title": "Funcționează Offline",
+    "feat.offline.desc": "Funcționează chiar și fără conexiune la internet după încărcare.",
+    "feat.secure.title": "100% Sigur",
+    "feat.secure.desc": "Datele dumneavoastră nu părăsesc niciodată dispozitivul.",
+    "faq.title": "Întrebări Frecvente",
+    "faq.q1": "Este AIxZIP gratuit?",
+    "faq.a1": "Da, toate instrumentele sunt complet gratuite.",
+    "faq.q2": "Sunt fișierele mele în siguranță?",
+    "faq.a2": "Absolut. Folosim tehnologie bazată pe browser, astfel încât fișierele dumneavoastră sunt procesate local.",
+    "testi.title": "Iubit de Utilizatori",
+    "drag_drop": "Faceți clic sau trageți pentru a încărca imagini",
+    "support_hint": "Suportă JPG, PNG, WebP · Procesare în Masă",
+    "queue_title": "Coadă de Procesare",
+    "clear_list": "Ștergeți Lista",
+    "empty_hint": "Se așteaptă imagini...",
+    "settings_title": "Opțiuni",
+    "tab_pixels": "În Pixeli",
+    "tab_percent": "În Procentaj",
+    "lbl_width": "Lățime (px)",
+    "lbl_height": "Înălțime (px)",
+    "lbl_percent": "Procentaj (%)",
+    "lbl_auto": "Auto",
+    "chk_no_enlarge": "Nu măriți dacă este mai mică",
+    "label_rename": "Redenumire în Masă",
+    "placeholder_rename": "ex. Fotografie",
+    "label_quality": "Calitate",
+    "sec_compress": "Compresie",
+    "chk_compress": "Activați Compresia",
+    "lbl_quality": "Calitate",
+    "val_quality_high": "Calitate Înaltă",
+    "val_quality_low": "Compresie Înaltă",
+    "hint_smart": "Recomandat pentru un echilibru.",
+    "hint_recommend": "Fără Pierderi Vizuale + Dimensiune Mică",
+    "hint_100": "Fără Pierderi (Dimensiune Mare)",
+    "hint_lossy": "Compresie cu Pierderi",
+    "opt_smart": "Inteligent",
+    "opt_original": "Original",
+    "sec_privacy": "Confidențialitate",
+    "chk_strip_metadata": "Eliminați Metadatele",
+    "hint_strip_metadata": "Elimină informațiile EXIF/GPS.",
+    "btn_download": "Descărcați ZIP",
+    "btn_download_one": "Descărcați",
+    "btn_processing": "Se procesează...",
+    "status_pending": "În Așteptare",
+    "status_processing": "Se procesează...",
+    "status_done": "Finalizat",
+    "status_error": "Eșuat",
+    "stat_saved": "Salvat",
+    "modal_title": "Ștergeți Toate Elementele?",
+    "modal_desc": "Toate imaginile procesate vor fi pierdute. Această acțiune nu poate fi anulată.",
+    "modal_cancel": "Anulați",
+    "modal_confirm": "Ștergeți Tot",
+    "leave_warning": "Aveți imagini nesalvate. Părăsirea acestei pagini vă va face să pierdeți progresul."
+  }
+}

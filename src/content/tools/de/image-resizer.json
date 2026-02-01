@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Batch-Bildgrößenänderung – Bilder nach Pixel oder Prozentsatz ändern",
+    "keywords": "Batch-Bildgrößenänderung, Bilder online ändern, Fotogröße ändern, Massen-Bildgrößenänderung, Größenänderung nach Prozentsatz, Pixel-Größenänderung, kostenloses Online-Tool",
+    "description": "Ändern Sie mehrere Bilder gleichzeitig nach Pixeln oder Prozentsatz. Seitenverhältnis beibehalten, intelligente Komprimierung und datenschutzfreundliche lokale Verarbeitung."
+  },
+  "hero": {
+    "title": "Batch-Bildgrößenänderung",
+    "subtitle": "Ändern Sie Hunderte von Bildern in Sekunden. Definieren Sie Abmessungen nach Pixeln oder Prozentsatz. 100% clientseitig."
+  },
+  "steps": [
+    {
+      "title": "Fotos hochladen",
+      "desc": "Ziehen Sie JPG-, PNG- oder WebP-Bilder per Drag & Drop in den Upload-Bereich."
+    },
+    {
+      "title": "Abmessungen festlegen",
+      "desc": "Wählen Sie zwischen 'Pixel' (genaue Breite/Höhe) oder 'Prozentsatz'-Skalierung."
+    },
+    {
+      "title": "Verarbeiten & Speichern",
+      "desc": "Klicken Sie auf 'Verarbeitung starten', um Größe zu ändern und zu komprimieren, dann laden Sie Ihr ZIP herunter."
+    }
+  ],
+  "features": [
+    {
+      "title": "Exakte Pixelsteuerung",
+      "desc": "Legen Sie spezifische Breiten- oder Höhenwerte fest. Das Tool berechnet automatisch die andere Dimension, um Verzerrung zu vermeiden."
+    },
+    {
+      "title": "Massen-Prozentsatz-Skalierung",
+      "desc": "Reduzieren Sie schnell alle Bilder auf 50% oder 75% ihrer Originalgröße für das Teilen oder als Vorschaubilder."
+    },
+    {
+      "title": "Intelligente Komprimierung",
+      "desc": "Integrierte Optimierung stellt sicher, dass Ihre geänderten Bilder die kleinste Dateigröße ohne sichtbaren Qualitätsverlust haben."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Werden meine Bilder verzerrt?",
+      "a": "Nein. Standardmäßig sperren wir das Seitenverhältnis. Wenn Sie die Breite ändern, passt sich die Höhe automatisch an, um die korrekte Bildproportion beizubehalten."
+    },
+    {
+      "q": "Gibt es eine Grenze für die Dateigröße?",
+      "a": "Da die Verarbeitung lokal auf Ihrem Gerät erfolgt, hängt die Grenze vom Arbeitsspeicher (RAM) Ihres Computers ab, nicht von unserem Server. Sie können typischerweise Hunderte von Bildern verarbeiten."
+    },
+    {
+      "q": "Unterstützt es transparente PNGs?",
+      "a": "Ja, die Größenänderung erhält den Transparenzkanal in PNG- und WebP-Dateien."
+    }
+  ]
+}

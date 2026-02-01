@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Eliminator de Filigrană AI Gemini - Îndepărtează SynthID & Benzi",
+    "keywords": "Eliminator Filigrană Gemini, Filigrană NanoBanana, Îndepărtează SynthID, Instrumente AI Gratuite, Îndepărtează Banda AI",
+    "description": "Gratuit, rapid, fără pierderi. Detectează și elimină automat filigrane invizibile și benzi translucide din imaginile generate de Gemini / NanoBanana."
+  },
+  "hero": {
+    "title": "Eliminator de Filigrană AI Gemini",
+    "subtitle": "Gratuit, Rapid, Fără Pierderi. Detectează și elimină automat filigrane invizibile din imaginile generate de Gemini / NanoBanana."
+  },
+  "steps": [
+    {
+      "title": "Încarcă Imagini AI",
+      "desc": "Încarcă imagini generate de Gemini, NanoBanana sau alte instrumente AI."
+    },
+    {
+      "title": "Detectare Automată",
+      "desc": "Algoritmul identifică modele specifice de filigrană AI și benzi vizibile."
+    },
+    {
+      "title": "Curăță și Salvează",
+      "desc": "Descarcă imaginea curată fără banda de filigrană."
+    }
+  ],
+  "features": [
+    {
+      "title": "Gata pentru Gemini/NanoBanana",
+      "desc": "Special calibrat pentru a elimina benzile de filigrană albe/translucide din imaginile generate de Gemini."
+    },
+    {
+      "title": "Restaurare Fără Pierderi",
+      "desc": "Restabilește pixelii originali ascunși în spatele filigranei fără estompare."
+    },
+    {
+      "title": "Eliminare în Lot",
+      "desc": "Trage peste 50 de imagini și curăță-le pe toate în câteva secunde, local."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Ideal special pentru îndepărtarea benzii enervante Gemini. Funcționează perfect, iar modul lot economisește timp.",
+      "author": "Sarah J., Inginer Prompt"
+    },
+    {
+      "text": "Folosesc NanoBanana în fluxul meu de lucru zilnic, iar acest instrument este singurul care elimină filigrana perfect.",
+      "author": "Mike T., Creator AI"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Funcționează pe imaginile NanoBanana?",
+      "a": "Da! NanoBanana folosește aceeași tehnologie de bază ca Gemini pentru generarea de imagini. Algoritmul nostru detectează și elimină perfect banda translucidă caracteristică găsită la ambele."
+    },
+    {
+      "q": "Cum elimină filigrana fără estompare?",
+      "a": "Spre deosebire de instrumentele standard de 'vindecare' care estompează zona, AI-ul nostru calculează valorile exacte ale pixelilor ascunse în spatele stratului semi-transparent de filigrană, restabilind matematic imaginea originală."
+    },
+    {
+      "q": "Vor fi fotografiile mele încărcate pe un server?",
+      "a": "Nu. Toată procesarea are loc 100% local în browser-ul tău folosind WebAssembly. Imaginile tale nu părăsesc niciodată dispozitivul, asigurând confidențialitate completă."
+    },
+    {
+      "q": "Elimină SynthID (filigrane invizibile)?",
+      "a": "Ne concentrăm în principal pe îndepărtarea artefactelor vizibile (banda) pentru a restabili estetica vizuală. Deși procesul de re-codare poate pertura semnăturile digitale precum SynthID, nu garantăm eliminarea completă a filigranelor criptografice invizibile."
+    },
+    {
+      "q": "Există o limită pentru numărul de imagini pe care le pot procesa?",
+      "a": "Fără limite. Deoarece rulează pe propriul dispozitiv, poți procesa câte imagini poate gestiona memoria computerului tău."
+    }
+  ]
+}

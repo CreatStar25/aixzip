@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Công Cụ Thay Đổi Kích Thước Hàng Loạt - Thay Đổi Kích Thước Ảnh Theo Pixel hoặc Phần Trăm",
+    "keywords": "công cụ thay đổi kích thước ảnh hàng loạt, thay đổi kích thước ảnh trực tuyến, thay đổi kích thước ảnh, công cụ thay đổi kích thước ảnh số lượng lớn, thay đổi kích thước theo phần trăm, công cụ thay đổi kích thước pixel, công cụ trực tuyến miễn phí",
+    "description": "Thay đổi kích thước nhiều ảnh cùng lúc theo pixel hoặc phần trăm. Duy trì tỷ lệ khung hình, nén thông minh và xử lý cục bộ tập trung vào quyền riêng tư."
+  },
+  "hero": {
+    "title": "Công Cụ Thay Đổi Kích Thước Ảnh Hàng Loạt",
+    "subtitle": "Thay đổi kích thước hàng trăm ảnh trong vài giây. Xác định kích thước theo pixel hoặc phần trăm. 100% Xử lý phía máy khách."
+  },
+  "steps": [
+    {
+      "title": "Tải Ảnh Lên",
+      "desc": "Kéo & thả ảnh JPG, PNG hoặc WebP vào khu vực tải lên."
+    },
+    {
+      "title": "Thiết Lập Kích Thước",
+      "desc": "Chọn giữa 'Pixel' (chiều rộng/cao chính xác) hoặc 'Phần trăm' để thay đổi tỷ lệ."
+    },
+    {
+      "title": "Xử Lý & Lưu",
+      "desc": "Nhấp 'Bắt Đầu Xử Lý' để thay đổi kích thước và nén, sau đó tải xuống tệp zip của bạn."
+    }
+  ],
+  "features": [
+    {
+      "title": "Kiểm Soát Pixel Chính Xác",
+      "desc": "Đặt giá trị chiều rộng hoặc chiều cao cụ thể. Công cụ tự động tính toán kích thước còn lại để ngăn biến dạng."
+    },
+    {
+      "title": "Thay Đổi Tỷ Lệ Phần Trăm Số Lượng Lớn",
+      "desc": "Nhanh chóng giảm tất cả ảnh xuống 50% hoặc 75% kích thước gốc để chia sẻ hoặc làm ảnh thu nhỏ."
+    },
+    {
+      "title": "Nén Thông Minh",
+      "desc": "Tối ưu hóa tích hợp đảm bảo ảnh sau khi thay đổi kích thước có kích thước tệp nhỏ nhất mà không mất chất lượng hình ảnh."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ảnh của tôi có bị biến dạng không?",
+      "a": "Không. Theo mặc định, chúng tôi khóa tỷ lệ khung hình. Nếu bạn thay đổi chiều rộng, chiều cao sẽ tự động điều chỉnh để giữ tỷ lệ ảnh chính xác."
+    },
+    {
+      "q": "Có giới hạn về kích thước tệp không?",
+      "a": "Vì xử lý diễn ra cục bộ trên thiết bị của bạn, giới hạn phụ thuộc vào bộ nhớ (RAM) của máy tính, không phải máy chủ của chúng tôi. Bạn thường có thể xử lý hàng trăm ảnh."
+    },
+    {
+      "q": "Có hỗ trợ PNG trong suốt không?",
+      "a": "Có, thay đổi kích thước bảo toàn kênh trong suốt trong tệp PNG và WebP."
+    }
+  ]
+}

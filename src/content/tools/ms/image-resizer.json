@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Pengecil Saiz Imej Kelompok - Ubah Saiz Imej Mengikut Piksel atau Peratusan",
+    "keywords": "pengecil saiz imej kelompok, ubah saiz imej dalam talian, ubah saiz foto, pengecil saiz imej pukal, ubah saiz mengikut peratusan, pengecil saiz piksel, alat dalam talian percuma",
+    "description": "Ubah saiz berbilang imej sekaligus mengikut piksel atau peratusan. Mengekalkan nisbah aspek, mampatan pintar, dan pemprosesan tempatan yang fokus pada privasi."
+  },
+  "hero": {
+    "title": "Pengecil Saiz Imej Kelompok",
+    "subtitle": "Ubah saiz beratus-ratus imej dalam beberapa saat. Tentukan dimensi mengikut piksel atau peratusan. 100% Pemprosesan Pelanggan-sisi."
+  },
+  "steps": [
+    {
+      "title": "Muat Naik Foto",
+      "desc": "Seret & lepaskan imej JPG, PNG, atau WebP ke kawasan muat naik."
+    },
+    {
+      "title": "Tetapkan Dimensi",
+      "desc": "Pilih antara 'Piksel' (lebar/tinggi tepat) atau penskalaan 'Peratusan'."
+    },
+    {
+      "title": "Proses & Simpan",
+      "desc": "Klik 'Mula Memproses' untuk mengecil saiz dan memampat, kemudian muat turun zip anda."
+    }
+  ],
+  "features": [
+    {
+      "title": "Kawalan Piksel Tepat",
+      "desc": "Tetapkan nilai lebar atau tinggi khusus. Alat ini secara automatik mengira dimensi lain untuk mengelakkan herotan."
+    },
+    {
+      "title": "Penskalaan Peratusan Pukal",
+      "desc": "Cepat kurangkan semua imej kepada 50% atau 75% daripada saiz asal untuk perkongsian atau thumbnail."
+    },
+    {
+      "title": "Mampatan Pintar",
+      "desc": "Pengoptimuman terbina dalam memastikan imej yang dikecil saiz anda mempunyai saiz fail terkecil tanpa kehilangan kualiti yang ketara."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Adakah imej saya akan terherot?",
+      "a": "Tidak. Secara lalai, kami mengunci nisbah aspek. Jika anda menukar lebar, tinggi akan diselaraskan secara automatik untuk mengekalkan perkadaran imej yang betul."
+    },
+    {
+      "q": "Adakah terdapat had pada saiz fail?",
+      "a": "Memandangkan pemprosesan berlaku secara tempatan pada peranti anda, had bergantung pada memori (RAM) komputer anda, bukan pelayan kami. Anda biasanya boleh memproses beratus-ratus imej."
+    },
+    {
+      "q": "Adakah ia menyokong PNG lutsinar?",
+      "a": "Ya, pengecilan saiz mengekalkan saluran ketelusan dalam fail PNG dan WebP."
+    }
+  ]
+}

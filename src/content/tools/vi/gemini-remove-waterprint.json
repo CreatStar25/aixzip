@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Công Cụ Xóa Watermark Hình Ảnh Gemini AI - Loại Bỏ SynthID & Dải Chữ",
+    "keywords": "Công cụ xóa watermark Gemini, Xóa watermark NanoBanana, Loại bỏ SynthID, Công cụ AI miễn phí, Xóa dải AI",
+    "description": "Miễn phí, nhanh chóng, không mất chất lượng. Tự động phát hiện và xóa watermark vô hình cùng các dải trong suốt từ hình ảnh được tạo bởi Gemini / NanoBanana."
+  },
+  "hero": {
+    "title": "Công Cụ Xóa Watermark Hình Ảnh Gemini AI",
+    "subtitle": "Miễn phí, Nhanh chóng, Không mất chất lượng. Tự động phát hiện và xóa watermark vô hình từ hình ảnh được tạo bởi Gemini / NanoBanana."
+  },
+  "steps": [
+    {
+      "title": "Tải Lên Hình Ảnh AI",
+      "desc": "Tải lên hình ảnh được tạo bởi Gemini, NanoBanana, hoặc các công cụ AI khác."
+    },
+    {
+      "title": "Tự Động Phát Hiện",
+      "desc": "Thuật toán xác định các mẫu watermark AI cụ thể và các dải chữ hiển thị."
+    },
+    {
+      "title": "Làm Sạch & Lưu Lại",
+      "desc": "Tải xuống hình ảnh sạch mà không có dải watermark."
+    }
+  ],
+  "features": [
+    {
+      "title": "Sẵn Sàng Cho Gemini/NanoBanana",
+      "desc": "Được điều chỉnh đặc biệt để xóa các dải watermark trắng/trong suốt từ hình ảnh được tạo bởi Gemini."
+    },
+    {
+      "title": "Khôi Phục Không Mất Chất Lượng",
+      "desc": "Khôi phục các pixel gốc bị ẩn sau watermark mà không làm mờ hình ảnh."
+    },
+    {
+      "title": "Xóa Hàng Loạt",
+      "desc": "Kéo thả 50+ hình ảnh và làm sạch tất cả chỉ trong vài giây ngay trên thiết bị của bạn."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Lý tưởng để xóa dải chữ khó chịu của Gemini. Hoạt động hoàn hảo và chế độ xử lý hàng loạt tiết kiệm rất nhiều thời gian.",
+      "author": "Sarah J., Kỹ Sư Prompt"
+    },
+    {
+      "text": "Tôi sử dụng NanoBanana cho quy trình làm việc hàng ngày và công cụ này là công cụ duy nhất xóa watermark một cách sạch sẽ.",
+      "author": "Mike T., Người Sáng Tạo AI"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Nó có hoạt động trên hình ảnh NanoBanana không?",
+      "a": "Có! NanoBanana sử dụng công nghệ cơ bản giống như Gemini để tạo hình ảnh. Thuật toán của chúng tôi phát hiện và xóa hoàn hảo dải trong suốt đặc trưng có trên cả hai."
+    },
+    {
+      "q": "Làm thế nào để xóa watermark mà không làm mờ hình ảnh?",
+      "a": "Khác với các công cụ 'hàn gắn' tiêu chuẩn làm mờ khu vực, AI của chúng tôi tính toán chính xác giá trị pixel bị ẩn sau lớp watermark bán trong suốt, khôi phục toán học hình ảnh gốc."
+    },
+    {
+      "q": "Ảnh của tôi có được tải lên máy chủ không?",
+      "a": "Không. Tất cả quá trình xử lý diễn ra 100% cục bộ trên trình duyệt của bạn bằng WebAssembly. Hình ảnh của bạn không bao giờ rời khỏi thiết bị, đảm bảo quyền riêng tư hoàn toàn."
+    },
+    {
+      "q": "Nó có xóa SynthID (watermark vô hình) không?",
+      "a": "Chúng tôi chủ yếu tập trung vào việc loại bỏ các dấu hiệu hiển thị (dải chữ) để khôi phục tính thẩm mỹ hình ảnh. Mặc dù quá trình mã hóa lại có thể làm gián đoạn chữ ký số như SynthID, chúng tôi không đảm bảo việc loại bỏ hoàn toàn các watermark mật mã vô hình."
+    },
+    {
+      "q": "Có giới hạn về số lượng hình ảnh tôi có thể xử lý không?",
+      "a": "Không giới hạn. Vì công cụ chạy trên thiết bị của chính bạn, bạn có thể xử lý bao nhiêu hình ảnh tùy thích miễn là bộ nhớ máy tính của bạn xử lý được."
+    }
+  ]
+}

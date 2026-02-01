@@ -2,7 +2,8 @@
 import { tools, locales } from '../../../config/tools';
 import Layout from '../../../layouts/Layout.astro';
 import ToolDispatcher from '../../../components/tools/ToolDispatcher.jsx';
-import { ui } from '../../../i18n/ui';
+// 1. ✨ 引入新的翻译钩子，不再引用 ui.ts
+import { useTranslations } from '../../../i18n/utils';
 import { getEntry } from 'astro:content';
 
 export function getStaticPaths() {
@@ -20,16 +21,20 @@ export function getStaticPaths() {
 
 const { lang, category, tool } = Astro.params;
 
-// 1. 获取内容数据
+// 2. ✨ 获取全局 UI 翻译函数 (t)
+// 这会自动加载 src/content/i18n/[lang].json，如果缺省则回退到 en.json
+const t = await useTranslations(lang);
+
+// 3. 获取工具的个性化内容 (Hero, Features, FAQ 等)
+// 尝试加载对应语言的工具数据，如果没有则回退到英文
 const toolDataEntry = await getEntry('tools', `${lang}/${tool}`);
 const defaultDataEntry = await getEntry('tools', `en/${tool}`);
 const content = toolDataEntry?.data || defaultDataEntry?.data;
 
+// 如果连英文内容都没有，说明配置缺失，抛出错误
 if (!content) {
   throw new Error(`[Content Missing] No JSON found for tool: ${tool} in lang: ${lang}`);
 }
-
-const t = (key) => ui[lang]?.[key] || ui['en'][key] || key;
 ---
 
 <Layout title={content.seo.title} lang={lang}>
@@ -43,34 +48,36 @@ const t = (key) => ui[lang]?.[key] || ui['en'][key] || key;
   <main class="min-h-screen bg-slate-50">
     <section class="pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         
-        {/* ✨✨✨ 面包屑已移除 (Breadcrumbs Removed) ✨✨✨ */}
-
-        {/* 标题区 */}
+        {/* 顶部标题区 (Hero) */}
         <div class="text-center mb-10">
             <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">{content.hero.title}</h1>
             <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">{content.hero.subtitle}</p>
         </div>
 
-        {/* 工具主体 */}
+        {/* 核心工具组件区域 */}
         <div class="bg-white rounded-2xl shadow-2xl shadow-slate-200/50 overflow-hidden min-h-[600px] border border-slate-100">
+            {/* ToolDispatcher 会根据 toolId 加载对应的 React 组件 (如 WatermarkRemover) */}
             <ToolDispatcher toolId={tool} lang={lang} client:load />
         </div>
     </section>
 
-    {/* 营销内容动态渲染 */}
+    {/* 下方营销内容 (数据源自工具的 JSON 文件) */}
     <div class="space-y-24 pb-24">
         
-        {/* 1. Steps */}
+        {/* 1. 操作步骤 (Steps) */}
         {content.steps && (
             <section class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
+                    {/* 使用 t() 获取全局配置的标题，如 "How It Works" */}
                     <h2 class="text-3xl font-black text-slate-800 mb-4">{t('section.how_it_works')}</h2>
                     <div class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 relative">
                     {content.steps.map((step, index) => (
                         <div class="relative pl-8 md:pl-0 md:text-center group">
+                            {/* 连接线 */}
                             {index !== 2 && <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-100 -z-10"></div>}
+                            
                             <div class="w-16 h-16 bg-white border-2 border-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-blue-500/10 md:mx-auto relative z-10 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br from-white to-blue-50">
                                 {index + 1}
                             </div>
@@ -82,7 +89,7 @@ const t = (key) => ui[lang]?.[key] || ui['en'][key] || key;
             </section>
         )}
 
-        {/* 2. Features */}
+        {/* 2. 功能特性 (Features) */}
         {content.features && (
             <section class="bg-white py-24 border-y border-slate-100">
                 <div class="max-w-7xl mx-auto px-4">
@@ -105,7 +112,7 @@ const t = (key) => ui[lang]?.[key] || ui['en'][key] || key;
             </section>
         )}
 
-        {/* 3. Testimonials (新增动态渲染) */}
+        {/* 3. 用户评价 (Testimonials) */}
         {content.testimonials && (
             <section class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
@@ -137,7 +144,7 @@ const t = (key) => ui[lang]?.[key] || ui['en'][key] || key;
             </section>
         )}
 
-        {/* 4. FAQ */}
+        {/* 4. 常见问题 (FAQ) */}
         {content.faq && (
             <section class="max-w-3xl mx-auto px-4">
                 <div class="text-center mb-16">

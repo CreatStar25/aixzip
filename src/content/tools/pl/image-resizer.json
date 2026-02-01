@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Masowy Zmieniacz Rozmiaru Obrazów - Zmieniaj Rozmiar Obrazów w Pikselach lub Procentach",
+    "keywords": "masowy zmieniacz rozmiaru obrazów, zmień rozmiar obrazów online, zmiana rozmiaru zdjęć, zbiorczy zmieniacz obrazów, zmiana rozmiaru w procentach, zmieniacz pikseli, darmowe narzędzie online",
+    "description": "Zmień rozmiar wielu obrazów jednocześnie w pikselach lub procentach. Zachowaj proporcje, inteligentna kompresja i przetwarzanie lokalne z zachowaniem prywatności."
+  },
+  "hero": {
+    "title": "Masowy Zmieniacz Rozmiaru Obrazów",
+    "subtitle": "Zmień rozmiar setek obrazów w kilka sekund. Określ wymiary w pikselach lub procentach. 100% po stronie klienta."
+  },
+  "steps": [
+    {
+      "title": "Prześlij Zdjęcia",
+      "desc": "Przeciągnij i upuść obrazy JPG, PNG lub WebP w obszarze przesyłania."
+    },
+    {
+      "title": "Ustaw Wymiary",
+      "desc": "Wybierz między skalowaniem 'Pikselowym' (dokładna szerokość/wysokość) lub 'Procentowym'."
+    },
+    {
+      "title": "Przetwórz i Zapisz",
+      "desc": "Kliknij 'Rozpocznij Przetwarzanie', aby zmienić rozmiar i skompresować, a następnie pobierz swoje pliki ZIP."
+    }
+  ],
+  "features": [
+    {
+      "title": "Dokładna Kontrola Pikseli",
+      "desc": "Ustaw konkretne wartości szerokości lub wysokości. Narzędzie automatycznie oblicza drugi wymiar, aby zapobiec zniekształceniom."
+    },
+    {
+      "title": "Zbiorcze Skalowanie Procentowe",
+      "desc": "Szybko zmniejsz wszystkie obrazy do 50% lub 75% ich oryginalnego rozmiaru do udostępniania lub jako miniatury."
+    },
+    {
+      "title": "Inteligentna Kompresja",
+      "desc": "Wbudowana optymalizacja zapewnia, że Twoje obrazy po zmianie rozmiaru mają najmniejszy rozmiar pliku bez widocznej utraty jakości."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Czy moje obrazy zostaną zniekształcone?",
+      "a": "Nie. Domyślnie blokujemy proporcje obrazu. Jeśli zmienisz szerokość, wysokość dostosowuje się automatycznie, aby zachować prawidłowe proporcje."
+    },
+    {
+      "q": "Czy istnieje limit rozmiaru pliku?",
+      "a": "Ponieważ przetwarzanie odbywa się lokalnie na Twoim urządzeniu, limit zależy od pamięci (RAM) Twojego komputera, a nie od naszego serwera. Zazwyczaj możesz przetworzyć setki obrazów."
+    },
+    {
+      "q": "Czy obsługuje przezroczyste PNG?",
+      "a": "Tak, zmiana rozmiaru zachowuje kanał przezroczystości w plikach PNG i WebP."
+    }
+  ]
+}

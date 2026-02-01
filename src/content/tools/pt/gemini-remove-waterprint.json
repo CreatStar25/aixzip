@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Removedor de Marca d'Água de Imagens Gemini AI - Remova SynthID e Faixas",
+    "keywords": "Removedor de Marca d'Água Gemini, Marca d'Água NanoBanana, Remover SynthID, Ferramentas de IA Gratuitas, Remover Faixa de IA",
+    "description": "Gratuito, rápido, sem perdas. Detecte e remova automaticamente marcas d'água invisíveis e faixas translúcidas de imagens geradas pelo Gemini / NanoBanana."
+  },
+  "hero": {
+    "title": "Removedor de Marca d'Água de Imagens Gemini AI",
+    "subtitle": "Gratuito, Rápido, Sem Perdas. Detecte e remova automaticamente marcas d'água invisíveis de imagens geradas pelo Gemini / NanoBanana."
+  },
+  "steps": [
+    {
+      "title": "Carregue Imagens de IA",
+      "desc": "Carregue imagens geradas pelo Gemini, NanoBanana ou outras ferramentas de IA."
+    },
+    {
+      "title": "Detecção Automática",
+      "desc": "O algoritmo identifica padrões específicos de marca d'água de IA e faixas visíveis."
+    },
+    {
+      "title": "Limpe e Salve",
+      "desc": "Baixe a imagem limpa sem a faixa da marca d'água."
+    }
+  ],
+  "features": [
+    {
+      "title": "Pronto para Gemini/NanoBanana",
+      "desc": "Especificamente ajustado para remover as faixas de marca d'água brancas/translúcidas de imagens geradas pelo Gemini."
+    },
+    {
+      "title": "Restauração Sem Perdas",
+      "desc": "Restaura os pixels originais ocultos atrás da marca d'água sem borrar."
+    },
+    {
+      "title": "Remoção em Lote",
+      "desc": "Arraste 50+ imagens e limpe todas em segundos, localmente."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Idealmente específico para remover a irritante faixa do Gemini. Funciona perfeitamente e o modo em lote economiza muito tempo.",
+      "author": "Sarah J., Engenheira de Prompt"
+    },
+    {
+      "text": "Uso o NanoBanana no meu fluxo de trabalho diário e esta ferramenta é a única que remove a marca d'água de forma limpa.",
+      "author": "Mike T., Criador de IA"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Funciona em imagens do NanoBanana?",
+      "a": "Sim! O NanoBanana usa a mesma tecnologia subjacente do Gemini para geração de imagens. Nosso algoritmo detecta e remove perfeitamente a faixa translúcida característica encontrada em ambos."
+    },
+    {
+      "q": "Como ele remove a marca d'água sem borrar?",
+      "a": "Diferente de ferramentas de 'cura' padrão que borram a área, nossa IA calcula os valores exatos dos pixels ocultos atrás da camada semi-transparente da marca d'água, restaurando matematicamente a imagem original."
+    },
+    {
+      "q": "Minhas fotos serão enviadas para um servidor?",
+      "a": "Não. Todo o processamento acontece 100% localmente no seu navegador usando WebAssembly. Suas imagens nunca saem do seu dispositivo, garantindo privacidade total."
+    },
+    {
+      "q": "Ele remove SynthID (marcas d'água invisíveis)?",
+      "a": "Nós focamos principalmente na remoção de artefatos visíveis (a faixa) para restaurar a estética visual. Embora o processo de recodificação possa perturbar assinaturas digitais como o SynthID, não garantimos a remoção completa de marcas d'água criptográficas invisíveis."
+    },
+    {
+      "q": "Há um limite de quantas imagens posso processar?",
+      "a": "Sem limites. Como roda no seu próprio dispositivo, você pode processar quantas imagens a memória do seu computador suportar."
+    }
+  ]
+}

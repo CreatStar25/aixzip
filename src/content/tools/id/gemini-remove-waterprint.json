@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Penghapus Watermark Gambar AI Gemini - Hapus SynthID & Strip",
+    "keywords": "Penghapus Watermark Gemini, Watermark NanoBanana, Hapus SynthID, Alat AI Gratis, Hapus Strip AI",
+    "description": "Gratis, cepat, tanpa kehilangan kualitas. Secara otomatis mendeteksi dan menghapus watermark tak terlihat serta strip tembus pandang dari gambar yang dihasilkan Gemini / NanoBanana."
+  },
+  "hero": {
+    "title": "Penghapus Watermark Gambar AI Gemini",
+    "subtitle": "Gratis, Cepat, Tanpa Kehilangan Kualitas. Secara otomatis mendeteksi dan menghapus watermark tak terlihat dari gambar yang dihasilkan Gemini / NanoBanana."
+  },
+  "steps": [
+    {
+      "title": "Unggah Gambar AI",
+      "desc": "Unggah gambar yang dihasilkan oleh Gemini, NanoBanana, atau alat AI lainnya."
+    },
+    {
+      "title": "Deteksi Otomatis",
+      "desc": "Algoritma mengidentifikasi pola watermark AI spesifik dan strip yang terlihat."
+    },
+    {
+      "title": "Bersihkan & Simpan",
+      "desc": "Unduh gambar bersih tanpa strip watermark."
+    }
+  ],
+  "features": [
+    {
+      "title": "Siap untuk Gemini/NanoBanana",
+      "desc": "Secara khusus disesuaikan untuk menghapus strip watermark putih/tembus pandang dari gambar yang dihasilkan Gemini."
+    },
+    {
+      "title": "Pemulihan Tanpa Kehilangan Kualitas",
+      "desc": "Memulihkan piksel asli yang tersembunyi di balik watermark tanpa mengaburkan gambar."
+    },
+    {
+      "title": "Penghapusan Batch",
+      "desc": "Seret 50+ gambar dan bersihkan semuanya dalam hitungan detik secara lokal."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Sangat ideal khusus untuk menghapus strip Gemini yang mengganggu. Berfungsi sempurna dan mode batch menghemat waktu.",
+      "author": "Sarah J., Prompt Engineer"
+    },
+    {
+      "text": "Saya menggunakan NanoBanana untuk alur kerja harian saya dan alat ini adalah satu-satunya yang menghapus watermark dengan bersih.",
+      "author": "Mike T., Kreator AI"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Apakah ini berfungsi pada gambar NanoBanana?",
+      "a": "Ya! NanoBanana menggunakan teknologi dasar yang sama dengan Gemini untuk pembuatan gambar. Algoritma kami mendeteksi dan menghapus strip tembus pandang khas yang ditemukan pada keduanya dengan sempurna."
+    },
+    {
+      "q": "Bagaimana cara menghapus watermark tanpa mengaburkan gambar?",
+      "a": "Berbeda dengan alat 'penyembuhan' standar yang mengaburkan area, AI kami menghitung nilai piksel tepat yang tersembunyi di balik lapisan watermark semi-transparan, memulihkan gambar asli secara matematis."
+    },
+    {
+      "q": "Apakah foto saya akan diunggah ke server?",
+      "a": "Tidak. Semua pemrosesan terjadi 100% secara lokal di browser Anda menggunakan WebAssembly. Gambar Anda tidak pernah meninggalkan perangkat, memastikan privasi penuh."
+    },
+    {
+      "q": "Apakah ini menghapus SynthID (watermark tak terlihat)?",
+      "a": "Kami terutama berfokus pada penghapusan artefak yang terlihat (strip) untuk memulihkan estetika visual. Meskipun proses pengkodean ulang dapat mengganggu tanda tangan digital seperti SynthID, kami tidak menjamin penghapusan lengkap watermark kriptografi tak terlihat."
+    },
+    {
+      "q": "Apakah ada batasan berapa banyak gambar yang dapat saya proses?",
+      "a": "Tidak ada batasan. Karena berjalan di perangkat Anda sendiri, Anda dapat memproses sebanyak gambar yang dapat ditangani oleh memori komputer Anda."
+    }
+  ]
+}

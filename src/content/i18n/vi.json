@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Công Cụ Hình Ảnh",
+      "items": [
+        {
+          "name": "Xóa Watermark Gemini",
+          "href": "/vi/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Chỉnh Sửa Ảnh (Xoay/Lật)",
+          "href": "/vi/image/image-editor"
+        },
+        {
+          "name": "Thay Đổi Kích Thước Ảnh Hàng Loạt",
+          "href": "/vi/image/image-resizer"
+        },
+        {
+          "name": "Nén Ảnh Hàng Loạt",
+          "href": "/vi/image/image-compressor"
+        },
+        {
+          "name": "Chuyển Đổi Ảnh Hàng Loạt",
+          "href": "/vi/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Công Cụ PDF",
+      "items": [
+        {
+          "name": "PDF sang Hình Ảnh",
+          "href": "/vi/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Công Cụ Tệp",
+      "items": [
+        {
+          "name": "Tạo ZIP",
+          "href": "/vi/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Công Cụ AI Miễn Phí, Công Cụ PDF, Công Cụ Hình Ảnh, Bộ Chuyển Đổi Tệp",
+    "hero.title": "Công Cụ AI & Chuyển Đổi Tệp Trực Tuyến Miễn Phí",
+    "hero.subtitle": "Xử lý 100% phía máy khách. Không tải tệp lên máy chủ. An toàn, Nhanh chóng và Miễn phí.",
+    "hero.search_placeholder": "Tìm kiếm công cụ (VD: \"Watermark\", \"PDF\")",
+    "section.all": "Tất Cả Công Cụ",
+    "footer.desc": "Công cụ trực tuyến miễn phí để chuyển đổi, nén và chỉnh sửa tệp của bạn.",
+    "footer.rights": "Đã đăng ký bản quyền.",
+    "footer.col.pdf": "Công Cụ PDF",
+    "footer.col.image": "Công Cụ Hình Ảnh",
+    "footer.col.company": "Công Ty",
+    "footer.col.lang": "Quốc Tế",
+    "footer.link.about": "Về Chúng Tôi",
+    "footer.link.privacy": "Chính Sách Bảo Mật",
+    "footer.link.terms": "Điều Khoản Dịch Vụ",
+    "breadcrumb.home": "Trang Chủ",
+    "section.how_it_works": "Cách Thức Hoạt Động",
+    "section.features": "Tính Năng Chính",
+    "section.testimonials": "Người Dùng Nói Gì",
+    "section.faq": "Câu Hỏi Thường Gặp",
+    "feat.nologin.title": "Không Cần Đăng Ký",
+    "feat.nologin.desc": "Bắt đầu sử dụng công cụ ngay lập tức mà không cần đăng ký.",
+    "feat.client.title": "Phía Máy Khách",
+    "feat.client.desc": "Tệp được xử lý trong trình duyệt của bạn. Không tải lên máy chủ.",
+    "feat.offline.title": "Hoạt Động Ngoại Tuyến",
+    "feat.offline.desc": "Hoạt động ngay cả khi không có internet sau khi tải.",
+    "feat.secure.title": "100% An Toàn",
+    "feat.secure.desc": "Dữ liệu của bạn không bao giờ rời khỏi thiết bị.",
+    "faq.title": "Câu Hỏi Thường Gặp",
+    "faq.q1": "AIxZIP có miễn phí không?",
+    "faq.a1": "Có, tất cả công cụ đều hoàn toàn miễn phí.",
+    "faq.q2": "Tệp của tôi có an toàn không?",
+    "faq.a2": "Chắc chắn. Chúng tôi sử dụng công nghệ dựa trên trình duyệt, vì vậy tệp của bạn được xử lý cục bộ.",
+    "testi.title": "Được Người Dùng Yêu Thích",
+    "drag_drop": "Nhấp hoặc Kéo để Tải Ảnh Lên",
+    "support_hint": "Hỗ trợ JPG, PNG, WebP · Xử lý Hàng Loạt",
+    "queue_title": "Hàng Đợi Xử Lý",
+    "clear_list": "Xóa Danh Sách",
+    "empty_hint": "Đang chờ hình ảnh...",
+    "settings_title": "Tùy Chọn",
+    "tab_pixels": "Theo Pixel",
+    "tab_percent": "Theo Phần Trăm",
+    "lbl_width": "Chiều Rộng (px)",
+    "lbl_height": "Chiều Cao (px)",
+    "lbl_percent": "Phần Trăm (%)",
+    "lbl_auto": "Tự Động",
+    "chk_no_enlarge": "Không phóng to nếu nhỏ hơn",
+    "label_rename": "Đổi Tên Hàng Loạt",
+    "placeholder_rename": "VD: Ảnh",
+    "label_quality": "Chất Lượng",
+    "sec_compress": "Nén",
+    "chk_compress": "Bật Nén",
+    "lbl_quality": "Chất Lượng",
+    "val_quality_high": "Chất Lượng Cao",
+    "val_quality_low": "Nén Cao",
+    "hint_smart": "Được khuyến nghị để cân bằng.",
+    "hint_recommend": "Không Mất Mát Thị Giác + Kích Thước Nhỏ",
+    "hint_100": "Không Mất Mát (Kích Thước Lớn)",
+    "hint_lossy": "Nén Mất Mát",
+    "opt_smart": "Thông Minh",
+    "opt_original": "Gốc",
+    "sec_privacy": "Quyền Riêng Tư",
+    "chk_strip_metadata": "Xóa Siêu Dữ Liệu",
+    "hint_strip_metadata": "Xóa thông tin EXIF/GPS.",
+    "btn_download": "Tải Xuống ZIP",
+    "btn_download_one": "Tải Xuống",
+    "btn_processing": "Đang xử lý...",
+    "status_pending": "Đang chờ",
+    "status_processing": "Đang xử lý...",
+    "status_done": "Hoàn tất",
+    "status_error": "Thất bại",
+    "stat_saved": "Đã lưu",
+    "modal_title": "Xóa Tất Cả Mục?",
+    "modal_desc": "Tất cả hình ảnh đã xử lý sẽ bị mất. Hành động này không thể hoàn tác.",
+    "modal_cancel": "Hủy",
+    "modal_confirm": "Xóa Tất Cả",
+    "leave_warning": "Bạn có hình ảnh chưa lưu. Rời khỏi trang này sẽ mất tiến trình của bạn."
+  }
+}

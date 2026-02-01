@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "أدوات الصور",
+      "items": [
+        {
+          "name": "إزالة العلامة المائية Gemini",
+          "href": "/ar/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "محرر الصور (تدوير/قلب)",
+          "href": "/ar/image/image-editor"
+        },
+        {
+          "name": "تغيير حجم الصور الدفعي",
+          "href": "/ar/image/image-resizer"
+        },
+        {
+          "name": "ضغط الصور الدفعي",
+          "href": "/ar/image/image-compressor"
+        },
+        {
+          "name": "تحويل الصور الدفعي",
+          "href": "/ar/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "أدوات PDF",
+      "items": [
+        {
+          "name": "PDF إلى صورة",
+          "href": "/ar/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "أدوات الملفات",
+      "items": [
+        {
+          "name": "إنشاء ملف ZIP",
+          "href": "/ar/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "أدوات الذكاء الاصطناعي المجانية، أدوات PDF، أدوات الصور، محولات الملفات",
+    "hero.title": "أدوات الذكاء الاصطناعي ومحول الملفات المجاني عبر الإنترنت",
+    "hero.subtitle": "معالجة 100% على جهاز العميل. لا يتم رفع الملفات إلى الخادم. آمن، سريع، ومجاني.",
+    "hero.search_placeholder": "ابحث عن الأدوات (مثل \"علامة مائية\"، \"PDF\")",
+    "section.all": "جميع الأدوات",
+    "footer.desc": "أدوات مجانية عبر الإنترنت لتحويل وضغط وتحرير ملفاتك.",
+    "footer.rights": "جميع الحقوق محفوظة.",
+    "footer.col.pdf": "أدوات PDF",
+    "footer.col.image": "أدوات الصور",
+    "footer.col.company": "الشركة",
+    "footer.col.lang": "الدولية",
+    "footer.link.about": "من نحن",
+    "footer.link.privacy": "سياسة الخصوصية",
+    "footer.link.terms": "شروط الخدمة",
+    "breadcrumb.home": "الرئيسية",
+    "section.how_it_works": "كيف يعمل",
+    "section.features": "الميزات الرئيسية",
+    "section.testimonials": "ماذا يقول المستخدمون",
+    "section.faq": "الأسئلة الشائعة",
+    "feat.nologin.title": "لا حاجة لتسجيل الدخول",
+    "feat.nologin.desc": "ابدأ باستخدام الأدوات فورًا دون تسجيل.",
+    "feat.client.title": "معالجة على جهاز العميل",
+    "feat.client.desc": "يتم معالجة الملفات في متصفحك. لا توجد رفعات إلى الخادم.",
+    "feat.offline.title": "يعمل دون اتصال",
+    "feat.offline.desc": "يعمل حتى بدون إنترنت بعد التحميل.",
+    "feat.secure.title": "آمن 100%",
+    "feat.secure.desc": "بياناتك لا تترك جهازك أبدًا.",
+    "faq.title": "الأسئلة الشائعة",
+    "faq.q1": "هل AIxZIP مجاني؟",
+    "faq.a1": "نعم، جميع الأدوات مجانية تمامًا للاستخدام.",
+    "faq.q2": "هل ملفاتي آمنة؟",
+    "faq.a2": "بالتأكيد. نستخدم تقنية تعمل في المتصفح، لذا تتم معالجة ملفاتك محليًا.",
+    "testi.title": "محبوب من قبل المستخد��ين",
+    "drag_drop": "انقر أو اسحب لرفع الصور",
+    "support_hint": "يدعم JPG، PNG، WebP · معالجة دفعة",
+    "queue_title": "قائمة الانتظار للمعالجة",
+    "clear_list": "مسح القائمة",
+    "empty_hint": "في انتظار الصور...",
+    "settings_title": "الخيارات",
+    "tab_pixels": "بالبكسل",
+    "tab_percent": "بالنسبة المئوية",
+    "lbl_width": "العرض (بكسل)",
+    "lbl_height": "الارتفاع (بكسل)",
+    "lbl_percent": "النسبة المئوية (%)",
+    "lbl_auto": "تلقائي",
+    "chk_no_enlarge": "لا تكبير إذا كانت أصغر",
+    "label_rename": "إعادة تسمية دفعة",
+    "placeholder_rename": "مثال: صورة",
+    "label_quality": "الجودة",
+    "sec_compress": "الضغط",
+    "chk_compress": "تفعيل الضغط",
+    "lbl_quality": "الجودة",
+    "val_quality_high": "جودة عالية",
+    "val_quality_low": "ضغط عالي",
+    "hint_smart": "موصى به للتوازن.",
+    "hint_recommend": "بدون فقد مرئي + حجم صغير",
+    "hint_100": "بدون فقد (حجم كبير)",
+    "hint_lossy": "ضغط مع فقد",
+    "opt_smart": "ذكي",
+    "opt_original": "الأصلي",
+    "sec_privacy": "الخصوصية",
+    "chk_strip_metadata": "إزالة البيانات الوصفية",
+    "hint_strip_metadata": "يزيل معلومات EXIF/GPS.",
+    "btn_download": "تحميل ZIP",
+    "btn_download_one": "تحميل",
+    "btn_processing": "جاري المعالجة...",
+    "status_pending": "قيد الانتظار",
+    "status_processing": "جاري المعالجة...",
+    "status_done": "تم",
+    "status_error": "فشل",
+    "stat_saved": "تم الحفظ",
+    "modal_title": "مسح جميع العناصر؟",
+    "modal_desc": "سيتم فقدان جميع الصور المعالجة. لا يمكن التراجع عن هذا الإجراء.",
+    "modal_cancel": "إلغاء",
+    "modal_confirm": "مسح الكل",
+    "leave_warning": "لديك صور غير محفوظة. مغادرة هذه الصفحة ستفقد تقدمك."
+  }
+}

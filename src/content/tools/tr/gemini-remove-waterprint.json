@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Gemini AI Görsel Filigran Kaldırıcı - SynthID ve Şeritleri Temizleyin",
+    "keywords": "Gemini Filigran Kaldırıcı, NanoBanana Filigranı Kaldırma, SynthID Kaldırma, Ücretsiz AI Araçları, AI Şeridi Kaldırma",
+    "description": "Ücretsiz, hızlı, kayıpsız. Gemini / NanoBanana ile oluşturulmuş görsellerdeki görünmez filigranları ve yarı saydam şeritleri otomatik olarak tespit edin ve kaldırın."
+  },
+  "hero": {
+    "title": "Gemini AI Görsel Filigran Kaldırıcı",
+    "subtitle": "Ücretsiz, Hızlı, Kayıpsız. Gemini / NanoBanana ile oluşturulmuş görsellerdeki görünmez filigranları otomatik olarak tespit edin ve kaldırın."
+  },
+  "steps": [
+    {
+      "title": "AI Görsellerini Yükleyin",
+      "desc": "Gemini, NanoBanana veya diğer AI araçlarıyla oluşturulmuş görselleri yükleyin."
+    },
+    {
+      "title": "Otomatik Tespit",
+      "desc": "Algoritma, belirli AI filigran desenlerini ve görünür şeritleri tanımlar."
+    },
+    {
+      "title": "Temizle ve Kaydet",
+      "desc": "Filigran şeridi olmadan temiz görseli indirin."
+    }
+  ],
+  "features": [
+    {
+      "title": "Gemini/NanoBanana Uyumlu",
+      "desc": "Gemini ile oluşturulmuş görsellerdeki beyaz/yarı saydam filigran şeritlerini kaldırmak için özel olarak ayarlanmıştır."
+    },
+    {
+      "title": "Kayıpsız Restorasyon",
+      "desc": "Filigranın arkasında kalan orijinal pikselleri bulanıklaştırmadan geri yükler."
+    },
+    {
+      "title": "Toplu Kaldırma",
+      "desc": "50'den fazla görseli sürükleyip bırakın ve hepsini saniyeler içinde yerel olarak temizleyin."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Özellikle can sıkıcı Gemini şeridini kaldırmak için ideal. Mükemmel çalışıyor ve toplu mod zaman kazandırıyor.",
+      "author": "Sarah J., Prompt Mühendisi"
+    },
+    {
+      "text": "Günlük iş akışım için NanoBanana kullanıyorum ve bu araç, filigranı temiz bir şekilde kaldıran tek araç.",
+      "author": "Mike T., AI İçerik Üreticisi"
+    }
+  ],
+  "faq": [
+    {
+      "q": "NanoBanana görsellerinde çalışıyor mu?",
+      "a": "Evet! NanoBanana, görsel oluşturma için Gemini ile aynı temel teknolojiyi kullanır. Algoritmamız, her ikisinde de bulunan karakteristik yarı saydam şeridi mükemmel şekilde tespit eder ve kaldırır."
+    },
+    {
+      "q": "Filigranı bulanıklaştırmadan nasıl kaldırıyor?",
+      "a": "Alanı bulanıklaştıran standart 'iyileştirme' araçlarının aksine, AI'mız yarı saydam filigran katmanının arkasındaki tam piksel değerlerini hesaplayarak orijinal görseli matematiksel olarak geri yükler."
+    },
+    {
+      "q": "Fotoğraflarım bir sunucuya yüklenecek mi?",
+      "a": "Hayır. Tüm işlemler, WebAssembly kullanılarak tarayıcınızda %100 yerel olarak gerçekleşir. Görselleriniz cihazınızdan hiç ayrılmaz, böylece tam gizlilik sağlanır."
+    },
+    {
+      "q": "SynthID'yi (görünmez filigranları) kaldırıyor mu?",
+      "a": "Önceliğimiz, görsel estetiği geri kazandırmak için görünür artefaktları (şerit) kaldırmaktır. Yeniden kodlama işlemi, SynthID gibi dijital imzaları bozabilirken, görünmez kriptografik filigranların tamamen kaldırılmasını garanti etmiyoruz."
+    },
+    {
+      "q": "İşleyebileceğim görsel sayısında bir sınır var mı?",
+      "a": "Sınır yoktur. Kendi cihazınızda çalıştığı için, bilgisayarınızın belleğinin kaldırdığı kadar çok görseli işleyebilirsiniz."
+    }
+  ]
+}

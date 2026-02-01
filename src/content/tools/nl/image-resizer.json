@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Batch Image Resizer - Afbeeldingen Formatteren op Pixel of Percentage",
+    "keywords": "batch image resizer, afbeeldingen online formatteren, fotoformaat wijzigen, bulk image resizer, formatteren op percentage, pixel resizer, gratis online tool",
+    "description": "Formateer meerdere afbeeldingen tegelijk op pixels of percentage. Behoud beeldverhouding, slimme compressie en privacy-gerichte lokale verwerking."
+  },
+  "hero": {
+    "title": "Batch Image Resizer",
+    "subtitle": "Formateer honderden afbeeldingen in seconden. Definieer afmetingen op pixels of percentage. 100% Client-side."
+  },
+  "steps": [
+    {
+      "title": "Upload Foto's",
+      "desc": "Sleep & zet JPG-, PNG- of WebP-afbeeldingen neer in het uploadgebied."
+    },
+    {
+      "title": "Stel Afmetingen In",
+      "desc": "Kies tussen 'Pixels' (exacte breedte/hoogte) of 'Percentage' schaling."
+    },
+    {
+      "title": "Verwerk & Bewaar",
+      "desc": "Klik op 'Start Verwerking' om te formatteren en comprimeren, download vervolgens je zip-bestand."
+    }
+  ],
+  "features": [
+    {
+      "title": "Exacte Pixelcontrole",
+      "desc": "Stel specifieke breedte- of hoogtewaarden in. De tool berekent automatisch de andere dimensie om vervorming te voorkomen."
+    },
+    {
+      "title": "Bulk Percentage Schaling",
+      "desc": "Verklein snel alle afbeeldingen naar 50% of 75% van hun originele formaat voor delen of miniaturen."
+    },
+    {
+      "title": "Slimme Compressie",
+      "desc": "Ingesloten optimalisatie zorgt ervoor dat je geformatteerde afbeeldingen de kleinste bestandsgrootte hebben zonder zichtbaar kwaliteitsverlies."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Worden mijn afbeeldingen vervormd?",
+      "a": "Nee. Standaard vergrendelen we de beeldverhouding. Als je de breedte wijzigt, past de hoogte zich automatisch aan om de juiste beeldverhouding te behouden."
+    },
+    {
+      "q": "Is er een limiet voor de bestandsgrootte?",
+      "a": "Omdat verwerking lokaal op je apparaat plaatsvindt, hangt de limiet af van het geheugen (RAM) van je computer, niet van onze server. Je kunt doorgaans honderden afbeeldingen verwerken."
+    },
+    {
+      "q": "Ondersteunt het transparante PNG's?",
+      "a": "Ja, het formatteren behoudt het transparantiekanaal in PNG- en WebP-bestanden."
+    }
+  ]
+}

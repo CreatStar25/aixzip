@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "图片工具",
+      "items": [
+        {
+          "name": "Gemini 水印去除",
+          "href": "/zh-cn/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "图片编辑器（旋转/翻转）",
+          "href": "/zh-cn/image/image-editor"
+        },
+        {
+          "name": "批量图片尺寸调整",
+          "href": "/zh-cn/image/image-resizer"
+        },
+        {
+          "name": "批量图片压缩",
+          "href": "/zh-cn/image/image-compressor"
+        },
+        {
+          "name": "批量图片格式转换",
+          "href": "/zh-cn/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDF工具",
+      "items": [
+        {
+          "name": "PDF转图片",
+          "href": "/zh-cn/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "文件工具",
+      "items": [
+        {
+          "name": "创建ZIP",
+          "href": "/zh-cn/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "免费AI工具，PDF工具，图片工具，文件转换器",
+    "hero.title": "免费在线AI工具与文件转换器",
+    "hero.subtitle": "100%客户端处理。文件不上传服务器。安全、快速、免费。",
+    "hero.search_placeholder": "搜索工具（例如：“水印”、“PDF”）",
+    "section.all": "所有工具",
+    "footer.desc": "免费在线工具，用于转换、压缩和编辑您的文件。",
+    "footer.rights": "保留所有权利。",
+    "footer.col.pdf": "PDF工具",
+    "footer.col.image": "图片工具",
+    "footer.col.company": "公司",
+    "footer.col.lang": "国际化",
+    "footer.link.about": "关于我们",
+    "footer.link.privacy": "隐私政策",
+    "footer.link.terms": "服务条款",
+    "breadcrumb.home": "首页",
+    "section.how_it_works": "工作原理",
+    "section.features": "主要特性",
+    "section.testimonials": "用户评价",
+    "section.faq": "常见问题",
+    "feat.nologin.title": "无需注册",
+    "feat.nologin.desc": "无需注册，立即开始使用工具。",
+    "feat.client.title": "客户端处理",
+    "feat.client.desc": "文件在您的浏览器中处理，无需上传至服务器。",
+    "feat.offline.title": "支持离线",
+    "feat.offline.desc": "页面加载后，即使无网络也可使用。",
+    "feat.secure.title": "100%安全",
+    "feat.secure.desc": "您的数据永远不会离开您的设备。",
+    "faq.title": "常见问题",
+    "faq.q1": "AIxZIP是免费的吗？",
+    "faq.a1": "是的，所有工具完全免费使用。",
+    "faq.q2": "我的文件安全吗？",
+    "faq.a2": "绝对安全。我们使用基于浏览器的技术，您的文件在本地处理。",
+    "testi.title": "深受用户喜爱",
+    "drag_drop": "点击或拖拽上传图片",
+    "support_hint": "支持 JPG, PNG, WebP · 批量处理",
+    "queue_title": "处理队列",
+    "clear_list": "清空列表",
+    "empty_hint": "等待图片上传...",
+    "settings_title": "���项设置",
+    "tab_pixels": "按像素",
+    "tab_percent": "按百分比",
+    "lbl_width": "宽度（像素）",
+    "lbl_height": "高度（像素）",
+    "lbl_percent": "百分比（%）",
+    "lbl_auto": "自动",
+    "chk_no_enlarge": "如果图片较小则不放大",
+    "label_rename": "批量重命名",
+    "placeholder_rename": "例如：照片",
+    "label_quality": "质量",
+    "sec_compress": "压缩设置",
+    "chk_compress": "启用压缩",
+    "lbl_quality": "质量",
+    "val_quality_high": "高质量",
+    "val_quality_low": "高压缩率",
+    "hint_smart": "推荐用于平衡效果。",
+    "hint_recommend": "视觉无损 + 小体积",
+    "hint_100": "无损（体积较大）",
+    "hint_lossy": "有损压缩",
+    "opt_smart": "智能",
+    "opt_original": "原始",
+    "sec_privacy": "隐私",
+    "chk_strip_metadata": "去除元数据",
+    "hint_strip_metadata": "移除EXIF/GPS信息。",
+    "btn_download": "下载ZIP",
+    "btn_download_one": "下载",
+    "btn_processing": "处理中...",
+    "status_pending": "等待中",
+    "status_processing": "处理中...",
+    "status_done": "完成",
+    "status_error": "失败",
+    "stat_saved": "已节省",
+    "modal_title": "清空所有项目？",
+    "modal_desc": "所有已处理的图片将丢失。此操作无法撤销。",
+    "modal_cancel": "取消",
+    "modal_confirm": "全部清空",
+    "leave_warning": "您有未保存的图片。离开此页面将丢失您的进度。"
+  }
+}

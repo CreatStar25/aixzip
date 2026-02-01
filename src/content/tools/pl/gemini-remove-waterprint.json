@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Gemini AI Usuwacz Znaków Wodnych z Obrazów - Usuń SynthID i Paski",
+    "keywords": "Usuwacz Znaków Wodnych Gemini, Znak Wodny NanoBanana, Usuń SynthID, Darmowe Narzędzia AI, Usuń Pasek AI",
+    "description": "Darmowe, szybkie, bezstratne. Automatycznie wykrywaj i usuwaj niewidoczne znaki wodne oraz półprzezroczyste paski z obrazów wygenerowanych przez Gemini / NanoBanana."
+  },
+  "hero": {
+    "title": "Gemini AI Usuwacz Znaków Wodnych z Obrazów",
+    "subtitle": "Darmowe, Szybkie, Bezstratne. Automatycznie wykrywaj i usuwaj niewidoczne znaki wodne z obrazów wygenerowanych przez Gemini / NanoBanana."
+  },
+  "steps": [
+    {
+      "title": "Prześlij Obrazy AI",
+      "desc": "Prześlij obrazy wygenerowane przez Gemini, NanoBanana lub inne narzędzia AI."
+    },
+    {
+      "title": "Automatyczne Wykrywanie",
+      "desc": "Algorytm identyfikuje specyficzne wzorce znaków wodnych AI oraz widoczne paski."
+    },
+    {
+      "title": "Wyczyść i Zapisz",
+      "desc": "Pobierz czysty obraz bez paska znaku wodnego."
+    }
+  ],
+  "features": [
+    {
+      "title": "Gotowe dla Gemini/NanoBanana",
+      "desc": "Specjalnie dostrojone do usuwania białych/półprzezroczystych pasków znaków wodnych z obrazów wygenerowanych przez Gemini."
+    },
+    {
+      "title": "Bezstratna Odbudowa",
+      "desc": "Przywraca oryginalne piksele ukryte pod znakiem wodnym bez rozmycia."
+    },
+    {
+      "title": "Usuwanie Seryjne",
+      "desc": "Przeciągnij 50+ obrazów i wyczyść je wszystkie w kilka sekund lokalnie."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Idealnie dostosowane do usuwania irytującego paska Gemini. Działa perfekcyjnie, a tryb seryjny oszczędza mnóstwo czasu.",
+      "author": "Sarah J., Inżynier Promptów"
+    },
+    {
+      "text": "Używam NanoBanana w codziennej pracy i to narzędzie jest jedynym, które czyści znak wodny bez śladu.",
+      "author": "Mike T., Twórca AI"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Czy działa na obrazach z NanoBanana?",
+      "a": "Tak! NanoBanana używa tej samej podstawowej technologii co Gemini do generowania obrazów. Nasz algorytm doskonale wykrywa i usuwa charakterystyczny półprzezroczysty pasek występujący w obu."
+    },
+    {
+      "q": "Jak usuwa znak wodny bez rozmycia?",
+      "a": "W przeciwieństwie do standardowych narzędzi 'uzdrawiających', które rozmywają obszar, nasze AI oblicza dokładne wartości pikseli ukrytych za półprzezroczystą warstwą znaku wodnego, matematycznie przywracając oryginalny obraz."
+    },
+    {
+      "q": "Czy moje zdjęcia będą przesyłane na serwer?",
+      "a": "Nie. Całe przetwarzanie odbywa się w 100% lokalnie w Twojej przeglądarce przy użyciu WebAssembly. Twoje obrazy nigdy nie opuszczają urządzenia, zapewniając pełną prywatność."
+    },
+    {
+      "q": "Czy usuwa SynthID (niewidoczne znaki wodne)?",
+      "a": "Skupiamy się głównie na usuwaniu widocznych artefaktów (paska) w celu przywrócenia estetyki wizualnej. Chociaż proces ponownego kodowania może zakłócić podpisy cyfrowe, takie jak SynthID, nie gwarantujemy całkowitego usunięcia niewidocznych kryptograficznych znaków wodnych."
+    },
+    {
+      "q": "Czy istnieje limit liczby obrazów do przetworzenia?",
+      "a": "Bez limitów. Ponieważ działa na Twoim własnym urządzeniu, możesz przetwarzać tyle obrazów, ile pozwala pamięć Twojego komputera."
+    }
+  ]
+}

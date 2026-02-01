@@ -1,14 +1,26 @@
 {
   "seo": {
-    "title": "Batch Image Resizer",
-    "keywords": "resize image, change dimensions, scale photo",
-    "description": "Resize images by pixels or percentage online."
+    "title": "Batch Image Resizer - Resize Images by Pixel or Percentage",
+    "keywords": "batch image resizer, resize images online, change photo size, bulk image resizer, resize by percentage, pixel resizer, free online tool",
+    "description": "Resize multiple images at once by pixels or percentage. Maintain aspect ratio, smart compression, and privacy-focused local processing."
   },
   "hero": {
     "title": "Batch Image Resizer",
-    "subtitle": "Change image dimensions easily."
+    "subtitle": "Resize hundreds of images in seconds. Define dimensions by pixels or percentage. 100% Client-side."
   },
-  "steps": [], 
-  "features": [],
-  "faq": []
+  "steps": [
+    { "title": "Upload Photos", "desc": "Drag & drop JPG, PNG, or WebP images into the upload area." },
+    { "title": "Set Dimensions", "desc": "Choose between 'Pixels' (exact width/height) or 'Percentage' scaling." },
+    { "title": "Process & Save", "desc": "Click 'Start Processing' to resize and compress, then download your zip." }
+  ],
+  "features": [
+    { "title": "Exact Pixel Control", "desc": "Set specific width or height values. The tool automatically calculates the other dimension to prevent distortion." },
+    { "title": "Bulk Percentage Scaling", "desc": "Quickly reduce all images to 50% or 75% of their original size for sharing or thumbnails." },
+    { "title": "Smart Compression", "desc": "Built-in optimization ensures your resized images have the smallest file size without visible quality loss." }
+  ],
+  "faq": [
+    { "q": "Will my images be distorted?", "a": "No. By default, we lock the aspect ratio. If you change the width, the height adjusts automatically to keep the image proportion correct." },
+    { "q": "Is there a limit on file size?", "a": "Since processing happens locally on your device, the limit depends on your computer's memory (RAM), not our server. You can typically process hundreds of images." },
+    { "q": "Does it support transparent PNGs?", "a": "Yes, resizing preserves the transparency channel in PNG and WebP files." }
+  ]
 }

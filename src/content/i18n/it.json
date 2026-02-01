@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Strumenti Immagine",
+      "items": [
+        {
+          "name": "Rimozione Filigrana Gemini",
+          "href": "/it/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Editor Immagini (Ruota/Inverti)",
+          "href": "/it/image/image-editor"
+        },
+        {
+          "name": "Ridimensionatore Batch Immagini",
+          "href": "/it/image/image-resizer"
+        },
+        {
+          "name": "Compressore Batch Immagini",
+          "href": "/it/image/image-compressor"
+        },
+        {
+          "name": "Convertitore Batch Immagini",
+          "href": "/it/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Strumenti PDF",
+      "items": [
+        {
+          "name": "PDF a Immagine",
+          "href": "/it/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Strumenti File",
+      "items": [
+        {
+          "name": "Crea ZIP",
+          "href": "/it/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Strumenti AI Gratuiti, Strumenti PDF, Strumenti Immagine, Convertitori File",
+    "hero.title": "Strumenti AI Online Gratuiti & Convertitore File",
+    "hero.subtitle": "Elaborazione 100% lato client. Nessun caricamento file sul server. Sicuro, Veloce e Gratuito.",
+    "hero.search_placeholder": "Cerca strumenti (es. \"Filigrana\", \"PDF\")",
+    "section.all": "Tutti gli Strumenti",
+    "footer.desc": "Strumenti online gratuiti per convertire, comprimere e modificare i tuoi file.",
+    "footer.rights": "Tutti i diritti riservati.",
+    "footer.col.pdf": "Strumenti PDF",
+    "footer.col.image": "Strumenti Immagine",
+    "footer.col.company": "Azienda",
+    "footer.col.lang": "Internazionale",
+    "footer.link.about": "Chi Siamo",
+    "footer.link.privacy": "Privacy Policy",
+    "footer.link.terms": "Termini di Servizio",
+    "breadcrumb.home": "Home",
+    "section.how_it_works": "Come Funziona",
+    "section.features": "Caratteristiche Principali",
+    "section.testimonials": "Cosa Dicono gli Utenti",
+    "section.faq": "FAQ",
+    "feat.nologin.title": "Nessuna Registrazione",
+    "feat.nologin.desc": "Inizia a usare gli strumenti immediatamente senza registrazione.",
+    "feat.client.title": "Lato Client",
+    "feat.client.desc": "I file vengono elaborati nel tuo browser. Nessun caricamento sul server.",
+    "feat.offline.title": "Funziona Offline",
+    "feat.offline.desc": "Funziona anche senza internet dopo il caricamento.",
+    "feat.secure.title": "100% Sicuro",
+    "feat.secure.desc": "I tuoi dati non lasciano mai il tuo dispositivo.",
+    "faq.title": "Domande Frequenti",
+    "faq.q1": "AIxZIP è gratuito?",
+    "faq.a1": "Sì, tutti gli strumenti sono completamente gratuiti.",
+    "faq.q2": "I miei file sono al sicuro?",
+    "faq.a2": "Assolutamente. Usiamo tecnologia basata su browser, quindi i tuoi file vengono elaborati localmente.",
+    "testi.title": "Amato dagli Utenti",
+    "drag_drop": "Clicca o Trascina per Caricare Immagini",
+    "support_hint": "Supporta JPG, PNG, WebP · Elaborazione in Batch",
+    "queue_title": "Coda di Elaborazione",
+    "clear_list": "Svuota Lista",
+    "empty_hint": "In attesa di immagini...",
+    "settings_title": "Opzioni",
+    "tab_pixels": "Per Pixel",
+    "tab_percent": "Per Percentuale",
+    "lbl_width": "Larghezza (px)",
+    "lbl_height": "Altezza (px)",
+    "lbl_percent": "Percentuale (%)",
+    "lbl_auto": "Auto",
+    "chk_no_enlarge": "Non ingrandire se più piccolo",
+    "label_rename": "Rinomina in Batch",
+    "placeholder_rename": "es. Foto",
+    "label_quality": "Qualità",
+    "sec_compress": "Compressione",
+    "chk_compress": "Abilita Compressione",
+    "lbl_quality": "Qualità",
+    "val_quality_high": "Alta Qualità",
+    "val_quality_low": "Alta Compressione",
+    "hint_smart": "Consigliato per un buon equilibrio.",
+    "hint_recommend": "Visivamente Senza Perdita + Piccole Dimensioni",
+    "hint_100": "Senza Perdita (Dimensioni Grandi)",
+    "hint_lossy": "Compressione con Perdita",
+    "opt_smart": "Intelligente",
+    "opt_original": "Originale",
+    "sec_privacy": "Privacy",
+    "chk_strip_metadata": "Rimuovi Metadati",
+    "hint_strip_metadata": "Rimuove informazioni EXIF/GPS.",
+    "btn_download": "Scarica ZIP",
+    "btn_download_one": "Scarica",
+    "btn_processing": "Elaborazione...",
+    "status_pending": "In Attesa",
+    "status_processing": "Elaborazione...",
+    "status_done": "Completato",
+    "status_error": "Fallito",
+    "stat_saved": "Risparmiato",
+    "modal_title": "Svuotare Tutti gli Elementi?",
+    "modal_desc": "Tutte le immagini elaborate andranno perse. Questa azione non può essere annullata.",
+    "modal_cancel": "Annulla",
+    "modal_confirm": "Svuota Tutto",
+    "leave_warning": "Hai immagini non salvate. Lasciando questa pagina perderai i progressi."
+  }
+}

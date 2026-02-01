@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Redimensionator de Imagini în Masă - Redimensionează Imagini după Pixeli sau Procentaj",
+    "keywords": "redimensionator de imagini în masă, redimensionează imagini online, schimbă dimensiunea fotografiilor, redimensionator de imagini în bulk, redimensionează după procentaj, redimensionator după pixeli, unealtă online gratuită",
+    "description": "Redimensionează mai multe imagini simultan după pixeli sau procentaj. Menține raportul de aspect, compresie inteligentă și procesare locală cu accent pe confidențialitate."
+  },
+  "hero": {
+    "title": "Redimensionator de Imagini în Masă",
+    "subtitle": "Redimensionează sute de imagini în câteva secunde. Definește dimensiunile după pixeli sau procentaj. 100% pe partea clientului."
+  },
+  "steps": [
+    {
+      "title": "Încarcă Fotografii",
+      "desc": "Trage și plasează imagini JPG, PNG sau WebP în zona de încărcare."
+    },
+    {
+      "title": "Setează Dimensiuni",
+      "desc": "Alege între 'Pixeli' (lățime/înălțime exactă) sau scalare după 'Procentaj'."
+    },
+    {
+      "title": "Procesează și Salvează",
+      "desc": "Apasă 'Începe Procesarea' pentru a redimensiona și comprima, apoi descarcă arhiva zip."
+    }
+  ],
+  "features": [
+    {
+      "title": "Control Exact pe Pixeli",
+      "desc": "Setează valori specifice pentru lățime sau înălțime. Unealta calculează automat cealaltă dimensiune pentru a preveni distorsiunea."
+    },
+    {
+      "title": "Scalare în Masă după Procentaj",
+      "desc": "Redu rapid toate imaginile la 50% sau 75% din dimensiunea originală pentru partajare sau miniaturi."
+    },
+    {
+      "title": "Compresie Inteligentă",
+      "desc": "Optimizarea integrată asigură că imaginile redimensionate au cea mai mică dimensiune de fișier fără pierderi vizibile de calitate."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Vor fi distorsionate imaginile mele?",
+      "a": "Nu. În mod implicit, blocăm raportul de aspect. Dacă schimbi lățimea, înălțimea se ajustează automat pentru a menține proporțiile corecte ale imaginii."
+    },
+    {
+      "q": "Există o limită pentru dimensiunea fișierelor?",
+      "a": "Deoarece procesarea are loc local pe dispozitivul tău, limita depinde de memoria (RAM) computerului tău, nu de serverul nostru. Poți procesa de obicei sute de imagini."
+    },
+    {
+      "q": "Suportă PNG-uri transparente?",
+      "a": "Da, redimensionarea păstrează canalul de transparență în fișierele PNG și WebP."
+    }
+  ]
+}

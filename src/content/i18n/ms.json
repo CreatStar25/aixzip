@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Alat Imej",
+      "items": [
+        {
+          "name": "Pembuang Tanda Air Gemini",
+          "href": "/ms/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Penyunting Imej (Putar/Balik)",
+          "href": "/ms/image/image-editor"
+        },
+        {
+          "name": "Penyusun Saiz Imej Pukal",
+          "href": "/ms/image/image-resizer"
+        },
+        {
+          "name": "Pemampat Imej Pukal",
+          "href": "/ms/image/image-compressor"
+        },
+        {
+          "name": "Penukar Imej Pukal",
+          "href": "/ms/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Alat PDF",
+      "items": [
+        {
+          "name": "PDF ke Imej",
+          "href": "/ms/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Alat Fail",
+      "items": [
+        {
+          "name": "Cipta ZIP",
+          "href": "/ms/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Alat AI Percuma, Alat PDF, Alat Imej, Penukar Fail",
+    "hero.title": "Alat AI & Penukar Fail Dalam Talian Percuma",
+    "hero.subtitle": "Pemprosesan 100% di sisi pelanggan. Tiada muat naik fail ke pelayan. Selamat, Pantas, dan Percuma.",
+    "hero.search_placeholder": "Cari alat (cth. \"Tanda Air\", \"PDF\")",
+    "section.all": "Semua Alat",
+    "footer.desc": "Alat dalam talian percuma untuk menukar, memampat, dan mengedit fail anda.",
+    "footer.rights": "Hak cipta terpelihara.",
+    "footer.col.pdf": "Alat PDF",
+    "footer.col.image": "Alat Imej",
+    "footer.col.company": "Syarikat",
+    "footer.col.lang": "Antarabangsa",
+    "footer.link.about": "Tentang Kami",
+    "footer.link.privacy": "Dasar Privasi",
+    "footer.link.terms": "Terma Perkhidmatan",
+    "breadcrumb.home": "Laman Utama",
+    "section.how_it_works": "Cara Ia Berfungsi",
+    "section.features": "Ciri Utama",
+    "section.testimonials": "Apa Kata Pengguna",
+    "section.faq": "Soalan Lazim",
+    "feat.nologin.title": "Tiada Pendaftaran",
+    "feat.nologin.desc": "Mula gunakan alat serta-merta tanpa pendaftaran.",
+    "feat.client.title": "Sisi Pelanggan",
+    "feat.client.desc": "Fail diproses dalam pelayar anda. Tiada muat naik ke pelayan.",
+    "feat.offline.title": "Boleh Beroperasi Luar Talian",
+    "feat.offline.desc": "Berfungsi walaupun tanpa internet selepas dimuat.",
+    "feat.secure.title": "100% Selamat",
+    "feat.secure.desc": "Data anda tidak pernah meninggalkan peranti anda.",
+    "faq.title": "Soalan Lazim",
+    "faq.q1": "Adakah AIxZIP percuma?",
+    "faq.a1": "Ya, semua alat adalah percuma sepenuhnya.",
+    "faq.q2": "Adakah fail saya selamat?",
+    "faq.a2": "Sudah tentu. Kami menggunakan teknologi berasaskan pelayar, jadi fail anda diproses secara tempatan.",
+    "testi.title": "Disukai Pengguna",
+    "drag_drop": "Klik atau Seret untuk Muat Naik Imej",
+    "support_hint": "Menyokong JPG, PNG, WebP · Pemprosesan Pukal",
+    "queue_title": "Barisan Proses",
+    "clear_list": "Kosongkan Senarai",
+    "empty_hint": "Menunggu imej...",
+    "settings_title": "Pilihan",
+    "tab_pixels": "Mengikut Piksel",
+    "tab_percent": "Mengikut Peratusan",
+    "lbl_width": "Lebar (px)",
+    "lbl_height": "Tinggi (px)",
+    "lbl_percent": "Peratusan (%)",
+    "lbl_auto": "Auto",
+    "chk_no_enlarge": "Jangan besarkan jika lebih kecil",
+    "label_rename": "Tukar Nama Pukal",
+    "placeholder_rename": "cth. Foto",
+    "label_quality": "Kualiti",
+    "sec_compress": "Pemampatan",
+    "chk_compress": "Dayakan Pemampatan",
+    "lbl_quality": "Kualiti",
+    "val_quality_high": "Kualiti Tinggi",
+    "val_quality_low": "Pemampatan Tinggi",
+    "hint_smart": "Disyorkan untuk keseimbangan.",
+    "hint_recommend": "Tiada Kehilangan Visual + Saiz Kecil",
+    "hint_100": "Tiada Kehilangan (Saiz Besar)",
+    "hint_lossy": "Pemampatan Kehilangan",
+    "opt_smart": "Pintar",
+    "opt_original": "Asal",
+    "sec_privacy": "Privasi",
+    "chk_strip_metadata": "Buang Metadata",
+    "hint_strip_metadata": "Buang maklumat EXIF/GPS.",
+    "btn_download": "Muat Turun ZIP",
+    "btn_download_one": "Muat Turun",
+    "btn_processing": "Memproses...",
+    "status_pending": "Belum Diproses",
+    "status_processing": "Memproses...",
+    "status_done": "Selesai",
+    "status_error": "Gagal",
+    "stat_saved": "Telah Disimpan",
+    "modal_title": "Kosongkan Semua Item?",
+    "modal_desc": "Semua imej yang diproses akan hilang. Tindakan ini tidak boleh dibatalkan.",
+    "modal_cancel": "Batal",
+    "modal_confirm": "Kosongkan Semua",
+    "leave_warning": "Anda mempunyai imej yang belum disimpan. Meninggalkan halaman ini akan menghilangkan kemajuan anda."
+  }
+}

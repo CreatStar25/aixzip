@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Redimensionneur d'Images par Lot - Redimensionner par Pixels ou Pourcentage",
+    "keywords": "redimensionneur d'images par lot, redimensionner des images en ligne, changer la taille des photos, redimensionneur en masse, redimensionner par pourcentage, redimensionneur en pixels, outil en ligne gratuit",
+    "description": "Redimensionnez plusieurs images à la fois par pixels ou pourcentage. Maintien du ratio d'aspect, compression intelligente et traitement local axé sur la confidentialité."
+  },
+  "hero": {
+    "title": "Redimensionneur d'Images par Lot",
+    "subtitle": "Redimensionnez des centaines d'images en quelques secondes. Définissez les dimensions par pixels ou pourcentage. 100% côté client."
+  },
+  "steps": [
+    {
+      "title": "Télécharger des Photos",
+      "desc": "Glissez-déposez des images JPG, PNG ou WebP dans la zone de téléchargement."
+    },
+    {
+      "title": "Définir les Dimensions",
+      "desc": "Choisissez entre 'Pixels' (largeur/hauteur exactes) ou mise à l'échelle par 'Pourcentage'."
+    },
+    {
+      "title": "Traiter et Sauvegarder",
+      "desc": "Cliquez sur 'Démarrer le Traitement' pour redimensionner et compresser, puis téléchargez votre fichier zip."
+    }
+  ],
+  "features": [
+    {
+      "title": "Contrôle Pixel par Pixel",
+      "desc": "Définissez des valeurs de largeur ou de hauteur spécifiques. L'outil calcule automatiquement l'autre dimension pour éviter la distorsion."
+    },
+    {
+      "title": "Mise à l'Échelle en Pourcentage par Lot",
+      "desc": "Réduisez rapidement toutes les images à 50% ou 75% de leur taille d'origine pour le partage ou les miniatures."
+    },
+    {
+      "title": "Compression Intelligente",
+      "desc": "L'optimisation intégrée garantit que vos images redimensionnées ont la plus petite taille de fichier sans perte de qualité visible."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Mes images seront-elles déformées ?",
+      "a": "Non. Par défaut, nous verrouillons le ratio d'aspect. Si vous modifiez la largeur, la hauteur s'ajuste automatiquement pour conserver les proportions correctes de l'image."
+    },
+    {
+      "q": "Y a-t-il une limite de taille de fichier ?",
+      "a": "Comme le traitement se fait localement sur votre appareil, la limite dépend de la mémoire (RAM) de votre ordinateur, et non de nos serveurs. Vous pouvez généralement traiter des centaines d'images."
+    },
+    {
+      "q": "Prend-il en charge les PNG transparents ?",
+      "a": "Oui, le redimensionnement préserve le canal de transparence dans les fichiers PNG et WebP."
+    }
+  ]
+}

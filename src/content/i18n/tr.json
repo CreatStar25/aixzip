@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Görsel Araçları",
+      "items": [
+        {
+          "name": "Gemini Filigran Kaldırıcı",
+          "href": "/tr/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Görsel Düzenleyici (Döndür/Çevir)",
+          "href": "/tr/image/image-editor"
+        },
+        {
+          "name": "Toplu Görsel Boyutlandırıcı",
+          "href": "/tr/image/image-resizer"
+        },
+        {
+          "name": "Toplu Görsel Sıkıştırıcı",
+          "href": "/tr/image/image-compressor"
+        },
+        {
+          "name": "Toplu Görsel Dönüştürücü",
+          "href": "/tr/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDF Araçları",
+      "items": [
+        {
+          "name": "PDF'den Görsele",
+          "href": "/tr/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Dosya Araçları",
+      "items": [
+        {
+          "name": "ZIP Oluştur",
+          "href": "/tr/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Ücretsiz AI Araçları, PDF Araçları, Görsel Araçları, Dosya Dönüştürücüler",
+    "hero.title": "Ücretsiz Çevrimiçi AI Araçları & Dosya Dönüştürücü",
+    "hero.subtitle": "%100 İstemci tarafında işleme. Sunucuya dosya yüklenmez. Güvenli, Hızlı ve Ücretsiz.",
+    "hero.search_placeholder": "Araçları ara (örn. \"Filigran\", \"PDF\")",
+    "section.all": "Tüm Araçlar",
+    "footer.desc": "Dosyalarınızı dönüştürmek, sıkıştırmak ve düzenlemek için ücretsiz çevrimiçi araçlar.",
+    "footer.rights": "Tüm hakları saklıdır.",
+    "footer.col.pdf": "PDF Araçları",
+    "footer.col.image": "Görsel Araçları",
+    "footer.col.company": "Şirket",
+    "footer.col.lang": "Uluslararası",
+    "footer.link.about": "Hakkımızda",
+    "footer.link.privacy": "Gizlilik Politikası",
+    "footer.link.terms": "Hizmet Şartları",
+    "breadcrumb.home": "Ana Sayfa",
+    "section.how_it_works": "Nasıl Çalışır",
+    "section.features": "Temel Özellikler",
+    "section.testimonials": "Kullanıcılar Ne Diyor",
+    "section.faq": "SSS",
+    "feat.nologin.title": "Kayıt Gerekmez",
+    "feat.nologin.desc": "Kayıt olmadan hemen araçları kullanmaya başlayın.",
+    "feat.client.title": "İstemci Tarafında",
+    "feat.client.desc": "Dosyalar tarayıcınızda işlenir. Sunucuya yükleme yok.",
+    "feat.offline.title": "Çevrimdışı Çalışabilir",
+    "feat.offline.desc": "Yüklendikten sonra internet olmadan da çalışır.",
+    "feat.secure.title": "%100 Güvenli",
+    "feat.secure.desc": "Verileriniz cihazınızdan hiç ayrılmaz.",
+    "faq.title": "Sıkça Sorulan Sorular",
+    "faq.q1": "AIxZIP ücretsiz mi?",
+    "faq.a1": "Evet, tüm araçlar tamamen ücretsiz kullanılabilir.",
+    "faq.q2": "Dosyalarım güvende mi?",
+    "faq.a2": "Kesinlikle. Tarayıcı tabanlı teknoloji kullanıyoruz, böylece dosyalarınız yerel olarak işlenir.",
+    "testi.title": "Kullanıcılar Tarafından Sevilen",
+    "drag_drop": "Tıklayın veya Görselleri Yüklemek için Sürükleyin",
+    "support_hint": "JPG, PNG, WebP destekler · Toplu İşleme",
+    "queue_title": "İşlem Kuyruğu",
+    "clear_list": "Listeyi Temizle",
+    "empty_hint": "Görseller bekleniyor...",
+    "settings_title": "Seçenekler",
+    "tab_pixels": "Piksel ile",
+    "tab_percent": "Yüzde ile",
+    "lbl_width": "Genişlik (px)",
+    "lbl_height": "Yükseklik (px)",
+    "lbl_percent": "Yüzde (%)",
+    "lbl_auto": "Otomatik",
+    "chk_no_enlarge": "Daha küçükse büyütme",
+    "label_rename": "Toplu Yeniden Adlandır",
+    "placeholder_rename": "örn. Fotoğraf",
+    "label_quality": "Kalite",
+    "sec_compress": "Sıkıştırma",
+    "chk_compress": "Sıkıştırmayı Etkinleştir",
+    "lbl_quality": "Kalite",
+    "val_quality_high": "Yüksek Kalite",
+    "val_quality_low": "Yüksek Sıkıştırma",
+    "hint_smart": "Denge için önerilir.",
+    "hint_recommend": "Görsel Olarak Kayıpsız + Küçük Boyut",
+    "hint_100": "Kayıpsız (Büyük Boyut)",
+    "hint_lossy": "Kayıplı Sıkıştırma",
+    "opt_smart": "Akıllı",
+    "opt_original": "Orijinal",
+    "sec_privacy": "Gizlilik",
+    "chk_strip_metadata": "Meta Verileri Kaldır",
+    "hint_strip_metadata": "EXIF/GPS bilgilerini kaldırır.",
+    "btn_download": "ZIP İndir",
+    "btn_download_one": "İndir",
+    "btn_processing": "İşleniyor...",
+    "status_pending": "Beklemede",
+    "status_processing": "İşleniyor...",
+    "status_done": "Tamamlandı",
+    "status_error": "Başarısız",
+    "stat_saved": "Kaydedildi",
+    "modal_title": "Tüm Öğeler Temizlensin mi?",
+    "modal_desc": "İşlenmiş tüm görseller kaybolacak. Bu işlem geri alınamaz.",
+    "modal_cancel": "İptal",
+    "modal_confirm": "Tümünü Temizle",
+    "leave_warning": "Kaydedilmemiş görselleriniz var. Bu sayfadan ayrılmak ilerlemenizi kaybettirecektir."
+  }
+}

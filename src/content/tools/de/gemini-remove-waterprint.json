@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Gemini AI Bildwasserzeichen-Entferner - SynthID & Streifen entfernen",
+    "keywords": "Gemini Wasserzeichen-Entferner, NanoBanana Wasserzeichen, SynthID entfernen, Kostenlose KI-Tools, KI-Streifen entfernen",
+    "description": "Kostenlos, schnell, verlustfrei. Automatische Erkennung und Entfernung unsichtbarer Wasserzeichen und durchscheinender Streifen von Gemini-/NanoBanana-generierten Bildern."
+  },
+  "hero": {
+    "title": "Gemini AI Bildwasserzeichen-Entferner",
+    "subtitle": "Kostenlos, schnell, verlustfrei. Automatische Erkennung und Entfernung unsichtbarer Wasserzeichen von Gemini-/NanoBanana-generierten Bildern."
+  },
+  "steps": [
+    {
+      "title": "KI-Bilder hochladen",
+      "desc": "Laden Sie Bilder hoch, die von Gemini, NanoBanana oder anderen KI-Tools generiert wurden."
+    },
+    {
+      "title": "Automatische Erkennung",
+      "desc": "Der Algorithmus erkennt spezifische KI-Wasserzeichenmuster und sichtbare Streifen."
+    },
+    {
+      "title": "Bereinigen & Speichern",
+      "desc": "Laden Sie das saubere Bild ohne Wasserzeichenstreifen herunter."
+    }
+  ],
+  "features": [
+    {
+      "title": "Für Gemini/NanoBanana optimiert",
+      "desc": "Speziell angepasst, um die weißen/durchscheinenden Wasserzeichenstreifen von Gemini-generierten Bildern zu entfernen."
+    },
+    {
+      "title": "Verlustfreie Wiederherstellung",
+      "desc": "Stellt die ursprünglichen Pixel hinter dem Wasserzeichen wieder her, ohne zu verwischen."
+    },
+    {
+      "title": "Stapelverarbeitung",
+      "desc": "Ziehen Sie 50+ Bilder herein und bereinigen Sie sie alle lokal in Sekunden."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Perfekt für die Entfernung des lästigen Gemini-Streifens. Funktioniert einwandfrei und der Stapelmodus spart viel Zeit.",
+      "author": "Sarah J., Prompt Engineer"
+    },
+    {
+      "text": "Ich nutze NanoBanana täglich in meinem Workflow und dieses Tool ist das einzige, das das Wasserzeichen sauber entfernt.",
+      "author": "Mike T., KI-Kreativer"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Funktioniert es auch mit NanoBanana-Bildern?",
+      "a": "Ja! NanoBanana nutzt die gleiche zugrundeliegende Technologie wie Gemini für die Bildgenerierung. Unser Algorithmus erkennt und entfernt den charakteristischen durchscheinenden Streifen bei beiden perfekt."
+    },
+    {
+      "q": "Wie entfernt es das Wasserzeichen ohne zu verwischen?",
+      "a": "Im Gegensatz zu herkömmlichen 'Reparatur'-Tools, die den Bereich verwischen, berechnet unsere KI die exakten Pixelwerte hinter der halbtransparenten Wasserzeichenebene und stellt das Originalbild mathematisch wieder her."
+    },
+    {
+      "q": "Werden meine Fotos auf einen Server hochgeladen?",
+      "a": "Nein. Die gesamte Verarbeitung erfolgt zu 100 % lokal in Ihrem Browser über WebAssembly. Ihre Bilder verlassen nie Ihr Gerät, was absolute Privatsphäre gewährleistet."
+    },
+    {
+      "q": "Entfernt es SynthID (unsichtbare Wasserzeichen)?",
+      "a": "Wir konzentrieren uns hauptsächlich auf die Entfernung sichtbarer Artefakte (des Streifens), um die visuelle Ästhetik wiederherzustellen. Während der Neuverschlüsselungsprozess digitale Signaturen wie SynthID stören kann, garantieren wir keine vollständige Entfernung unsichtbarer kryptografischer Wasserzeichen."
+    },
+    {
+      "q": "Gibt es eine Begrenzung, wie viele Bilder ich verarbeiten kann?",
+      "a": "Keine Begrenzungen. Da es auf Ihrem eigenen Gerät läuft, können Sie so viele Bilder verarbeiten, wie der Arbeitsspeicher Ihres Computers bewältigt."
+    }
+  ]
+}

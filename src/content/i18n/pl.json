@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Narzędzia do Obrazów",
+      "items": [
+        {
+          "name": "Usuwacz Znaków Wodnych Gemini",
+          "href": "/pl/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Edytor Obrazów (Obróć/Odbij)",
+          "href": "/pl/image/image-editor"
+        },
+        {
+          "name": "Zmiana Rozmiaru Obrazów Seryjnie",
+          "href": "/pl/image/image-resizer"
+        },
+        {
+          "name": "Kompresja Obrazów Seryjnie",
+          "href": "/pl/image/image-compressor"
+        },
+        {
+          "name": "Konwerter Obrazów Seryjnie",
+          "href": "/pl/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "Narzędzia PDF",
+      "items": [
+        {
+          "name": "PDF na Obraz",
+          "href": "/pl/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Narzędzia do Plików",
+      "items": [
+        {
+          "name": "Utwórz ZIP",
+          "href": "/pl/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Darmowe Narzędzia AI, Narzędzia PDF, Narzędzia do Obrazów, Konwertery Plików",
+    "hero.title": "Darmowe Narzędzia AI Online i Konwerter Plików",
+    "hero.subtitle": "100% przetwarzanie po stronie klienta. Brak wysyłania plików na serwer. Bezpieczne, Szybkie i Darmowe.",
+    "hero.search_placeholder": "Szukaj narzędzi (np. \"Znak wodny\", \"PDF\")",
+    "section.all": "Wszystkie Narzędzia",
+    "footer.desc": "Darmowe narzędzia online do konwersji, kompresji i edycji plików.",
+    "footer.rights": "Wszelkie prawa zastrzeżone.",
+    "footer.col.pdf": "Narzędzia PDF",
+    "footer.col.image": "Narzędzia do Obrazów",
+    "footer.col.company": "Firma",
+    "footer.col.lang": "Języki",
+    "footer.link.about": "O nas",
+    "footer.link.privacy": "Polityka Prywatności",
+    "footer.link.terms": "Warunki Korzystania",
+    "breadcrumb.home": "Strona główna",
+    "section.how_it_works": "Jak to działa",
+    "section.features": "Kluczowe Funkcje",
+    "section.testimonials": "Co mówią użytkownicy",
+    "section.faq": "FAQ",
+    "feat.nologin.title": "Bez Rejestracji",
+    "feat.nologin.desc": "Zacznij używać narzędzi natychmiast bez rejestracji.",
+    "feat.client.title": "Po Stronie Klienta",
+    "feat.client.desc": "Pliki są przetwarzane w Twojej przeglądarce. Brak wysyłania na serwer.",
+    "feat.offline.title": "Praca Offline",
+    "feat.offline.desc": "Działa nawet bez internetu po załadowaniu.",
+    "feat.secure.title": "100% Bezpieczne",
+    "feat.secure.desc": "Twoje dane nigdy nie opuszczają Twojego urządzenia.",
+    "faq.title": "Często Zadawane Pytania",
+    "faq.q1": "Czy AIxZIP jest darmowe?",
+    "faq.a1": "Tak, wszystkie narzędzia są całkowicie darmowe.",
+    "faq.q2": "Czy moje pliki są bezpieczne?",
+    "faq.a2": "Absolutnie. Używamy technologii przeglądarkowej, więc Twoje pliki są przetwarzane lokalnie.",
+    "testi.title": "Uwielbiane przez użytkowników",
+    "drag_drop": "Kliknij lub przeciągnij, aby przesłać obrazy",
+    "support_hint": "Obsługuje JPG, PNG, WebP · Przetwarzanie seryjne",
+    "queue_title": "Kolejka Przetwarzania",
+    "clear_list": "Wyczyść listę",
+    "empty_hint": "Oczekiwanie na obrazy...",
+    "settings_title": "Opcje",
+    "tab_pixels": "W pikselach",
+    "tab_percent": "W procentach",
+    "lbl_width": "Szerokość (px)",
+    "lbl_height": "Wysokość (px)",
+    "lbl_percent": "Procent (%)",
+    "lbl_auto": "Auto",
+    "chk_no_enlarge": "Nie powiększaj, jeśli mniejsze",
+    "label_rename": "Zmiana nazw seryjnie",
+    "placeholder_rename": "np. Zdjęcie",
+    "label_quality": "Jakość",
+    "sec_compress": "Kompresja",
+    "chk_compress": "Włącz kompresję",
+    "lbl_quality": "Jakość",
+    "val_quality_high": "Wysoka Jakość",
+    "val_quality_low": "Wysoka Kompresja",
+    "hint_smart": "Zalecane dla równowagi.",
+    "hint_recommend": "Wizualnie Bezstratne + Mały Rozmiar",
+    "hint_100": "Bezstratne (Duży Rozmiar)",
+    "hint_lossy": "Kompresja Stratna",
+    "opt_smart": "Inteligentna",
+    "opt_original": "Oryginalna",
+    "sec_privacy": "Prywatność",
+    "chk_strip_metadata": "Usuń Metadane",
+    "hint_strip_metadata": "Usuwa informacje EXIF/GPS.",
+    "btn_download": "Pobierz ZIP",
+    "btn_download_one": "Pobierz",
+    "btn_processing": "Przetwarzanie...",
+    "status_pending": "Oczekujące",
+    "status_processing": "Przetwarzanie...",
+    "status_done": "Gotowe",
+    "status_error": "Niepowodzenie",
+    "stat_saved": "Zaoszczędzono",
+    "modal_title": "Wyczyścić wszystkie elementy?",
+    "modal_desc": "Wszystkie przetworzone obrazy zostaną utracone. Tej czynności nie można cofnąć.",
+    "modal_cancel": "Anuluj",
+    "modal_confirm": "Wyczyść wszystko",
+    "leave_warning": "Masz niezapisane obrazy. Opuszczenie tej strony spowoduje utratę postępu."
+  }
+}

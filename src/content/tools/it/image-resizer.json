@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Ridimensionatore Batch di Immagini - Ridimensiona Immagini per Pixel o Percentuale",
+    "keywords": "ridimensionatore batch immagini, ridimensiona immagini online, cambia dimensione foto, ridimensionatore bulk immagini, ridimensiona per percentuale, ridimensionatore pixel, strumento online gratuito",
+    "description": "Ridimensiona più immagini contemporaneamente per pixel o percentuale. Mantieni le proporzioni, compressione intelligente ed elaborazione locale focalizzata sulla privacy."
+  },
+  "hero": {
+    "title": "Ridimensionatore Batch di Immagini",
+    "subtitle": "Ridimensiona centinaia di immagini in pochi secondi. Definisci le dimensioni per pixel o percentuale. 100% lato client."
+  },
+  "steps": [
+    {
+      "title": "Carica Foto",
+      "desc": "Trascina e rilascia immagini JPG, PNG o WebP nell'area di caricamento."
+    },
+    {
+      "title": "Imposta Dimensioni",
+      "desc": "Scegli tra 'Pixel' (larghezza/altezza esatte) o ridimensionamento 'Percentuale'."
+    },
+    {
+      "title": "Elabora e Salva",
+      "desc": "Clicca 'Avvia Elaborazione' per ridimensionare e comprimere, poi scarica il tuo file zip."
+    }
+  ],
+  "features": [
+    {
+      "title": "Controllo Pixel Esatto",
+      "desc": "Imposta valori specifici di larghezza o altezza. Lo strumento calcola automaticamente l'altra dimensione per prevenire distorsioni."
+    },
+    {
+      "title": "Ridimensionamento Percentuale in Blocco",
+      "desc": "Riduci rapidamente tutte le immagini al 50% o 75% della loro dimensione originale per condivisione o miniature."
+    },
+    {
+      "title": "Compressione Intelligente",
+      "desc": "L'ottimizzazione integrata garantisce che le tue immagini ridimensionate abbiano la dimensione file più piccola senza perdita di qualità visibile."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Le mie immagini verranno distorte?",
+      "a": "No. Per impostazione predefinita, blocchiamo le proporzioni. Se modifichi la larghezza, l'altezza si adatta automaticamente per mantenere le proporzioni dell'immagine corrette."
+    },
+    {
+      "q": "C'è un limite alla dimensione del file?",
+      "a": "Poiché l'elaborazione avviene localmente sul tuo dispositivo, il limite dipende dalla memoria (RAM) del tuo computer, non dal nostro server. In genere puoi elaborare centinaia di immagini."
+    },
+    {
+      "q": "Supporta PNG trasparenti?",
+      "a": "Sì, il ridimensionamento preserva il canale di trasparenza nei file PNG e WebP."
+    }
+  ]
+}

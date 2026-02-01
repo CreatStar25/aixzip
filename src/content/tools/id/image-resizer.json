@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Batch Image Resizer - Ubah Ukuran Gambar Berdasarkan Pixel atau Persentase",
+    "keywords": "batch image resizer, ubah ukuran gambar online, ubah ukuran foto, bulk image resizer, ubah ukuran berdasarkan persentase, pixel resizer, alat online gratis",
+    "description": "Ubah ukuran beberapa gambar sekaligus berdasarkan pixel atau persentase. Pertahankan rasio aspek, kompresi pintar, dan pemrosesan lokal yang berfokus pada privasi."
+  },
+  "hero": {
+    "title": "Batch Image Resizer",
+    "subtitle": "Ubah ukuran ratusan gambar dalam hitungan detik. Tentukan dimensi berdasarkan pixel atau persentase. 100% diproses di sisi klien."
+  },
+  "steps": [
+    {
+      "title": "Unggah Foto",
+      "desc": "Seret & lepas gambar JPG, PNG, atau WebP ke area unggahan."
+    },
+    {
+      "title": "Atur Dimensi",
+      "desc": "Pilih antara 'Pixel' (lebar/tinggi tepat) atau penskalaan 'Persentase'."
+    },
+    {
+      "title": "Proses & Simpan",
+      "desc": "Klik 'Mulai Pemrosesan' untuk mengubah ukuran dan mengompres, lalu unduh file zip Anda."
+    }
+  ],
+  "features": [
+    {
+      "title": "Kontrol Pixel Tepat",
+      "desc": "Atur nilai lebar atau tinggi spesifik. Alat ini secara otomatis menghitung dimensi lainnya untuk mencegah distorsi."
+    },
+    {
+      "title": "Penskalaan Persentase Massal",
+      "desc": "Cepat kurangi semua gambar menjadi 50% atau 75% dari ukuran aslinya untuk berbagi atau thumbnail."
+    },
+    {
+      "title": "Kompresi Pintar",
+      "desc": "Optimisasi bawaan memastikan gambar yang diubah ukurannya memiliki ukuran file terkecil tanpa kehilangan kualitas yang terlihat."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Apakah gambar saya akan terdistorsi?",
+      "a": "Tidak. Secara default, kami mengunci rasio aspek. Jika Anda mengubah lebar, tinggi akan menyesuaikan secara otomatis untuk menjaga proporsi gambar tetap benar."
+    },
+    {
+      "q": "Apakah ada batasan ukuran file?",
+      "a": "Karena pemrosesan terjadi secara lokal di perangkat Anda, batasannya bergantung pada memori (RAM) komputer Anda, bukan server kami. Anda biasanya dapat memproses ratusan gambar."
+    },
+    {
+      "q": "Apakah mendukung PNG transparan?",
+      "a": "Ya, pengubahan ukuran mempertahankan saluran transparansi dalam file PNG dan WebP."
+    }
+  ]
+}

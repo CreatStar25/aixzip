@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "Bild-Tools",
+      "items": [
+        {
+          "name": "Gemini Wasserzeichen-Entferner",
+          "href": "/de/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Bild-Editor (Drehen/Spiegeln)",
+          "href": "/de/image/image-editor"
+        },
+        {
+          "name": "Stapel-Bildgrößenänderung",
+          "href": "/de/image/image-resizer"
+        },
+        {
+          "name": "Stapel-Bildkomprimierung",
+          "href": "/de/image/image-compressor"
+        },
+        {
+          "name": "Stapel-Bildkonverter",
+          "href": "/de/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDF-Tools",
+      "items": [
+        {
+          "name": "PDF zu Bild",
+          "href": "/de/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "Datei-Tools",
+      "items": [
+        {
+          "name": "ZIP erstellen",
+          "href": "/de/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "Kostenlose KI-Tools, PDF-Tools, Bild-Tools, Dateikonverter",
+    "hero.title": "Kostenlose Online-KI-Tools & Dateikonverter",
+    "hero.subtitle": "100% clientseitige Verarbeitung. Keine Datei-Uploads zum Server. Sicher, Schnell und Kostenlos.",
+    "hero.search_placeholder": "Tools suchen (z.B. \"Wasserzeichen\", \"PDF\")",
+    "section.all": "Alle Tools",
+    "footer.desc": "Kostenlose Online-Tools zum Konvertieren, Komprimieren und Bearbeiten Ihrer Dateien.",
+    "footer.rights": "Alle Rechte vorbehalten.",
+    "footer.col.pdf": "PDF-Tools",
+    "footer.col.image": "Bild-Tools",
+    "footer.col.company": "Unternehmen",
+    "footer.col.lang": "International",
+    "footer.link.about": "Über uns",
+    "footer.link.privacy": "Datenschutz",
+    "footer.link.terms": "Nutzungsbedingungen",
+    "breadcrumb.home": "Startseite",
+    "section.how_it_works": "So funktioniert's",
+    "section.features": "Hauptmerkmale",
+    "section.testimonials": "Nutzerstimmen",
+    "section.faq": "FAQ",
+    "feat.nologin.title": "Keine Anmeldung",
+    "feat.nologin.desc": "Tools sofort ohne Registrierung nutzen.",
+    "feat.client.title": "Clientseitig",
+    "feat.client.desc": "Dateien werden in Ihrem Browser verarbeitet. Keine Server-Uploads.",
+    "feat.offline.title": "Offline-fähig",
+    "feat.offline.desc": "Funktioniert auch ohne Internet nach dem Laden.",
+    "feat.secure.title": "100% Sicher",
+    "feat.secure.desc": "Ihre Daten verlassen nie Ihr Gerät.",
+    "faq.title": "Häufig gestellte Fragen",
+    "faq.q1": "Ist AIxZIP kostenlos?",
+    "faq.a1": "Ja, alle Tools sind komplett kostenlos nutzbar.",
+    "faq.q2": "Sind meine Dateien sicher?",
+    "faq.a2": "Absolut. Wir nutzen browserbasierte Technologie, Ihre Dateien werden lokal verarbeitet.",
+    "testi.title": "Von Nutzern geliebt",
+    "drag_drop": "Klicken oder Bilder zum Hochladen ziehen",
+    "support_hint": "Unterstützt JPG, PNG, WebP · Stapelverarbeitung",
+    "queue_title": "Verarbeitungswarteschlange",
+    "clear_list": "Liste leeren",
+    "empty_hint": "Warte auf Bilder...",
+    "settings_title": "Optionen",
+    "tab_pixels": "Nach Pixeln",
+    "tab_percent": "Nach Prozent",
+    "lbl_width": "Breite (px)",
+    "lbl_height": "Höhe (px)",
+    "lbl_percent": "Prozentsatz (%)",
+    "lbl_auto": "Automatisch",
+    "chk_no_enlarge": "Nicht vergrößern, wenn kleiner",
+    "label_rename": "Stapelumbenennung",
+    "placeholder_rename": "z.B. Foto",
+    "label_quality": "Qualität",
+    "sec_compress": "Komprimierung",
+    "chk_compress": "Komprimierung aktivieren",
+    "lbl_quality": "Qualität",
+    "val_quality_high": "Hohe Qualität",
+    "val_quality_low": "Hohe Komprimierung",
+    "hint_smart": "Empfohlen für Ausgewogenheit.",
+    "hint_recommend": "Visuell verlustfrei + Kleine Größe",
+    "hint_100": "Verlustfrei (Große Größe)",
+    "hint_lossy": "Verlustbehaftete Komprimierung",
+    "opt_smart": "Intelligent",
+    "opt_original": "Original",
+    "sec_privacy": "Datenschutz",
+    "chk_strip_metadata": "Metadaten entfernen",
+    "hint_strip_metadata": "Entfernt EXIF/GPS-Informationen.",
+    "btn_download": "ZIP herunterladen",
+    "btn_download_one": "Herunterladen",
+    "btn_processing": "Wird verarbeitet...",
+    "status_pending": "Ausstehend",
+    "status_processing": "Wird verarbeitet...",
+    "status_done": "Fertig",
+    "status_error": "Fehlgeschlagen",
+    "stat_saved": "Gespeichert",
+    "modal_title": "Alle Elemente löschen?",
+    "modal_desc": "Alle verarbeiteten Bilder gehen verloren. Diese Aktion kann nicht rückgängig gemacht werden.",
+    "modal_cancel": "Abbrechen",
+    "modal_confirm": "Alle löschen",
+    "leave_warning": "Sie haben ungespeicherte Bilder. Beim Verlassen dieser Seite geht Ihr Fortschritt verloren."
+  }
+}

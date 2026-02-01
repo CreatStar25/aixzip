@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "image": {
+      "title": "छवि उपकरण",
+      "items": [
+        {
+          "name": "जेमिनी वॉटरमार्क रिमूवर",
+          "href": "/hi/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "छवि संपादक (घुमाएँ/पलटें)",
+          "href": "/hi/image/image-editor"
+        },
+        {
+          "name": "बैच छवि आकार बदलने वाला",
+          "href": "/hi/image/image-resizer"
+        },
+        {
+          "name": "बैच छवि संपीडक",
+          "href": "/hi/image/image-compressor"
+        },
+        {
+          "name": "बैच छवि कनवर्टर",
+          "href": "/hi/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "PDF उपकरण",
+      "items": [
+        {
+          "name": "PDF से छवि",
+          "href": "/hi/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "फ़ाइल उपकरण",
+      "items": [
+        {
+          "name": "ZIP बनाएँ",
+          "href": "/hi/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "site.seo_keywords": "मुफ्त AI उपकरण, PDF उपकरण, छवि उपकरण, फ़ाइल कनवर्टर",
+    "hero.title": "मुफ्त ऑनलाइन AI उपकरण और फ़ाइल कनवर्टर",
+    "hero.subtitle": "100% क्लाइंट-साइड प्रोसेसिंग। सर्वर पर कोई फ़ाइल अपलोड नहीं। सुरक्षित, तेज़ और मुफ्त।",
+    "hero.search_placeholder": "उपकरण खोजें (जैसे \"वॉटरमार्क\", \"PDF\")",
+    "section.all": "सभी उपकरण",
+    "footer.desc": "आपकी फ़ाइलों को कनवर्ट, संपीड़ित और संपादित करने के लिए मुफ्त ऑनलाइन उपकरण।",
+    "footer.rights": "सर्वाधिकार सुरक्षित।",
+    "footer.col.pdf": "PDF उपकरण",
+    "footer.col.image": "छवि उपकरण",
+    "footer.col.company": "कंपनी",
+    "footer.col.lang": "अंतरराष्ट्रीय",
+    "footer.link.about": "हमारे बारे में",
+    "footer.link.privacy": "गोपनीयता नीति",
+    "footer.link.terms": "सेवा की शर्तें",
+    "breadcrumb.home": "होम",
+    "section.how_it_works": "यह कैसे काम करता है",
+    "section.features": "मुख्य विशेषताएँ",
+    "section.testimonials": "उपयोगकर्ता क्या कहते हैं",
+    "section.faq": "सामान्य प्रश्न",
+    "feat.nologin.title": "साइन अप नहीं",
+    "feat.nologin.desc": "पंजीकरण के बिना तुरंत उपकरणों का उपयोग शुरू करें।",
+    "feat.client.title": "क्लाइंट-साइड",
+    "feat.client.desc": "फ़ाइलें आपके ब्राउज़र में संसाधित होती हैं। कोई सर्वर अपलोड नहीं।",
+    "feat.offline.title": "ऑफ़लाइन सक्षम",
+    "feat.offline.desc": "लोड होने के बाद इंटरनेट के बिना भी काम करता है।",
+    "feat.secure.title": "100% सुरक्षित",
+    "feat.secure.desc": "आपका डेटा आपके डिवाइस को कभी नहीं छोड़ता।",
+    "faq.title": "अक्सर पूछे जाने वाले प्रश्न",
+    "faq.q1": "क्या AIxZIP मुफ़्त है?",
+    "faq.a1": "हाँ, सभी उपकरण पूरी तरह से मुफ़्त हैं।",
+    "faq.q2": "क्या मेरी फ़ाइलें सुरक्षित हैं?",
+    "faq.a2": "बिल्कुल। हम ब्राउज़र-आधारित तकनीक का उपयोग करते हैं, इसलिए आपकी फ़ाइलें स्थानीय रूप से संसाधित होती हैं।",
+    "testi.title": "उपयोगकर्ताओं द्वारा पसंद किया गया",
+    "drag_drop": "छवियाँ अपलोड करने के लिए क्लिक करें या खींचें",
+    "support_hint": "JPG, PNG, WebP का समर्थन करता है · बैच प्रोसेसिंग",
+    "queue_title": "प्रोसेस कतार",
+    "clear_list": "सूची साफ़ करें",
+    "empty_hint": "छवियों की प्रतीक्षा कर रहा है...",
+    "settings_title": "विकल्प",
+    "tab_pixels": "पिक्सेल द्वारा",
+    "tab_percent": "प्रतिशत द्वारा",
+    "lbl_width": "चौड़ाई (px)",
+    "lbl_height": "ऊँचाई (px)",
+    "lbl_percent": "प्रतिशत (%)",
+    "lbl_auto": "स्वचालित",
+    "chk_no_enlarge": "यदि छोटा है तो बड़ा न करें",
+    "label_rename": "बैच नाम बदलें",
+    "placeholder_rename": "जैसे फोटो",
+    "label_quality": "गुणवत्ता",
+    "sec_compress": "संपीड़न",
+    "chk_compress": "संपीड़न सक्षम करें",
+    "lbl_quality": "गुणवत्ता",
+    "val_quality_high": "उच्च गुणवत्ता",
+    "val_quality_low": "उच्च संपीड़न",
+    "hint_smart": "संतुलन के लिए अनुशंसित।",
+    "hint_recommend": "दृश्य रूप से हानिरहित + छोटा आकार",
+    "hint_100": "हानिरहित (बड़ा आकार)",
+    "hint_lossy": "हानिपूर्ण संपीड़न",
+    "opt_smart": "स्मार्ट",
+    "opt_original": "मूल",
+    "sec_privacy": "गोपनीयता",
+    "chk_strip_metadata": "मेटाडेटा हटाएँ",
+    "hint_strip_metadata": "EXIF/GPS जानकारी हटाता है।",
+    "btn_download": "ZIP डाउनलोड करें",
+    "btn_download_one": "डाउनलोड करें",
+    "btn_processing": "प्रोसेसिंग...",
+    "status_pending": "लंबित",
+    "status_processing": "प्रोसेसिंग...",
+    "status_done": "पूर्ण",
+    "status_error": "विफल",
+    "stat_saved": "सहेजा गया",
+    "modal_title": "सभी आइटम साफ़ करें?",
+    "modal_desc": "सभी संसाधित छवियाँ खो जाएँगी। इस क्रिया को पूर्ववत नहीं किया जा सकता।",
+    "modal_cancel": "रद्द करें",
+    "modal_confirm": "सभी साफ़ करें",
+    "leave_warning": "आपके पास असहेजित छवियाँ हैं। इस पृष्ठ को छोड़ने से आपकी प्रगति खो जाएगी।"
+  }
+}

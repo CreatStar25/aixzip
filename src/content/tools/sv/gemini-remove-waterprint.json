@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Gemini AI Vattenmärkesborttagare - Ta bort SynthID & Remser",
+    "keywords": "Gemini Vattenmärkesborttagare, NanoBanana Vattenmärke, Ta bort SynthID, Gratis AI-verktyg, Ta bort AI-remsa",
+    "description": "Gratis, snabb, förlustfri. Upptäck och ta automatiskt bort osynliga vattenmärken och genomskinliga remsor från Gemini / NanoBanana-genererade bilder."
+  },
+  "hero": {
+    "title": "Gemini AI Vattenmärkesborttagare",
+    "subtitle": "Gratis, Snabb, Förlustfri. Upptäck och ta automatiskt bort osynliga vattenmärken från Gemini / NanoBanana-genererade bilder."
+  },
+  "steps": [
+    {
+      "title": "Ladda upp AI-bilder",
+      "desc": "Ladda upp bilder genererade av Gemini, NanoBanana eller andra AI-verktyg."
+    },
+    {
+      "title": "Automatisk upptäckt",
+      "desc": "Algoritmen identifierar specifika AI-vattenmärkesmönster och synliga remsor."
+    },
+    {
+      "title": "Rensa & Spara",
+      "desc": "Ladda ner den rena bilden utan vattenmärkesremsan."
+    }
+  ],
+  "features": [
+    {
+      "title": "Redo för Gemini/NanoBanana",
+      "desc": "Specifikt anpassad för att ta bort de vita/genomskinliga vattenmärkesremsorna från Gemini-genererade bilder."
+    },
+    {
+      "title": "Förlustfri återställning",
+      "desc": "Återställer de ursprungliga pixlarna som döljs bakom vattenmärket utan oskärpa."
+    },
+    {
+      "title": "Massborttagning",
+      "desc": "Dra in 50+ bilder och rensa dem alla på några sekunder lokalt."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Perfekt anpassad för att ta bort den irriterande Gemini-remsan. Fungerar perfekt och batchläget sparar tid.",
+      "author": "Sarah J., Prompt Engineer"
+    },
+    {
+      "text": "Jag använder NanoBanana i mitt dagliga arbetsflöde och detta verktyg är det enda som tar bort vattenmärket rent.",
+      "author": "Mike T., AI-skapare"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fungerar det på NanoBanana-bilder?",
+      "a": "Ja! NanoBanana använder samma underliggande teknik som Gemini för bildgenerering. Vår algoritm upptäcker och tar perfekt bort den karakteristiska genomskinliga remsan som finns på båda."
+    },
+    {
+      "q": "Hur tar den bort vattenmärket utan oskärpa?",
+      "a": "Till skillnad från standard 'läkande' verktyg som oskärpar området, beräknar vår AI de exakta pixelvärdena som döljs bakom det halvgenomskinliga vattenmärkeslagret och återställer matematiskt den ursprungliga bilden."
+    },
+    {
+      "q": "Laddas mina foton upp till en server?",
+      "a": "Nej. All bearbetning sker 100% lokalt i din webbläsare med WebAssembly. Dina bilder lämnar aldrig din enhet, vilket garanterar fullständig integritet."
+    },
+    {
+      "q": "Tar den bort SynthID (osynliga vattenmärken)?",
+      "a": "Vi fokuserar främst på att ta bort synliga artefakter (remsan) för att återställa visuell estetik. Medan omkodningsprocessen kan störa digitala signaturer som SynthID, garanterar vi inte fullständig borttagning av osynliga kryptografiska vattenmärken."
+    },
+    {
+      "q": "Finns det en gräns för hur många bilder jag kan bearbeta?",
+      "a": "Inga gränser. Eftersom det körs på din egen enhet kan du bearbeta så många bilder som din dators minne klarar."
+    }
+  ]
+}

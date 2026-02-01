@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Gemini AI Watermarkverwijderaar - Verwijder SynthID & Strepen",
+    "keywords": "Gemini Watermarkverwijderaar, NanoBanana Watermark, SynthID Verwijderen, Gratis AI Tools, AI Streep Verwijderen",
+    "description": "Gratis, snel, verliesvrij. Detecteer en verwijder automatisch onzichtbare watermerken en doorschijnende strepen van door Gemini / NanoBanana gegenereerde afbeeldingen."
+  },
+  "hero": {
+    "title": "Gemini AI Watermarkverwijderaar",
+    "subtitle": "Gratis, Snel, Verliesvrij. Detecteer en verwijder automatisch onzichtbare watermerken van door Gemini / NanoBanana gegenereerde afbeeldingen."
+  },
+  "steps": [
+    {
+      "title": "Upload AI-afbeeldingen",
+      "desc": "Upload afbeeldingen gegenereerd door Gemini, NanoBanana of andere AI-tools."
+    },
+    {
+      "title": "Automatische Detectie",
+      "desc": "Het algoritme identificeert specifieke AI-watermarkpatronen en zichtbare strepen."
+    },
+    {
+      "title": "Opschonen & Opslaan",
+      "desc": "Download de schone afbeelding zonder de watermarkstreep."
+    }
+  ],
+  "features": [
+    {
+      "title": "Gemini/NanoBanana Gereed",
+      "desc": "Specifiek afgestemd om de witte/doorschijnende watermarkstrepen van door Gemini gegenereerde afbeeldingen te verwijderen."
+    },
+    {
+      "title": "Verliesvrij Herstel",
+      "desc": "Herstelt de originele pixels die achter het watermerk verborgen zijn, zonder vervaging."
+    },
+    {
+      "title": "Batchverwijdering",
+      "desc": "Sleep 50+ afbeeldingen naar binnen en maak ze allemaal lokaal in seconden schoon."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Ideaal specifiek voor het verwijderen van die vervelende Gemini-streep. Werkt perfect en de batchmodus bespaart veel tijd.",
+      "author": "Sarah J., Prompt Engineer"
+    },
+    {
+      "text": "Ik gebruik NanoBanana voor mijn dagelijkse workflow en deze tool is de enige die het watermerk netjes verwijdert.",
+      "author": "Mike T., AI Creator"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Werkt het ook op NanoBanana-afbeeldingen?",
+      "a": "Ja! NanoBanana gebruikt dezelfde onderliggende technologie als Gemini voor beeldgeneratie. Ons algoritme detecteert en verwijdert perfect de karakteristieke doorschijnende streep die bij beide voorkomt."
+    },
+    {
+      "q": "Hoe verwijdert het het watermerk zonder vervaging?",
+      "a": "In tegenstelling tot standaard 'herstel'-tools die het gebied vervagen, berekent onze AI de exacte pixelwaarden die achter de semi-transparante watermerklag verborgen zijn, waardoor de originele afbeelding wiskundig wordt hersteld."
+    },
+    {
+      "q": "Worden mijn foto's naar een server geüpload?",
+      "a": "Nee. Alle verwerking gebeurt 100% lokaal in uw browser met WebAssembly. Uw afbeeldingen verlaten nooit uw apparaat, wat volledige privacy garandeert."
+    },
+    {
+      "q": "Verwijdert het SynthID (onzichtbare watermerken)?",
+      "a": "We richten ons voornamelijk op het verwijderen van zichtbare artefacten (de streep) om de visuele esthetiek te herstellen. Hoewel het opnieuw coderen digitale handtekeningen zoals SynthID kan verstoren, garanderen we niet de volledige verwijdering van onzichtbare cryptografische watermerken."
+    },
+    {
+      "q": "Is er een limiet aan het aantal afbeeldingen dat ik kan verwerken?",
+      "a": "Geen limieten. Omdat het op uw eigen apparaat draait, kunt u zoveel afbeeldingen verwerken als het geheugen van uw computer aankan."
+    }
+  ]
+}
