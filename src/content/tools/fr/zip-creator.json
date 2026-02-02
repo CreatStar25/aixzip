@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "Créer un fichier ZIP en ligne - Outil ZIP gratuit",
+    "keywords": "créer zip, compresser zip, archiver dossier, zip en ligne",
+    "description": "Créez des fichiers ZIP en ligne gratuitement. Téléchargez plusieurs fichiers ou dossiers et regroupez-les dans une archive ZIP. Rapide, sécurisé et local."
+  },
+  "hero": {
+    "title": "Créateur de ZIP en ligne gratuit",
+    "subtitle": "Regroupez instantanément plusieurs fichiers et dossiers dans une archive ZIP. Sécurisé, rapide et 100% gratuit."
+  },
+  "steps": [
+    {
+      "title": "Télécharger",
+      "desc": "Glissez-déposez des fichiers ou dossiers ici."
+    },
+    {
+      "title": "Configurer",
+      "desc": "Définissez le nom et le niveau de compression."
+    },
+    {
+      "title": "Télécharger",
+      "desc": "Générez et téléchargez votre ZIP."
+    }
+  ],
+  "features": [
+    {
+      "title": "Support des dossiers",
+      "desc": "Téléchargez des dossiers entiers en préservant la structure."
+    },
+    {
+      "title": "Traitement local",
+      "desc": "Les fichiers restent dans votre navigateur."
+    },
+    {
+      "title": "Multiplateforme",
+      "desc": "L'encodage UTF-8 évite les problèmes de noms de fichiers sur Windows/Mac."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Puis-je télécharger des dossiers ?",
+      "a": "Oui, nous prenons en charge le téléchargement de dossiers entiers. La structure est préservée."
+    },
+    {
+      "q": "Les noms de fichiers seront-ils illisibles sur Windows/Mac ?",
+      "a": "Non, nous utilisons l'encodage UTF-8 pour garantir un affichage correct partout."
+    },
+    {
+      "q": "Prenez-vous en charge 7z ?",
+      "a": "Actuellement, nous supportons le ZIP. Le support 7z arrive bientôt."
+    },
+    {
+      "q": "Est-ce gratuit ?",
+      "a": "Oui, c'est totalement gratuit sans frais cachés."
+    },
+    {
+      "q": "Mes fichiers sont-ils en sécurité ?",
+      "a": "Absolument. Tout le traitement se fait dans votre navigateur."
+    }
+  ]
+}

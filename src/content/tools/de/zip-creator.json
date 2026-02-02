@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "ZIP-Datei online erstellen - Kostenloser ZIP-Creator",
+    "keywords": "zip erstellen, zip komprimieren, ordner packen, online archivieren",
+    "description": "Erstellen Sie kostenlos ZIP-Dateien online. Laden Sie mehrere Dateien oder Ordner hoch und packen Sie sie in ein ZIP-Archiv. Schnell, sicher und lokal im Browser."
+  },
+  "hero": {
+    "title": "Kostenloser Online ZIP-Creator",
+    "subtitle": "Packen Sie mehrere Dateien und Ordner sofort in ein ZIP-Archiv. Sicher, schnell und 100% kostenlos."
+  },
+  "steps": [
+    {
+      "title": "Dateien hochladen",
+      "desc": "Dateien oder Ordner hierher ziehen."
+    },
+    {
+      "title": "Konfigurieren",
+      "desc": "Dateinamen und Komprimierungsstufe festlegen."
+    },
+    {
+      "title": "Herunterladen",
+      "desc": "ZIP erstellen und sofort herunterladen."
+    }
+  ],
+  "features": [
+    {
+      "title": "Ordner-Support",
+      "desc": "Laden Sie ganze Ordner hoch, die Struktur bleibt erhalten."
+    },
+    {
+      "title": "Lokale Verarbeitung",
+      "desc": "Dateien werden im Browser verarbeitet und nicht hochgeladen."
+    },
+    {
+      "title": "Plattformübergreifend",
+      "desc": "UTF-8-Codierung verhindert Dateinamenfehler auf Windows/Mac."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich Ordner hochladen?",
+      "a": "Ja, wir unterstützen das Hochladen ganzer Ordner. Die Verzeichnisstruktur bleibt erhalten."
+    },
+    {
+      "q": "Werden Dateinamen auf Windows/Mac falsch angezeigt?",
+      "a": "Nein, wir verwenden UTF-8-Codierung, damit Dateinamen überall korrekt angezeigt werden."
+    },
+    {
+      "q": "Unterstützen Sie 7z?",
+      "a": "Derzeit unterstützen wir ZIP. 7z-Unterstützung kommt bald."
+    },
+    {
+      "q": "Ist es kostenlos?",
+      "a": "Ja, es ist völlig kostenlos ohne versteckte Kosten."
+    },
+    {
+      "q": "Sind meine Dateien sicher?",
+      "a": "Absolut. Die Verarbeitung erfolgt lokal in Ihrem Browser."
+    }
+  ]
+}

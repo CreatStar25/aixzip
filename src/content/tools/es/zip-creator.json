@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "Crear archivo ZIP online - Creador de ZIP gratis",
+    "keywords": "crear zip, comprimir zip, carpeta a zip, zip online",
+    "description": "Crea archivos ZIP online gratis. Sube múltiples archivos o carpetas y agrúpalos en un ZIP. Rápido, seguro y local."
+  },
+  "hero": {
+    "title": "Creador de ZIP Online Gratis",
+    "subtitle": "Empaqueta múltiples archivos y carpetas en un archivo ZIP al instante. Seguro, rápido y 100% gratis."
+  },
+  "steps": [
+    {
+      "title": "Subir archivos",
+      "desc": "Arrastra y suelta archivos o carpetas aquí."
+    },
+    {
+      "title": "Configurar",
+      "desc": "Establece el nombre y nivel de compresión."
+    },
+    {
+      "title": "Descargar",
+      "desc": "Genera y descarga tu ZIP."
+    }
+  ],
+  "features": [
+    {
+      "title": "Soporte de carpetas",
+      "desc": "Sube carpetas enteras conservando la estructura."
+    },
+    {
+      "title": "Procesamiento local",
+      "desc": "Los archivos nunca salen de tu navegador."
+    },
+    {
+      "title": "Multiplataforma",
+      "desc": "La codificación UTF-8 evita errores en nombres de archivo en Windows/Mac."
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Puedo subir carpetas?",
+      "a": "Sí, soportamos la subida de carpetas enteras. La estructura se conserva en el ZIP."
+    },
+    {
+      "q": "¿Los nombres de archivo se verán mal en Windows/Mac?",
+      "a": "No, usamos codificación UTF-8 para asegurar que se vean bien en todos los sistemas."
+    },
+    {
+      "q": "¿Soportan 7z?",
+      "a": "Actualmente soportamos ZIP. El soporte para 7z llegará pronto."
+    },
+    {
+      "q": "¿Es gratis?",
+      "a": "Sí, es completamente gratis sin costos ocultos."
+    },
+    {
+      "q": "¿Están seguros mis archivos?",
+      "a": "Absolutamente. El procesamiento ocurre localmente en tu navegador."
+    }
+  ]
+}
