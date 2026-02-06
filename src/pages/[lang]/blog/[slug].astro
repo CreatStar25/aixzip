@@ -1,0 +1,84 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  
+  return posts.map(post => {
+    // Slug format: "lang/post-slug"
+    // e.g. "en/welcome"
+    const parts = post.slug.split('/');
+    let lang = parts[0];
+    let slug = parts.slice(1).join('/');
+
+    // Fallback if slug doesn't have lang prefix (unlikely with current structure)
+    if (parts.length === 1) {
+      slug = parts[0];
+      // Try to infer lang from frontmatter or default? 
+      // Assuming structure is strictly lang/slug
+    }
+    
+    return {
+      params: { lang, slug },
+      props: { post },
+    };
+  });
+}
+
+const { lang } = Astro.params;
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Get translations
+const t = await useTranslations(lang || 'en');
+---
+
+<Layout 
+  title={`${post.data.title} - ${t('site.title')}`} 
+  description={post.data.description}
+  lang={lang}
+>
+  <main class="max-w-3xl mx-auto px-4 py-12 min-h-screen">
+    <article class="prose prose-lg prose-slate mx-auto prose-img:rounded-xl prose-img:shadow-lg prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-500">
+      <div class="mb-8 text-center not-prose">
+        <div class="flex items-center justify-center gap-3 text-sm text-slate-500 mb-4">
+          {post.data.date && (
+            <time datetime={new Date(post.data.date).toISOString()}>
+              {new Date(post.data.date).toLocaleDateString(lang)}
+            </time>
+          )}
+          <span>•</span>
+          <span>{post.data.author}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 leading-tight">{post.data.title}</h1>
+      </div>
+      
+      <div class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-slate-100">
+        <Content />
+        
+        <div class="mt-12 p-6 bg-blue-50 rounded-xl border border-blue-100 text-center not-prose">
+          <p class="text-blue-900 font-medium mb-4">{t('blog.cta_text') || 'Need to create a ZIP file?'}</p>
+          <a 
+            href={`/${lang}/file/zip-creator`} 
+            class="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+          >
+            <i class="fa-solid fa-file-zipper mr-2"></i>
+            {t('blog.create_zip_cta') || 'Create ZIP File'}
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <div class="mt-12 text-center">
+      <a 
+        href={`/${lang}/blog`} 
+        class="inline-flex items-center gap-2 text-blue-600 font-bold hover:underline"
+      >
+        <i class="fa-solid fa-arrow-left"></i>
+        {t('blog.back_to_list') || 'Back to Blog'}
+      </a>
+    </div>
+  </main>
+</Layout>

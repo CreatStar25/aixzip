@@ -27,8 +27,10 @@ export async function getI18nData(lang: string) {
 // 3. ✨ 新增：Helper Hook，用于在组件中快速获取翻译函数 t('key')
 export async function useTranslations(lang: string) {
   const data = await getI18nData(lang);
+  // Also load English data for fallback
+  const enData = lang === 'en' ? data : await getI18nData('en');
   
   return function t(key: string): string {
-    return data.ui[key] || key;
+    return data.ui[key] || enData.ui[key] || key;
   };
 }

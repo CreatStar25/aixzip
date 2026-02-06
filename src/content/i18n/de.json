@@ -121,6 +121,14 @@
     "modal_desc": "Alle verarbeiteten Bilder gehen verloren. Diese Aktion kann nicht rückgängig gemacht werden.",
     "modal_cancel": "Abbrechen",
     "modal_confirm": "Alle löschen",
-    "leave_warning": "Sie haben ungespeicherte Bilder. Beim Verlassen dieser Seite geht Ihr Fortschritt verloren."
+    "leave_warning": "Sie haben ungespeicherte Bilder. Beim Verlassen dieser Seite geht Ihr Fortschritt verloren.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Neueste Updates, Tutorials und Tipps",
+    "blog.read_more": "Weiterlesen",
+    "blog.no_posts": "Noch keine Beiträge",
+    "blog.back_to_list": "Zurück zum Blog",
+    "blog.create_zip_cta": "ZIP-Datei erstellen",
+    "blog.cta_text": "Müssen Sie eine ZIP-Datei erstellen?"
   }
 }

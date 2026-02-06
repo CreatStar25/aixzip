@@ -121,6 +121,14 @@
     "modal_desc": "Semua imej yang diproses akan hilang. Tindakan ini tidak boleh dibatalkan.",
     "modal_cancel": "Batal",
     "modal_confirm": "Kosongkan Semua",
-    "leave_warning": "Anda mempunyai imej yang belum disimpan. Meninggalkan halaman ini akan menghilangkan kemajuan anda."
+    "leave_warning": "Anda mempunyai imej yang belum disimpan. Meninggalkan halaman ini akan menghilangkan kemajuan anda.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Kemas kini terkini, tutorial dan petua",
+    "blog.read_more": "Baca Lebih Lanjut",
+    "blog.no_posts": "Tiada siaran lagi",
+    "blog.back_to_list": "Kembali ke Blog",
+    "blog.create_zip_cta": "Buat fail ZIP",
+    "blog.cta_text": "Perlu buat fail ZIP?"
   }
 }

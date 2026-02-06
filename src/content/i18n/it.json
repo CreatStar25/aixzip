@@ -121,6 +121,14 @@
     "modal_desc": "Tutte le immagini elaborate andranno perse. Questa azione non può essere annullata.",
     "modal_cancel": "Annulla",
     "modal_confirm": "Svuota Tutto",
-    "leave_warning": "Hai immagini non salvate. Lasciando questa pagina perderai i progressi."
+    "leave_warning": "Hai immagini non salvate. Lasciando questa pagina perderai i progressi.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Ultimi aggiornamenti, tutorial e suggerimenti",
+    "blog.read_more": "Leggi di più",
+    "blog.no_posts": "Nessun post ancora",
+    "blog.back_to_list": "Torna al blog",
+    "blog.create_zip_cta": "Crea file ZIP",
+    "blog.cta_text": "Hai bisogno di creare un file ZIP?"
   }
 }

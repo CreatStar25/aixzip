@@ -121,6 +121,14 @@
     "modal_desc": "Alle verwerkte afbeeldingen gaan verloren. Deze actie kan niet ongedaan worden gemaakt.",
     "modal_cancel": "Annuleren",
     "modal_confirm": "Alles Wissen",
-    "leave_warning": "Je hebt niet-opgeslagen afbeeldingen. Deze pagina verlaten betekent dat je voortgang verloren gaat."
+    "leave_warning": "Je hebt niet-opgeslagen afbeeldingen. Deze pagina verlaten betekent dat je voortgang verloren gaat.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Laatste updates, tutorials en tips",
+    "blog.read_more": "Lees meer",
+    "blog.no_posts": "Nog geen berichten",
+    "blog.back_to_list": "Terug naar blog",
+    "blog.create_zip_cta": "ZIP-bestand maken",
+    "blog.cta_text": "Moet u een ZIP-bestand maken?"
   }
 }

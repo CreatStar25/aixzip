@@ -121,6 +121,14 @@
     "modal_desc": "Todas las imágenes procesadas se perderán. Esta acción no se puede deshacer.",
     "modal_cancel": "Cancelar",
     "modal_confirm": "Limpiar Todo",
-    "leave_warning": "Tienes imágenes sin guardar. Salir de esta página perderá tu progreso."
+    "leave_warning": "Tienes imágenes sin guardar. Salir de esta página perderá tu progreso.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Últimas actualizaciones, tutoriales y consejos",
+    "blog.read_more": "Leer más",
+    "blog.no_posts": "Aún no hay publicaciones",
+    "blog.back_to_list": "Volver al Blog",
+    "blog.create_zip_cta": "Crear archivo ZIP",
+    "blog.cta_text": "¿Necesita crear un archivo ZIP?"
   }
 }

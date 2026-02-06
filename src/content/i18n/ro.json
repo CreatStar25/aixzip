@@ -121,6 +121,14 @@
     "modal_desc": "Toate imaginile procesate vor fi pierdute. Această acțiune nu poate fi anulată.",
     "modal_cancel": "Anulați",
     "modal_confirm": "Ștergeți Tot",
-    "leave_warning": "Aveți imagini nesalvate. Părăsirea acestei pagini vă va face să pierdeți progresul."
+    "leave_warning": "Aveți imagini nesalvate. Părăsirea acestei pagini vă va face să pierdeți progresul.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Cele mai recente actualizări, tutoriale și sfaturi",
+    "blog.read_more": "Citește mai mult",
+    "blog.no_posts": "Nicio postare încă",
+    "blog.back_to_list": "Înapoi la blog",
+    "blog.create_zip_cta": "Creați fișier ZIP",
+    "blog.cta_text": "Aveți nevoie să creați un fișier ZIP?"
   }
 }

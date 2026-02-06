@@ -59,12 +59,31 @@ export const ui = {
   // ... (保持您原有的 ui 内容)
   en: {
     'site.title': 'AIxZIP',
+    'site.seo_keywords': 'Free Online PDF, Image, Video Tools',
+    'hero.title': 'Free Online File Tools',
+    'hero.subtitle': 'Process your files locally in your browser. Fast, secure, and free.',
+    'hero.search_placeholder': 'Search for tools...',
+    'section.all': 'All Tools',
+    
     'breadcrumb.home': 'Home',
     'section.how_it_works': 'How It Works',
     'section.features': 'Key Features',
     'section.testimonials': 'What Users Say',
     'section.faq': 'FAQ',
     
+    'feat.nologin.title': 'No Login Required',
+    'feat.nologin.desc': 'Start using tools immediately without registration.',
+    'feat.client.title': 'Local Processing',
+    'feat.client.desc': 'Files are processed in your browser for maximum privacy.',
+    'feat.secure.title': '100% Secure',
+    'feat.secure.desc': 'Your files never leave your device.',
+    'feat.offline.title': 'Works Offline',
+    'feat.offline.desc': 'Once loaded, use tools without internet connection.',
+    
+    'testi.title': 'What Users Say',
+    'testi.1.text': 'Super fast and easy to use. Saved me hours!',
+    'testi.1.author': 'Alex D.',
+
     // 组件通用词条
     'drag_drop': 'Click or Drag to Upload Images',
     'support_hint': 'Supports JPG, PNG, WebP · Batch Processing',
@@ -96,6 +115,25 @@ export const ui = {
   },
   'zh-cn': {
     'site.title': 'AIxZIP',
+    'site.seo_keywords': '免费在线 PDF、图片、视频工具',
+    'hero.title': '免费在线文件工具箱',
+    'hero.subtitle': '所有文件处理均在浏览器本地完成。快速、安全、免费。',
+    'hero.search_placeholder': '搜索工具...',
+    'section.all': '全部工具',
+
+    'feat.nologin.title': '无需登录',
+    'feat.nologin.desc': '无需注册，打开即用。',
+    'feat.client.title': '本地处理',
+    'feat.client.desc': '文件仅在浏览器中处理，保护隐私。',
+    'feat.secure.title': '安全可靠',
+    'feat.secure.desc': '您的文件永远不会上传到服务器。',
+    'feat.offline.title': '离线可用',
+    'feat.offline.desc': '页面加载后，无需网络即可使用。',
+
+    'testi.title': '用户评价',
+    'testi.1.text': '转换速度非常快，而且不用上传文件，很放心。',
+    'testi.1.author': '李明',
+
     'breadcrumb.home': '首页',
     'section.how_it_works': '如何使用',
     'section.features': '功能亮点',

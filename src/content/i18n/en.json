@@ -3,31 +3,57 @@
     "image": {
       "title": "Image Tools",
       "items": [
-        { "name": "Gemini Watermark Remover", "href": "/en/image/gemini-remove-waterprint" },
-        { "name": "Image Editor (Rotate/Flip)", "href": "/en/image/image-editor" },
-        { "name": "Batch Image Resizer", "href": "/en/image/image-resizer" },
-        { "name": "Batch Image Compressor", "href": "/en/image/image-compressor" },
-        { "name": "Batch Image Converter", "href": "/en/image/image-converter" }
+        {
+          "name": "Gemini Watermark Remover",
+          "href": "/en/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "Image Editor (Rotate/Flip)",
+          "href": "/en/image/image-editor"
+        },
+        {
+          "name": "Batch Image Resizer",
+          "href": "/en/image/image-resizer"
+        },
+        {
+          "name": "Batch Image Compressor",
+          "href": "/en/image/image-compressor"
+        },
+        {
+          "name": "Batch Image Converter",
+          "href": "/en/image/image-converter"
+        }
       ]
     },
     "pdf": {
       "title": "PDF Tools",
       "items": [
-        { "name": "PDF to Image", "href": "/en/pdf/pdf-to-image" }
+        {
+          "name": "PDF to Image",
+          "href": "/en/pdf/pdf-to-image"
+        }
       ]
     },
     "file": {
       "title": "File Tools",
       "items": [
-        { "name": "Create ZIP", "href": "/en/file/zip-creator" }
+        {
+          "name": "Create ZIP",
+          "href": "/en/file/zip-creator"
+        }
       ]
     }
   },
   "ui": {
     "site.title": "AIxZIP",
-    "site.seo_keywords": "Free AI Tools, PDF Tools, Image Tools, File Converters",
-    "hero.title": "Free Online AI Tools & File Converter",
-    "hero.subtitle": "100% Client-side processing. No file uploads to server. Secure, Fast, and Free.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Latest updates, tutorials and tips",
+    "blog.read_more": "Read More",
+    "blog.no_posts": "No posts yet",
+    "site.seo_keywords": "Free AI Tools, PDF Tools, Image Tools, Zip Tools, File Converters",
+    "hero.title": "Free Online PDF, Image & Zip Tools",
+    "hero.subtitle": "Convert, Compress, Edit. 100% Client-side processing. No file uploads to server.",
     "hero.search_placeholder": "Search tools (e.g. \"Watermark\", \"PDF\")",
     "section.all": "All Tools",
     "footer.desc": "Free online tools to convert, compress, and edit your files.",
@@ -48,6 +74,26 @@
     "feat.nologin.desc": "Start using tools immediately without registration.",
     "feat.client.title": "Client-Side",
     "feat.client.desc": "Files are processed in your browser. No server uploads.",
+    "home.quick.image.title": "Image Tools",
+    "home.quick.image.desc": "Compress, Convert, Edit",
+    "home.quick.pdf.title": "PDF Tools",
+    "home.quick.pdf.desc": "Convert PDF to Image",
+    "home.quick.zip.title": "Zip Tools",
+    "home.quick.zip.desc": "Create and Extract Archives",
+    "tools.gemini-remove-waterprint.name": "Gemini Watermark Remover",
+    "tools.gemini-remove-waterprint.desc": "Remove watermarks using AI",
+    "tools.image-compressor.name": "Batch Image Compressor",
+    "tools.image-compressor.desc": "Compress images without losing quality",
+    "tools.image-editor.name": "Image Editor",
+    "tools.image-editor.desc": "Crop, rotate, and flip images",
+    "tools.image-resizer.name": "Batch Image Resizer",
+    "tools.image-resizer.desc": "Resize multiple images at once",
+    "tools.image-converter.name": "Batch Image Converter",
+    "tools.image-converter.desc": "Convert images between formats",
+    "tools.pdf-to-image.name": "PDF to Image",
+    "tools.pdf-to-image.desc": "Convert PDF pages to images",
+    "tools.zip-creator.name": "Create ZIP",
+    "tools.zip-creator.desc": "Create ZIP archives from files",
     "feat.offline.title": "Offline Capable",
     "feat.offline.desc": "Works even without internet after loading.",
     "feat.secure.title": "100% Secure",
@@ -104,6 +150,9 @@
     "sec_resize": "Resize Settings",
     "lbl_lock": "Lock Aspect Ratio",
     "hint_compress": "Rec 90%: Balance quality & size",
-    "btn_start": "Start Processing"
+    "btn_start": "Start Processing",
+    "blog.back_to_list": "Back to Blog",
+    "blog.create_zip_cta": "Create ZIP File",
+    "blog.cta_text": "Need to create a ZIP file?"
   }
 }

@@ -38,7 +38,7 @@
       "title": "文件工具",
       "items": [
         {
-          "name": "创建ZIP",
+          "name": "创建 ZIP",
           "href": "/zh-cn/file/zip-creator"
         }
       ]
@@ -46,9 +46,14 @@
   },
   "ui": {
     "site.title": "AIxZIP",
-    "site.seo_keywords": "免费AI工具，PDF工具，图片工具，文件转换器",
-    "hero.title": "免费在线AI工具与文件转换器",
-    "hero.subtitle": "100%客户端处理。文件不上传服务器。安全、快速、免费。",
+    "nav.blog": "博客",
+    "blog.title": "博客",
+    "blog.subtitle": "最新更新、教程和技巧",
+    "blog.read_more": "阅读更多",
+    "blog.no_posts": "暂无文章",
+    "site.seo_keywords": "免费AI工具, PDF工具, 图片工具, 压缩包工具, 格式转换",
+    "hero.title": "免费在线 PDF、图片 & 压缩包工具",
+    "hero.subtitle": "转换、压缩、编辑。100% 浏览器本地处理，文件无需上传服务器。",
     "hero.search_placeholder": "搜索工具（例如：“水印”、“PDF”）",
     "section.all": "所有工具",
     "footer.desc": "免费在线工具，用于转换、压缩和编辑您的文件。",
@@ -69,6 +74,26 @@
     "feat.nologin.desc": "无需注册，立即开始使用工具。",
     "feat.client.title": "客户端处理",
     "feat.client.desc": "文件在您的浏览器中处理，无需上传至服务器。",
+    "home.quick.image.title": "图片工具",
+    "home.quick.image.desc": "压缩、转换、编辑",
+    "home.quick.pdf.title": "PDF工具",
+    "home.quick.pdf.desc": "PDF转图片",
+    "home.quick.zip.title": "压缩包工具",
+    "home.quick.zip.desc": "创建和解压压缩包",
+    "tools.gemini-remove-waterprint.name": "Gemini 水印去除",
+    "tools.gemini-remove-waterprint.desc": "使用 AI 去除水印",
+    "tools.image-compressor.name": "批量图片压缩",
+    "tools.image-compressor.desc": "无损压缩图片大小",
+    "tools.image-editor.name": "图片编辑器",
+    "tools.image-editor.desc": "裁剪、旋转和翻转图片",
+    "tools.image-resizer.name": "批量图片调整大小",
+    "tools.image-resizer.desc": "一次调整多张图片大小",
+    "tools.image-converter.name": "批量图片转换",
+    "tools.image-converter.desc": "转换图片格式",
+    "tools.pdf-to-image.name": "PDF 转图片",
+    "tools.pdf-to-image.desc": "将 PDF 页面转换为图片",
+    "tools.zip-creator.name": "创建 ZIP",
+    "tools.zip-creator.desc": "从文件创建 ZIP 压缩包",
     "feat.offline.title": "支持离线",
     "feat.offline.desc": "页面加载后，即使无网络也可使用。",
     "feat.secure.title": "100%安全",
@@ -121,6 +146,9 @@
     "modal_desc": "所有已处理的图片将丢失。此操作无法撤销。",
     "modal_cancel": "取消",
     "modal_confirm": "全部清空",
-    "leave_warning": "您有未保存的图片。离开此页面将丢失您的进度。"
+    "leave_warning": "您有未保存的图片。离开此页面将丢失您的进度。",
+    "blog.back_to_list": "返回博客列表",
+    "blog.create_zip_cta": "创建 ZIP 文件",
+    "blog.cta_text": "需要创建 ZIP 文件吗？"
   }
 }

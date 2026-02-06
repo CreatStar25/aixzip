@@ -121,6 +121,14 @@
     "modal_desc": "Alla bearbetade bilder kommer att förloras. Denna åtgärd kan inte ångras.",
     "modal_cancel": "Avbryt",
     "modal_confirm": "Rensa alla",
-    "leave_warning": "Du har osparade bilder. Om du lämnar sidan förloras ditt arbete."
+    "leave_warning": "Du har osparade bilder. Om du lämnar sidan förloras ditt arbete.",
+    "nav.blog": "Blogg",
+    "blog.title": "Blogg",
+    "blog.subtitle": "Senaste uppdateringar, handledningar och tips",
+    "blog.read_more": "Läs mer",
+    "blog.no_posts": "Inga inlägg ännu",
+    "blog.back_to_list": "Tillbaka till bloggen",
+    "blog.create_zip_cta": "Skapa ZIP-fil",
+    "blog.cta_text": "Behöver du skapa en ZIP-fil?"
   }
 }

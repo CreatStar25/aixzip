@@ -37,13 +37,12 @@ if (!content) {
 }
 ---
 
-<Layout title={content.seo.title} lang={lang}>
-  <head>
-    <meta name="description" content={content.seo.description} />
-    <meta name="keywords" content={content.seo.keywords} />
-    <meta property="og:title" content={content.seo.title} />
-    <meta property="og:description" content={content.seo.description} />
-  </head>
+<Layout 
+  title={content.seo.title} 
+  description={content.seo.description}
+  keywords={content.seo.keywords}
+  lang={lang}
+>
 
   <main class="min-h-screen bg-slate-50">
     <section class="pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

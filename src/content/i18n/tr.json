@@ -121,6 +121,14 @@
     "modal_desc": "İşlenmiş tüm görseller kaybolacak. Bu işlem geri alınamaz.",
     "modal_cancel": "İptal",
     "modal_confirm": "Tümünü Temizle",
-    "leave_warning": "Kaydedilmemiş görselleriniz var. Bu sayfadan ayrılmak ilerlemenizi kaybettirecektir."
+    "leave_warning": "Kaydedilmemiş görselleriniz var. Bu sayfadan ayrılmak ilerlemenizi kaybettirecektir.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "En son güncellemeler, öğreticiler ve ipuçları",
+    "blog.read_more": "Devamını Oku",
+    "blog.no_posts": "Henüz yazı yok",
+    "blog.back_to_list": "Blog'a Dön",
+    "blog.create_zip_cta": "ZIP Dosyası Oluştur",
+    "blog.cta_text": "Bir ZIP dosyası oluşturmanız mı gerekiyor?"
   }
 }

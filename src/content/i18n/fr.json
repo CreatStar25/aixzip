@@ -121,6 +121,14 @@
     "modal_desc": "Toutes les images traitées seront perdues. Cette action est irréversible.",
     "modal_cancel": "Annuler",
     "modal_confirm": "Tout Vider",
-    "leave_warning": "Vous avez des images non enregistrées. Quitter cette page entraînera la perte de votre progression."
+    "leave_warning": "Vous avez des images non enregistrées. Quitter cette page entraînera la perte de votre progression.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Dernières mises à jour, tutoriels et conseils",
+    "blog.read_more": "Lire la suite",
+    "blog.no_posts": "Pas encore d'articles",
+    "blog.back_to_list": "Retour au blog",
+    "blog.create_zip_cta": "Créer un fichier ZIP",
+    "blog.cta_text": "Besoin de créer un fichier ZIP ?"
   }
 }

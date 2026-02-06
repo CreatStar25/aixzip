@@ -39,7 +39,28 @@ const i18nCollection = defineCollection({
   })
 });
 
+// ✨ 3. 新增：博客文章集合
+const blogCollection = defineCollection({
+  type: 'content', // Markdown/MDX files for blog
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.string().or(z.date()).optional(),
+    pubDate: z.string().or(z.date()).optional(),
+    author: z.string().default('AIxZIP Team'),
+    image: z.string().optional(),
+    coverImage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    lang: z.string().optional(),
+  }).transform((data) => ({
+    ...data,
+    date: data.pubDate || data.date,
+    image: data.coverImage || data.image,
+  })),
+});
+
 export const collections = {
   'tools': toolsCollection,
-  'i18n': i18nCollection, // 注册新集合
+  'i18n': i18nCollection,
+  'blog': blogCollection, // 注册博客集合
 };

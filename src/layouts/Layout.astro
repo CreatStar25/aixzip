@@ -4,7 +4,7 @@ import Footer from '../components/common/Footer.astro';
 import { getLangFromUrl } from '../i18n/utils';
 
 // 1. 接收页面传来的动态 title 参数
-const { title } = Astro.props;
+const { title, description, keywords } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const rtlLangs = ['ar', 'fa', 'he', 'ur']; 
@@ -13,6 +13,7 @@ const dir = rtlLangs.includes(lang) ? 'rtl' : 'ltr';
 // 2. 定义默认标题 (兜底用)
 const siteName = "AIxZIP";
 const defaultTitle = `${siteName} - Free Online PDF, Image, Video Tools`;
+const defaultDesc = "Free online tools to convert, compress, and edit your files. PDF Tools. PDF to Image. Image Tools. Image Compressor · Watermark Remover. Process files locally in your browser.";
 ---
 
 <!DOCTYPE html>
@@ -24,6 +25,11 @@ const defaultTitle = `${siteName} - Free Online PDF, Image, Video Tools`;
     <meta name="generator" content={Astro.generator} />
     
     <title>{title ? title : defaultTitle}</title>
+    <meta name="description" content={description || defaultDesc} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    
+    <meta property="og:title" content={title ? title : defaultTitle} />
+    <meta property="og:description" content={description || defaultDesc} />
 
     {/* ✨✨✨ Google Tag Manager (Script) ✨✨✨ */}
     <script is:inline>

@@ -1,22 +1,45 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { tools } from '../../config/tools';
-import { ui } from '../../i18n/ui';
+import { getI18nData } from '../../i18n/utils';
 
 // 1. 定义接收的参数
 interface Props { lang: string; }
 const { lang } = Astro.props;
 
 // 2. 辅助函数
-const t = (key: string) => ui[lang]?.[key] || ui['en'][key];
-const getToolName = (id: string) => id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+const i18nData = await getI18nData(lang);
+const enData = await getI18nData('en');
+const t = (key: string) => i18nData.ui[key] || enData.ui[key] || key;
+
+// 查找工具名称的辅助函数
+const getToolName = (id: string, category: string) => {
+  // 1. 优先使用 UI 翻译键值 (新方式)
+  const nameKey = `tools.${id}.name`;
+  if (i18nData.ui[nameKey]) return i18nData.ui[nameKey];
+
+  // 2. 尝试从 i18n nav 数据中查找 (旧方式兼容)
+  const categoryData = i18nData.nav[category];
+  if (categoryData && categoryData.items) {
+    const toolItem = categoryData.items.find((item: any) => item.href.includes(id));
+    if (toolItem) return toolItem.name;
+  }
+
+  // 3. 使用英文后备
+  if (enData.ui[nameKey]) return enData.ui[nameKey];
+  
+  // 4. 最后回退：格式化 ID
+  return id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+};
+
 const linkPrefix = lang === 'en' ? '' : `/${lang}`;
 
 // 3. 构建 SEO 标题 (品牌 | 关键词)
 const pageTitle = `${t('site.title')} | ${t('site.seo_keywords')}`;
+const pageDesc = `${t('site.seo_keywords')}. ${t('hero.subtitle')}`;
 ---
 
-<Layout title={pageTitle} lang={lang}>
+<Layout title={pageTitle} description={pageDesc} lang={lang}>
   
   {/* Hero Section */}
   <section class="bg-slate-900 text-white pt-24 pb-32 px-4 text-center relative overflow-hidden">
@@ -31,17 +54,53 @@ const pageTitle = `${t('site.title')} | ${t('site.seo_keywords')}`;
             {t('hero.subtitle')}
         </p>
 
-        <div class="relative max-w-xl mx-auto group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        {/* Quick Access Categories */}
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
+            <a href={`${linkPrefix}/image/image-compressor`} class="group relative bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl p-6 transition-all hover:-translate-y-1">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">{t('home.quick.image.title')}</h3>
+                    <p class="text-xs text-slate-400">{t('home.quick.image.desc')}</p>
+                </div>
+            </a>
+            
+            <a href={`${linkPrefix}/pdf/pdf-to-image`} class="group relative bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl p-6 transition-all hover:-translate-y-1">
+                <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-12 h-12 bg-red-500/20 text-red-400 rounded-xl flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">{t('home.quick.pdf.title')}</h3>
+                    <p class="text-xs text-slate-400">{t('home.quick.pdf.desc')}</p>
+                </div>
+            </a>
+
+            <a href={`${linkPrefix}/file/zip-creator`} class="group relative bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl p-6 transition-all hover:-translate-y-1">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-zipper"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">{t('home.quick.zip.title')}</h3>
+                    <p class="text-xs text-slate-400">{t('home.quick.zip.desc')}</p>
+                </div>
+            </a>
+        </div>
+
+        {/* Search Bar (De-emphasized) */}
+        <div class="relative max-w-md mx-auto group opacity-80 hover:opacity-100 transition-opacity">
             <div class="relative">
-                <div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                    <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-magnifying-glass text-slate-500 text-sm"></i>
                 </div>
                 <input 
                     type="text" 
                     id="toolSearch"
                     placeholder={t('hero.search_placeholder')}
-                    class="w-full pl-14 pr-6 py-5 rounded-full bg-white text-slate-900 placeholder:text-slate-400 focus:ring-0 outline-none text-lg shadow-xl"
+                    class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 text-white placeholder:text-slate-500 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all"
                 >
             </div>
         </div>
@@ -74,10 +133,10 @@ const pageTitle = `${t('site.title')} | ${t('site.seo_keywords')}`;
               <i class={`fa-solid ${tool.icon}`}></i>
             </div>
             <h3 class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors mb-1 z-10">
-               {getToolName(tool.id)}
+               {getToolName(tool.id, tool.category)}
             </h3>
             <span class="text-xs text-slate-400 uppercase font-bold tracking-wider z-10">
-              {tool.category}
+              {i18nData.nav[tool.category]?.title || tool.category}
             </span>
             <div class="absolute -right-4 -bottom-4 text-9xl text-slate-100 opacity-0 group-hover:opacity-50 transition-opacity rotate-12 z-0">
                 <i class={`fa-solid ${tool.icon}`}></i>

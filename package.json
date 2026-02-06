@@ -20,5 +20,8 @@
     "react-dom": "^19.2.4",
     "tailwindcss": "^3.4.17",
     "upng-js": "^2.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19"
   }
 }

@@ -121,6 +121,14 @@
     "modal_desc": "Tất cả hình ảnh đã xử lý sẽ bị mất. Hành động này không thể hoàn tác.",
     "modal_cancel": "Hủy",
     "modal_confirm": "Xóa Tất Cả",
-    "leave_warning": "Bạn có hình ảnh chưa lưu. Rời khỏi trang này sẽ mất tiến trình của bạn."
+    "leave_warning": "Bạn có hình ảnh chưa lưu. Rời khỏi trang này sẽ mất tiến trình của bạn.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Cập nhật mới nhất, hướng dẫn và mẹo",
+    "blog.read_more": "Đọc thêm",
+    "blog.no_posts": "Chưa có bài đăng nào",
+    "blog.back_to_list": "Quay lại Blog",
+    "blog.create_zip_cta": "Tạo tệp ZIP",
+    "blog.cta_text": "Cần tạo tệp ZIP?"
   }
 }

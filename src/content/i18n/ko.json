@@ -121,6 +121,14 @@
     "modal_desc": "처리된 모든 이미지가 손실됩니다. 이 작업은 취소할 수 없습니다.",
     "modal_cancel": "취소",
     "modal_confirm": "모두 지우기",
-    "leave_warning": "저장되지 않은 이미지가 있습니다. 이 페이지를 떠나면 진행 상황이 손실됩니다."
+    "leave_warning": "저장되지 않은 이미지가 있습니다. 이 페이지를 떠나면 진행 상황이 손실됩니다.",
+    "nav.blog": "블로그",
+    "blog.title": "블로그",
+    "blog.subtitle": "최신 업데이트, 튜토리얼 및 팁",
+    "blog.read_more": "더 읽기",
+    "blog.no_posts": "아직 게시물이 없습니다",
+    "blog.back_to_list": "블로그로 돌아가기",
+    "blog.create_zip_cta": "ZIP 파일 만들기",
+    "blog.cta_text": "ZIP 파일을 만들어야 합니까?"
   }
 }

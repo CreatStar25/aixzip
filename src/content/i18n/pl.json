@@ -121,6 +121,14 @@
     "modal_desc": "Wszystkie przetworzone obrazy zostaną utracone. Tej czynności nie można cofnąć.",
     "modal_cancel": "Anuluj",
     "modal_confirm": "Wyczyść wszystko",
-    "leave_warning": "Masz niezapisane obrazy. Opuszczenie tej strony spowoduje utratę postępu."
+    "leave_warning": "Masz niezapisane obrazy. Opuszczenie tej strony spowoduje utratę postępu.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Najnowsze aktualizacje, samouczki i wskazówki",
+    "blog.read_more": "Czytaj więcej",
+    "blog.no_posts": "Brak postów",
+    "blog.back_to_list": "Powrót do bloga",
+    "blog.create_zip_cta": "Utwórz plik ZIP",
+    "blog.cta_text": "Czy musisz utworzyć plik ZIP?"
   }
 }

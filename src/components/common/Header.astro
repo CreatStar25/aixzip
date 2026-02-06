@@ -18,7 +18,7 @@ const languageNames = {
 const locales = Object.keys(languageNames);
 
 const { pathname, search } = Astro.url;
-const getLocalizedPath = (targetLang) => {
+const getLocalizedPath = (targetLang: string) => {
   const segments = pathname.split('/').filter(Boolean);
   if (locales.includes(segments[0])) {
     segments.shift();
@@ -48,14 +48,14 @@ const getLocalizedPath = (targetLang) => {
 
     {/* ✨ 动态渲染菜单 (数据源自 JSON) */}
     <div class="hidden md:flex gap-8 h-full items-center">
-      {Object.entries(menu).map(([key, category]) => (
+      {Object.entries(menu).map(([key, category]: [string, any]) => (
         <div class="group relative h-full flex items-center cursor-pointer">
           <span class="text-base md:text-lg font-extrabold text-slate-600 group-hover:text-blue-600 py-6 transition-colors tracking-wide flex items-center gap-1">
             {category.title} 
             <i class="fa-solid fa-chevron-down text-[10px] opacity-40 group-hover:opacity-100 transition-opacity mt-1"></i>
           </span>
           <div class="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-white shadow-xl rounded-2xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-3 grid gap-1 z-50">
-             {category.items.map(item => (
+             {category.items.map((item: any) => (
                 <a href={item.href} class="block px-4 py-3 rounded-xl hover:bg-slate-50 text-slate-600 hover:text-blue-600 font-bold text-sm transition-colors flex items-center gap-3">
                     <i class="fa-solid fa-caret-right text-slate-300"></i> {item.name}
                 </a>
@@ -66,11 +66,20 @@ const getLocalizedPath = (targetLang) => {
     </div>
 
     {/* Language Selector */}
-    <div class="flex items-center">
+    <div class="flex items-center gap-4">
+        {/* Blog Link */}
+        <a 
+          href={`/${lang}/blog`} 
+          class="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-900 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors"
+        >
+          <i class="fa-solid fa-newspaper"></i>
+          <span>{i18nData.ui['nav.blog'] || 'Blog'}</span>
+        </a>
+
         <div class="group relative h-full flex items-center z-50">
             <button class="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-900 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors">
                 <i class="fa-solid fa-globe"></i> 
-                <span>{languageNames[lang]}</span>
+                <span>{languageNames[lang as keyof typeof languageNames]}</span>
                 <i class="fa-solid fa-chevron-down text-xs"></i>
             </button>
 
@@ -83,7 +92,7 @@ const getLocalizedPath = (targetLang) => {
                             data-lang-link={l}
                             class={`text-sm px-3 py-2 rounded-lg transition-colors flex items-center justify-between ${lang === l ? 'bg-blue-50 text-blue-600 font-bold' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}
                         >
-                            {languageNames[l]}
+                            {languageNames[l as keyof typeof languageNames]}
                             {lang === l && <i class="fa-solid fa-check text-xs"></i>}
                         </a>
                     ))}

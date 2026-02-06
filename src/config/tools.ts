@@ -8,12 +8,11 @@ export const locales = [
 ];
 
 export const tools = [
-  { id: 'gemini-remove-waterprint', category: 'image' },
-  { id: 'image-compressor', category: 'image' },
-  { id: 'image-editor', category: 'image' },
-  { id: 'image-resizer', category: 'image' },
-  { id: 'image-converter', category: 'image' },
-  { id: 'pdf-to-image', category: 'pdf' },
-  { id: 'zip-creator', category: 'file' },
-  // ... 更多工具
+  { id: 'gemini-remove-waterprint', category: 'image', icon: 'fa-wand-magic-sparkles' },
+  { id: 'image-compressor', category: 'image', icon: 'fa-compress' },
+  { id: 'image-editor', category: 'image', icon: 'fa-crop-simple' },
+  { id: 'image-resizer', category: 'image', icon: 'fa-expand' },
+  { id: 'image-converter', category: 'image', icon: 'fa-rotate' },
+  { id: 'pdf-to-image', category: 'pdf', icon: 'fa-file-pdf' },
+  { id: 'zip-creator', category: 'file', icon: 'fa-file-zipper' },
 ];

@@ -121,6 +121,14 @@
     "modal_desc": "Semua gambar yang diproses akan hilang. Tindakan ini tidak dapat dibatalkan.",
     "modal_cancel": "Batal",
     "modal_confirm": "Hapus Semua",
-    "leave_warning": "Anda memiliki gambar yang belum disimpan. Meninggalkan halaman ini akan menghapus progres Anda."
+    "leave_warning": "Anda memiliki gambar yang belum disimpan. Meninggalkan halaman ini akan menghapus progres Anda.",
+    "nav.blog": "Blog",
+    "blog.title": "Blog",
+    "blog.subtitle": "Pembaruan terkini, tutorial, dan tips",
+    "blog.read_more": "Baca Selengkapnya",
+    "blog.no_posts": "Belum ada postingan",
+    "blog.back_to_list": "Kembali ke Blog",
+    "blog.create_zip_cta": "Buat file ZIP",
+    "blog.cta_text": "Perlu membuat file ZIP?"
   }
 }
