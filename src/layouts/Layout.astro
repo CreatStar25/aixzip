@@ -31,6 +31,16 @@ const defaultDesc = "Free online tools to convert, compress, and edit your files
     <meta property="og:title" content={title ? title : defaultTitle} />
     <meta property="og:description" content={description || defaultDesc} />
 
+    {/* ✨✨✨ Google Analytics 4 ✨✨✨ */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KBYV6TMKPT"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KBYV6TMKPT');
+    </script>
+
     {/* ✨✨✨ Google Tag Manager (Script) ✨✨✨ */}
     <script is:inline>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
