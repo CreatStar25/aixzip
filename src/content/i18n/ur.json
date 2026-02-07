@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "image": {
+      "title": "تصویری ٹولز",
+      "items": [
+        {
+          "name": "جیمنی واٹر مارک ہٹانے والا",
+          "href": "/ur/image/gemini-remove-waterprint"
+        },
+        {
+          "name": "امیج ایڈیٹر (گھمائیں/پلٹائیں)",
+          "href": "/ur/image/image-editor"
+        },
+        {
+          "name": "بیچ امیج ریسائزر",
+          "href": "/ur/image/image-resizer"
+        },
+        {
+          "name": "بیچ امیج کمپریسر",
+          "href": "/ur/image/image-compressor"
+        },
+        {
+          "name": "بیچ امیج کنورٹر",
+          "href": "/ur/image/image-converter"
+        }
+      ]
+    },
+    "pdf": {
+      "title": "پی ڈی ایف ٹولز",
+      "items": [
+        {
+          "name": "پی ڈی ایف سے تصویر",
+          "href": "/ur/pdf/pdf-to-image"
+        }
+      ]
+    },
+    "file": {
+      "title": "فائل ٹولز",
+      "items": [
+        {
+          "name": "زپ بنائیں",
+          "href": "/ur/file/zip-creator"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "site.title": "AIxZIP",
+    "nav.blog": "بلاگ",
+    "blog.title": "بلاگ",
+    "blog.subtitle": "تازہ ترین اپ ڈیٹس، سبق اور تجاویز",
+    "blog.read_more": "مزید پڑھیں",
+    "blog.no_posts": "ابھی تک کوئی پوسٹ نہیں",
+    "site.seo_keywords": "مفت اے آئی ٹولز، پی ڈی ایف ٹولز، امیج ٹولز، زپ ٹولز، فائل کنورٹرز",
+    "hero.title": "مفت آن لائن پی ڈی ایف، امیج اور زپ ٹولز",
+    "hero.subtitle": "تبدیل کریں، کمپریس کریں، ترمیم کریں۔ 100٪ کلائنٹ سائیڈ پروسیسنگ۔ سرور پر کوئی فائل اپ لوڈ نہیں ہوتی۔",
+    "hero.search_placeholder": "ٹولز تلاش کریں (جیسے \"واٹر مارک\"، \"پی ڈی ایف\")",
+    "section.all": "تمام ٹولز",
+    "footer.desc": "اپنی فائلوں کو تبدیل، کمپریس اور ترمیم کرنے کے لیے مفت آن لائن ٹولز۔",
+    "footer.rights": "جملہ حقوق محفوظ ہیں۔",
+    "footer.col.pdf": "پی ڈی ایف ٹولز",
+    "footer.col.image": "تصویری ٹولز",
+    "footer.col.company": "کمپنی",
+    "footer.col.lang": "بین الاقوامی",
+    "footer.link.about": "ہمارے بارے میں",
+    "footer.link.privacy": "پرائیویسی پالیسی",
+    "footer.link.terms": "سروس کی شرائط",
+    "breadcrumb.home": "ہوم",
+    "section.how_it_works": "یہ کیسے کام کرتا ہے",
+    "section.features": "اہم خصوصیات",
+    "section.testimonials": "صارفین کیا کہتے ہیں",
+    "section.faq": "اکثر پوچھے گئے سوالات",
+    "feat.nologin.title": "کوئی سائن اپ نہیں",
+    "feat.nologin.desc": "رجسٹریشن کے بغیر فوری طور پر ٹولز استعمال کرنا شروع کریں۔",
+    "feat.client.title": "کلائنٹ سائیڈ",
+    "feat.client.desc": "فائلوں پر آپ کے براؤزر میں کارروائی کی جاتی ہے۔ کوئی سرور اپ لوڈ نہیں۔",
+    "home.quick.image.title": "تصویری ٹولز",
+    "home.quick.image.desc": "کمپریس، تبدیل، ترمیم کریں",
+    "home.quick.pdf.title": "پی ڈی ایف ٹولز",
+    "home.quick.pdf.desc": "پی ڈی ایف کو تصویر میں تبدیل کریں",
+    "home.quick.zip.title": "زپ ٹولز",
+    "home.quick.zip.desc": "آرکائیوز بنائیں اور نکالیں",
+    "tools.gemini-remove-waterprint.name": "جیمنی واٹر مارک ہٹانے والا",
+    "tools.gemini-remove-waterprint.desc": "اے آئی کا استعمال کرتے ہوئے واٹر مارکس کو ہٹائیں",
+    "tools.image-compressor.name": "بیچ امیج کمپریسر",
+    "tools.image-compressor.desc": "معیار کھوئے بغیر تصاویر کو کمپریس کریں",
+    "tools.image-editor.name": "امیج ایڈیٹر",
+    "tools.image-editor.desc": "تصاویر کو کاٹیں، گھمائیں اور پلٹائیں",
+    "tools.image-resizer.name": "بیچ امیج ریسائزر",
+    "tools.image-resizer.desc": "ایک ساتھ متعدد تصاویر کا سائز تبدیل کریں",
+    "tools.image-converter.name": "بیچ امیج کنورٹر",
+    "tools.image-converter.desc": "فارمیٹس کے درمیان تصاویر کو تبدیل کریں",
+    "tools.pdf-to-image.name": "پی ڈی ایف سے تصویر",
+    "tools.pdf-to-image.desc": "پی ڈی ایف صفحات کو تصاویر میں تبدیل کریں",
+    "tools.zip-creator.name": "زپ بنائیں",
+    "tools.zip-creator.desc": "فائلوں سے زپ آرکائیوز بنائیں",
+    "feat.offline.title": "آف لائن قابل",
+    "feat.offline.desc": "لوڈ ہونے کے بعد انٹرنیٹ کے بغیر بھی کام کرتا ہے۔",
+    "feat.secure.title": "100٪ محفوظ",
+    "feat.secure.desc": "آپ کا ڈیٹا کبھی بھی آپ کے آلے سے نہیں نکلتا۔"
+  }
+}

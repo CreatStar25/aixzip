@@ -4,7 +4,7 @@
 export const locales = [
   'en', 'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 
   'fr', 'ru', 'hi', 'ja', 'de', 'ko', 'tr', 'vi', 
-  'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro'
+  'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro', 'ur'
 ];
 
 export const tools = [

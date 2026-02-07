@@ -16,14 +16,14 @@ export default defineConfig({
           en: 'en', 'zh-cn': 'zh-cn', 'zh-tw': 'zh-tw', es: 'es', ar: 'ar', 
           pt: 'pt', id: 'id', ms: 'ms', fr: 'fr', ru: 'ru', hi: 'hi', 
           ja: 'ja', de: 'de', ko: 'ko', tr: 'tr', vi: 'vi', th: 'th', 
-          it: 'it', fa: 'fa', nl: 'nl', pl: 'pl', sv: 'sv', uk: 'uk', ro: 'ro'
+          it: 'it', fa: 'fa', nl: 'nl', pl: 'pl', sv: 'sv', uk: 'uk', ro: 'ro', ur: 'ur'
         },
       },
     }),
   ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 'fr', 'ru', 'hi', 'ja', 'de', 'ko', 'tr', 'vi', 'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro'],
+    locales: ['en', 'zh-cn', 'zh-tw', 'es', 'ar', 'pt', 'id', 'ms', 'fr', 'ru', 'hi', 'ja', 'de', 'ko', 'tr', 'vi', 'th', 'it', 'fa', 'nl', 'pl', 'sv', 'uk', 'ro', 'ur'],
     routing: {
       prefixDefaultLocale: false, // 英文不带 /en 前缀，其他语言带前缀
     },
